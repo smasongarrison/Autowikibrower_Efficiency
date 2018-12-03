@@ -22,70 +22,80 @@
     <AppendSummary>true</AppendSummary>
     <Replacements>
       <Replacement>
-        <Find>\[\ \\t\r\n\\f]</Find>
-        <Replace>\s</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
+        <Find>(?&lt;lead&gt;\((?:\?:)?|\|)(?&lt;q&gt;[\w]|\[[\w]+\])\|(?&lt;r&gt;[\w\?\[\]\-]*)\)\?</Find>
+        <Replace>${lead}${q}?|${r})</Replace>
+        <Comment>(x?|....)</Comment>
+        <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\[\^\\s]</Find>
-        <Replace>\S</Replace>
+        <Find>(?&lt;lead&gt;\((?:\?:)?|\|)(?&lt;r&gt;[\w\?\[\]\-]*)\|(?&lt;q&gt;[\w]|\[[\w]+\])\)\?</Find>
+        <Replace>${lead}${q}?|${r})</Replace>
         <Comment />
-        <IsRegex>false</IsRegex>
+        <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\[\^\\d]</Find>
-        <Replace>\D</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
+        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;\[?[\w][\w\]\?]{2,})\(\?:(?&lt;b1&gt;[\w][\w\?\[\]\(:\)]{0,20})(?&lt;b2&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?(?&lt;b4&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?(?&lt;b5&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?\)(?&lt;tail&gt;[\w]{0,})\|\k&lt;stem&gt;(?&lt;b3&gt;[\w][\w\?\(:]{0,20})\k&lt;tail&gt;(?=\)?\|)</Find>
+        <Replace>${lead}${stem}(?:${b1}${b2}${b4}${b5}|${b3})${tail}</Replace>
+        <Comment>stem(branch1|branch2|branch3)</Comment>
+        <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\[0-9]</Find>
-        <Replace>\d</Replace>
+        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;(?:[tTwWsS]|\[(?:tT|wW|sS)\])h)(?&lt;b1&gt;[a-z][a-z\?]{0,10})\|\k&lt;stem&gt;(?&lt;b2&gt;[a-z][a-z\?]{0,10})(?=\||\))</Find>
+        <Replace>${lead}${stem}(?:${b1}|${b2})</Replace>
         <Comment />
-        <IsRegex>false</IsRegex>
+        <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\[\^\\w]</Find>
-        <Replace>\W</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
+        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;\[?[\w][\w\]\?]{1,15})(?&lt;b1&gt;[\w][\w\?]{0,10})\|\k&lt;stem&gt;(?&lt;b2&gt;[\w][\w\?]{0,10})(?=\||\))</Find>
+        <Replace>${lead}${stem}(?:${b1}|${b2})</Replace>
+        <Comment>stem(branch1|branch2)</Comment>
+        <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\\d\+\(\?:st\|\[nr]d\|th\)</Find>
-        <Replace>\d+(?:th|st|[nr]d)</Replace>
+        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;(?:[tTwWsS]|\[(?:tT|wW|sS)\])h)\(\?:(?&lt;b1&gt;[a-z][a-z\?\[\]]{0,10})\|(?&lt;b2&gt;[a-z][a-z\?\[\]]{0,10})\)\|\k&lt;stem&gt;(?&lt;b3&gt;[a-z][a-z\?]{0,10})(?=\||\))</Find>
+        <Replace>${lead}${stem}(?:${b1}|${b2}|${b3})</Replace>
         <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>true</Enabled>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\|six\(\?:t\(\?:y\|een\)\)\?\|seven\(\?:t\(\?:y\|een\)\)\?\|</Find>
-        <Replace>|s(?:ix|even)(?:teen|ty)?|</Replace>
+        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;[A-Za-z]{1,4})(?:\[(?&lt;b1&gt;[A-Za-z]{2,})\]|(?&lt;b2&gt;[A-Za-z]{1}))(?&lt;q&gt;\?)?\|\k&lt;stem&gt;(?&lt;b3&gt;[A-Za-z])(?=\||\))</Find>
+        <Replace>${lead}${stem}[${b1}${b2}${b3}]${q}</Replace>
         <Comment />
-        <IsRegex>false</IsRegex>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(\(\?:[A-Za-z]{1,}\))\)</Find>
+        <Replace>$1</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
@@ -122,26 +132,6 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:(\(\?:[A-Za-z]{1,}\))\)</Find>
-        <Replace>$1</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;!\+)\|\)</Find>
-        <Replace>)?</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
         <Find>\((.)\?\)</Find>
         <Replace>($1)?</Replace>
         <Comment />
@@ -152,6 +142,26 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
+        <Find>\(:</Find>
+        <Replace>(?:</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(January\|February\|March\|April\|May\|June\|July\|August\|September\|October\|November\|December\)</Find>
+        <Replace>(J(?:anuary|u(?:ne|ly))|February|Ma(?:y|rch)|A(?:pril|ugust)|September|October|November|December)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
         <Find>(?&lt;!\+)\|\)</Find>
         <Replace>)?</Replace>
         <Comment />
@@ -162,8 +172,28 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\|due\|during\|</Find>
-        <Replace>|du(?:e|ring)|</Replace>
+        <Find>(?&lt;!\[)\[(?&lt;cap1&gt;[A-Z]{0,2})(?&lt;l1&gt;[a-z]{0,19})(?&lt;cap2&gt;[A-Z]{1,})(?&lt;l2&gt;[a-z]{1,19})(?&lt;o&gt;[^\]-]{0,19})\]</Find>
+        <Replace>[${l1}${l2}${cap1}${cap2}${o}]</Replace>
+        <Comment>order efficiency</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:([\w\d])\|([\w\d])\)</Find>
+        <Replace>[$1$2]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[0-9]</Find>
+        <Replace>\d</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
         <Enabled>true</Enabled>
@@ -172,28 +202,58 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;(?:[tTwWsS]|\[(?:tT|wW|sS)\])h)(?&lt;b1&gt;[a-z][a-z\?]{0,10})\|\k&lt;stem&gt;(?&lt;b2&gt;[a-z][a-z\?]{0,10})(?=\||\))</Find>
-        <Replace>${lead}${stem}(?:${b1}|${b2})</Replace>
+        <Find>\[\^\\d]</Find>
+        <Replace>\D</Replace>
         <Comment />
-        <IsRegex>true</IsRegex>
+        <IsRegex>false</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;(?:[tTwWsS]|\[(?:tT|wW|sS)\])h)\(\?:(?&lt;b1&gt;[a-z][a-z\?\[\]]{0,10})\|(?&lt;b2&gt;[a-z][a-z\?\[\]]{0,10})\)\|\k&lt;stem&gt;(?&lt;b3&gt;[a-z][a-z\?]{0,10})(?=\||\))</Find>
-        <Replace>${lead}${stem}(?:${b1}|${b2}|${b3})</Replace>
+        <Find>\\d\+\(\?:st\|\[nr]d\|th\)</Find>
+        <Replace>\d+(?:th|st|[nr]d)</Replace>
         <Comment />
-        <IsRegex>true</IsRegex>
+        <IsRegex>false</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(January\|February\|March\|April\|May\|June\|July\|August\|September\|October\|November\|December\)</Find>
-        <Replace>(J(?:anuary|u(?:ne|ly))|February|Ma(?:y|rch)|A(?:pril|ugust)|September|October|November|December)</Replace>
+        <Find>\[\ \\t\r\n\\f]</Find>
+        <Replace>\s</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\^\\s]</Find>
+        <Replace>\S</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\^\\w]</Find>
+        <Replace>\W</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|due\|during\|</Find>
+        <Replace>|du(?:e|ring)|</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
         <Enabled>true</Enabled>
@@ -222,48 +282,8 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>fi\(\?:ve\|ft\(\?:y\|teen\)</Find>
-        <Replace>fi(?:ve|ft(?:y|een)</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>t\(\?:h\|tieth\|teenth\)</Find>
-        <Replace>t(?:h|ieth|eenth)</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>t\(\?:y\|teen\)</Find>
-        <Replace>t(?:y|een)</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>sixt\(\?:h\|eenth\|ieth\)\|sevent\(\?:h\|eenth\|ieth\)</Find>
-        <Replace>s(?:ix|even)t(?:h|eenth|ieth)</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>tenth\|twe\(\?:lfth\|ntieth\)</Find>
-        <Replace>t(?:enth|we(?:lfth|ntieth))</Replace>
+        <Find>\|six\(\?:t\(\?:y\|een\)\)\?\|seven\(\?:t\(\?:y\|een\)\)\?\|</Find>
+        <Replace>|s(?:ix|even)(?:teen|ty)?|</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
         <Enabled>true</Enabled>
@@ -292,19 +312,69 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(:</Find>
-        <Replace>(?:</Replace>
+        <Find>fi\(\?:ve\|ft\(\?:y\|teen\)</Find>
+        <Replace>fi(?:ve|ft(?:y|een)</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>sixt\(\?:h\|eenth\|ieth\)\|sevent\(\?:h\|eenth\|ieth\)</Find>
+        <Replace>s(?:ix|even)t(?:h|eenth|ieth)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>tenth\|twe\(\?:lfth\|ntieth\)</Find>
+        <Replace>t(?:enth|we(?:lfth|ntieth))</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>t\(\?:h\|tieth\|teenth\)</Find>
+        <Replace>t(?:h|ieth|eenth)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>t\(\?:y\|teen\)</Find>
+        <Replace>t(?:y|een)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?:)?)(?&lt;stem1&gt;\w{1,})\|(?&lt;stem2&gt;\w{1,})\)(?&lt;tail&gt;[\w\?]{2,})(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${stem1}${tail}|${stem2}${tail})${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
     </Replacements>
     <AdvancedReps>
       <IRule xsi:type="Rule">
-        <enabled_>true</enabled_>
+        <enabled_>false</enabled_>
         <Children>
           <IRule xsi:type="Rule">
             <enabled_>false</enabled_>
@@ -380,10 +450,10 @@
         <regexOptions_>None</regexOptions_>
       </IRule>
       <IRule xsi:type="Rule">
-        <enabled_>true</enabled_>
+        <enabled_>false</enabled_>
         <Children>
           <IRule xsi:type="Rule">
-            <enabled_>true</enabled_>
+            <enabled_>false</enabled_>
             <Children />
             <Name>[xyzXYZ]</Name>
             <ruletype_>OnWholePage</ruletype_>
@@ -411,10 +481,10 @@
         <regexOptions_>None</regexOptions_>
       </IRule>
       <IRule xsi:type="Rule">
-        <enabled_>true</enabled_>
+        <enabled_>false</enabled_>
         <Children>
           <IRule xsi:type="Rule">
-            <enabled_>true</enabled_>
+            <enabled_>false</enabled_>
             <Children />
             <Name>stem(branch1|branch2)</Name>
             <ruletype_>OnWholePage</ruletype_>
@@ -429,7 +499,7 @@
             <regexOptions_>None</regexOptions_>
           </IRule>
           <IRule xsi:type="Rule">
-            <enabled_>true</enabled_>
+            <enabled_>false</enabled_>
             <Children />
             <Name>stem(branch1|branch2|branch3)</Name>
             <ruletype_>OnWholePage</ruletype_>
@@ -444,7 +514,7 @@
             <regexOptions_>None</regexOptions_>
           </IRule>
           <IRule xsi:type="Rule">
-            <enabled_>true</enabled_>
+            <enabled_>false</enabled_>
             <Children />
             <Name>stem[xyz]?tail</Name>
             <ruletype_>OnWholePage</ruletype_>
@@ -459,7 +529,7 @@
             <regexOptions_>None</regexOptions_>
           </IRule>
           <IRule xsi:type="Rule">
-            <enabled_>true</enabled_>
+            <enabled_>false</enabled_>
             <Children>
               <IRule xsi:type="Rule">
                 <enabled_>true</enabled_>
@@ -505,7 +575,7 @@
             <regexOptions_>None</regexOptions_>
           </IRule>
           <IRule xsi:type="Rule">
-            <enabled_>true</enabled_>
+            <enabled_>false</enabled_>
             <Children />
             <Name>(x?|....)</Name>
             <ruletype_>OnWholePage</ruletype_>
@@ -520,11 +590,11 @@
             <regexOptions_>None</regexOptions_>
           </IRule>
           <IRule xsi:type="Rule">
-            <enabled_>true</enabled_>
+            <enabled_>false</enabled_>
             <Children />
             <Name>[$1$2]</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>\(\?:([A-Za-z])\|([A-Za-z])\)</replace_>
+            <replace_>\(\?:([\w\d])\|([\w\d])\)</replace_>
             <with_>[$1$2]</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -535,7 +605,7 @@
             <regexOptions_>None</regexOptions_>
           </IRule>
           <IRule xsi:type="Rule">
-            <enabled_>true</enabled_>
+            <enabled_>false</enabled_>
             <Children />
             <Name>(x?|....)2</Name>
             <ruletype_>OnWholePage</ruletype_>
@@ -550,15 +620,15 @@
             <regexOptions_>None</regexOptions_>
           </IRule>
           <IRule xsi:type="Rule">
-            <enabled_>true</enabled_>
+            <enabled_>false</enabled_>
             <Children />
-            <Name>Rule</Name>
+            <Name>The Their</Name>
             <ruletype_>OnWholePage</ruletype_>
             <replace_>(:|\(|\|)((?:[tT]|\[tT\])he)(?:\|\2ir|ir\|\2)(\||\))</replace_>
             <with_>$1$2he(?:ir)?$3</with_>
             <ifContains_ />
             <ifNotContains_ />
-            <regex_>false</regex_>
+            <regex_>true</regex_>
             <ifIsRegex_>false</ifIsRegex_>
             <numoftimes_>1</numoftimes_>
             <ifRegexOptions_>None</ifRegexOptions_>
@@ -572,6 +642,20 @@
         <ifContains_ />
         <ifNotContains_ />
         <regex_>false</regex_>
+        <ifIsRegex_>false</ifIsRegex_>
+        <numoftimes_>1</numoftimes_>
+        <ifRegexOptions_>None</ifRegexOptions_>
+        <regexOptions_>None</regexOptions_>
+      </IRule>
+      <IRule xsi:type="Rule">
+        <enabled_>false</enabled_>
+        <Name>Rule</Name>
+        <ruletype_>OnWholePage</ruletype_>
+        <replace_>(?&lt;lead&gt;\((?:\?:)?)(?&lt;stem1&gt;\w{1,})\|(?&lt;stem2&gt;\w{1,})\)(?&lt;tail&gt;[\w\?]{2,})(?&lt;end&gt;\||\))</replace_>
+        <with_>${lead}${stem1}${tail}|${stem2}${tail})${end}</with_>
+        <ifContains_ />
+        <ifNotContains_ />
+        <regex_>true</regex_>
         <ifIsRegex_>false</ifIsRegex_>
         <numoftimes_>1</numoftimes_>
         <ifRegexOptions_>None</ifRegexOptions_>
@@ -648,8 +732,8 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>\$\d\$\d</FindText>
-    <FindRegex>true</FindRegex>
+    <FindText>he|</FindText>
+    <FindRegex>false</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
     <ToolBarEnabled>true</ToolBarEnabled>
