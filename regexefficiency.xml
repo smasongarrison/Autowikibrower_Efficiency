@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoWikiBrowserPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:space="preserve" Version="5.10.1.0">
+  <Project>wikipedia</Project>
+  <LanguageCode>en</LanguageCode>
+  <CustomProject />
+  <Protocol>https://</Protocol>
+  <LoginDomain />
+  <List>
+    <ListSource>Wikipedia:AutoWikiBrowser/Typos</ListSource>
+    <SelectedProvider>LinksOnPageOnlyBlueListProvider</SelectedProvider>
+    <ArticleList>
+      <Article NameSpaceKey="4">
+        <PreProcessed>false</PreProcessed>
+        <Name>Wikipedia:AutoWikiBrowser/Typos</Name>
+      </Article>
+    </ArticleList>
+  </List>
+  <FindAndReplace>
+    <Enabled>true</Enabled>
+    <IgnoreSomeText>false</IgnoreSomeText>
+    <IgnoreMoreText>false</IgnoreMoreText>
+    <AppendSummary>true</AppendSummary>
+    <Replacements>
+      <Replacement>
+        <Find>\[\ \\t\r\n\\f]</Find>
+        <Replace>\s</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\^\\s]</Find>
+        <Replace>\S</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\^\\d]</Find>
+        <Replace>\D</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[0-9]</Find>
+        <Replace>\d</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\^\\w]</Find>
+        <Replace>\W</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\\d\+\(\?:st\|\[nr]d\|th\)</Find>
+        <Replace>\d+(?:th|st|[nr]d)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|six\(\?:t\(\?:y\|een\)\)\?\|seven\(\?:t\(\?:y\|een\)\)\?\|</Find>
+        <Replace>|s(?:ix|even)(?:teen|ty)?|</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(:|\(|\|)([hH]|\[hH\])(?:is\|\2er|er\|\2is)(\||\))</Find>
+        <Replace>$1$2(?:is|er)$3</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(:|\(|\|)((?:[tT]|\[tT\])he)(?:\|\2ir|ir\|\2)(\||\))</Find>
+        <Replace>$1$2he(?:ir)?$3</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\((?&lt;q&gt;\?:)?\|(?&lt;a&gt;[A-Za-z]{1,})\)</Find>
+        <Replace>(${q}${a})?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(\(\?:[A-Za-z]{1,}\))\)</Find>
+        <Replace>$1</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!\+)\|\)</Find>
+        <Replace>)?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\((.)\?\)</Find>
+        <Replace>($1)?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!\+)\|\)</Find>
+        <Replace>)?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|due\|during\|</Find>
+        <Replace>|du(?:e|ring)|</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;(?:[tTwWsS]|\[(?:tT|wW|sS)\])h)(?&lt;b1&gt;[a-z][a-z\?]{0,10})\|\k&lt;stem&gt;(?&lt;b2&gt;[a-z][a-z\?]{0,10})(?=\||\))</Find>
+        <Replace>${lead}${stem}(?:${b1}|${b2})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;(?:[tTwWsS]|\[(?:tT|wW|sS)\])h)\(\?:(?&lt;b1&gt;[a-z][a-z\?\[\]]{0,10})\|(?&lt;b2&gt;[a-z][a-z\?\[\]]{0,10})\)\|\k&lt;stem&gt;(?&lt;b3&gt;[a-z][a-z\?]{0,10})(?=\||\))</Find>
+        <Replace>${lead}${stem}(?:${b1}|${b2}|${b3})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(January\|February\|March\|April\|May\|June\|July\|August\|September\|October\|November\|December\)</Find>
+        <Replace>(J(?:anuary|u(?:ne|ly))|February|Ma(?:y|rch)|A(?:pril|ugust)|September|October|November|December)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|fo\(\?:ur\(\?:teen\)\?\|rty\)\|fi\(\?:ve\|ft\(\?:y\|teen\)\)\|</Find>
+        <Replace>|f(?:o(?:ur(?:teen)?|rty)|i(?:ve|ft(?:y|een)))|</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|fo\(\?:ur\(\?:teen\)\?\|rty\)\|fi\(\?:ve\|ft\(\?:y\|een\)\)\|</Find>
+        <Replace>|f(?:o(?:ur(?:teen)?|rty)|i(?:ve|ft(?:y|een)))|</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>fi\(\?:ve\|ft\(\?:y\|teen\)</Find>
+        <Replace>fi(?:ve|ft(?:y|een)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>t\(\?:h\|tieth\|teenth\)</Find>
+        <Replace>t(?:h|ieth|eenth)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>t\(\?:y\|teen\)</Find>
+        <Replace>t(?:y|een)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>sixt\(\?:h\|eenth\|ieth\)\|sevent\(\?:h\|eenth\|ieth\)</Find>
+        <Replace>s(?:ix|even)t(?:h|eenth|ieth)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>tenth\|twe\(\?:lfth\|ntieth\)</Find>
+        <Replace>t(?:enth|we(?:lfth|ntieth))</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>tenth\|eleventh\|twe\(\?:lfth\|ntieth\)</Find>
+        <Replace>eleventh|t(?:enth|we(?:lfth|ntieth))</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>fo\(\?:urt\(\?:h\|eenth\)\|rtieth\)\|fift\(\?:h\|eenth\|ieth\)</Find>
+        <Replace>f(?:o(?:urt(?:h|eenth)|rtieth)|ift(?:h|eenth|ieth))</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(:</Find>
+        <Replace>(?:</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+    </Replacements>
+    <AdvancedReps>
+      <IRule xsi:type="Rule">
+        <enabled_>true</enabled_>
+        <Children>
+          <IRule xsi:type="Rule">
+            <enabled_>false</enabled_>
+            <Children />
+            <Name>|) -&gt; )?</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>\((?&lt;q&gt;\?:)?\|(?&lt;a&gt;[A-Za-z]{1,})\)</replace_>
+            <with_>(${q}${a})?</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>false</enabled_>
+            <Children />
+            <Name>(?:(?:</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>\(\?:(\(\?:[A-Za-z]{1,}\))\)</replace_>
+            <with_>$1</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>false</enabled_>
+            <Children />
+            <Name>x|) -&gt; x)?</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;!\+)\|\)</replace_>
+            <with_>)?</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>false</enabled_>
+            <Children />
+            <Name>(x?) -&gt; (x)?</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>\((.)\?\)</replace_>
+            <with_>($1)?</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+        </Children>
+        <Name>Shorter/Smaller Captures</Name>
+        <ruletype_>OnWholePage</ruletype_>
+        <replace_ />
+        <with_ />
+        <ifContains_ />
+        <ifNotContains_ />
+        <regex_>false</regex_>
+        <ifIsRegex_>false</ifIsRegex_>
+        <numoftimes_>1</numoftimes_>
+        <ifRegexOptions_>None</ifRegexOptions_>
+        <regexOptions_>None</regexOptions_>
+      </IRule>
+      <IRule xsi:type="Rule">
+        <enabled_>true</enabled_>
+        <Children>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>[xyzXYZ]</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;!\[)\[(?&lt;cap1&gt;[A-Z]{0,2})(?&lt;l1&gt;[a-z]{0,19})(?&lt;cap2&gt;[A-Z]{1,})(?&lt;l2&gt;[a-z]{1,19})(?&lt;o&gt;[^\]-]{0,19})\]</replace_>
+            <with_>[${l1}${l2}${cap1}${cap2}${o}]</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>2</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>Singleline</regexOptions_>
+          </IRule>
+        </Children>
+        <Name>Order Efficiency</Name>
+        <ruletype_>OnWholePage</ruletype_>
+        <replace_ />
+        <with_ />
+        <ifContains_ />
+        <ifNotContains_ />
+        <regex_>false</regex_>
+        <ifIsRegex_>false</ifIsRegex_>
+        <numoftimes_>1</numoftimes_>
+        <ifRegexOptions_>None</ifRegexOptions_>
+        <regexOptions_>None</regexOptions_>
+      </IRule>
+      <IRule xsi:type="Rule">
+        <enabled_>true</enabled_>
+        <Children>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>stem(branch1|branch2)</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;\[?[\w][\w\]\?]{1,15})(?&lt;b1&gt;[\w][\w\?]{0,10})\|\k&lt;stem&gt;(?&lt;b2&gt;[\w][\w\?]{0,10})(?=\||\))</replace_>
+            <with_>${lead}${stem}(?:${b1}|${b2})</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>stem(branch1|branch2|branch3)</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;\[?[\w][\w\]\?]{2,})\(\?:(?&lt;b1&gt;[\w][\w\?\[\]\(:\)]{0,20})(?&lt;b2&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?(?&lt;b4&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?(?&lt;b5&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?\)(?&lt;tail&gt;[\w]{0,})\|\k&lt;stem&gt;(?&lt;b3&gt;[\w][\w\?\(:]{0,20})\k&lt;tail&gt;(?=\)?\|)</replace_>
+            <with_>${lead}${stem}(?:${b1}${b2}${b4}${b5}|${b3})${tail}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>stem[xyz]?tail</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;[A-Za-z]{1,4})(?:\[(?&lt;b1&gt;[A-Za-z]{2,})\]|(?&lt;b2&gt;[A-Za-z]{1}))(?&lt;q&gt;\?)?(?&lt;tail&gt;[A-Za-z]{0,4})\|\k&lt;stem&gt;(?&lt;b3&gt;[A-Za-z])\k&lt;tail&gt;(?=\||\))</replace_>
+            <with_>${lead}${stem}[${b1}${b2}${b3}]${q}${tail}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>x[yz]q? 2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;lead&gt;\||\()(?&lt;stem&gt;[A-Za-z])(?&lt;b1&gt;[a-z])\|\k&lt;stem&gt;(?&lt;b2&gt;[a-xz])(?&lt;tail&gt;[a-z])\?(?=\||\))</replace_>
+                <with_>${lead}${stem}[${b1}${b2}]${tail}?</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>x[yz]q? 1</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;lead&gt;\||\()(?&lt;stem&gt;[A-Za-z])(?&lt;b1&gt;[a-z])(?&lt;o&gt;[a-z])\?\|\k&lt;stem&gt;(?&lt;b2&gt;[a-xz])(?=\||\))</replace_>
+                <with_>${lead}${stem}[${b1}${b2}]${o}?</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+            </Children>
+            <Name>Fewer Steps, but ...</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_ />
+            <with_ />
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>false</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>(x?|....)</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;lead&gt;\((?:\?:)?|\|)(?&lt;q&gt;[\w]|\[[\w]+\])\|(?&lt;r&gt;[\w\?\[\]\-]*)\)\?</replace_>
+            <with_>${lead}${q}?|${r})</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>[$1$2]</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>\(\?:([A-Za-z])\|([A-Za-z])\)</replace_>
+            <with_>[$1$2]</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>(x?|....)2</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;lead&gt;\((?:\?:)?|\|)(?&lt;r&gt;[\w\?\[\]\-]*)\|(?&lt;q&gt;[\w]|\[[\w]+\])\)\?</replace_>
+            <with_>${lead}${q}?|${r})</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Rule</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(:|\(|\|)((?:[tT]|\[tT\])he)(?:\|\2ir|ir\|\2)(\||\))</replace_>
+            <with_>$1$2he(?:ir)?$3</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>false</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+        </Children>
+        <Name>Few Steps</Name>
+        <ruletype_>OnWholePage</ruletype_>
+        <replace_ />
+        <with_ />
+        <ifContains_ />
+        <ifNotContains_ />
+        <regex_>false</regex_>
+        <ifIsRegex_>false</ifIsRegex_>
+        <numoftimes_>1</numoftimes_>
+        <ifRegexOptions_>None</ifRegexOptions_>
+        <regexOptions_>None</regexOptions_>
+      </IRule>
+    </AdvancedReps>
+    <SubstTemplates />
+    <IncludeComments>false</IncludeComments>
+    <ExpandRecursively>true</ExpandRecursively>
+    <IgnoreUnformatted>false</IgnoreUnformatted>
+  </FindAndReplace>
+  <Editprefs>
+    <GeneralFixes>false</GeneralFixes>
+    <Tagger>false</Tagger>
+    <Unicodify>false</Unicodify>
+    <Recategorisation>0</Recategorisation>
+    <NewCategory />
+    <NewCategory2 />
+    <ReImage>0</ReImage>
+    <ImageFind />
+    <Replace />
+    <SkipIfNoCatChange>false</SkipIfNoCatChange>
+    <RemoveSortKey>false</RemoveSortKey>
+    <SkipIfNoImgChange>false</SkipIfNoImgChange>
+    <AppendText>false</AppendText>
+    <AppendTextMetaDataSort>false</AppendTextMetaDataSort>
+    <Append>true</Append>
+    <Text />
+    <Newlines>0</Newlines>
+    <AutoDelay>10</AutoDelay>
+    <BotMaxEdits>0</BotMaxEdits>
+    <SupressTag>false</SupressTag>
+    <RegexTypoFix>false</RegexTypoFix>
+  </Editprefs>
+  <General>
+    <AutoSaveEdit>
+      <Enabled>false</Enabled>
+      <SavePeriod>30</SavePeriod>
+      <SaveFile />
+    </AutoSaveEdit>
+    <SelectedSummary>efficiency improvements</SelectedSummary>
+    <Summaries>
+      <string>clean up</string>
+      <string>re-categorisation per [[WP:CFD|CFD]]</string>
+      <string>clean up and re-categorisation per [[WP:CFD|CFD]]</string>
+      <string>removing category per [[WP:CFD|CFD]]</string>
+      <string>[[Wikipedia:Template substitution|subst:'ing]]</string>
+      <string>[[Wikipedia:WikiProject Stub sorting|stub sorting]]</string>
+      <string>[[WP:AWB/T|Typo fixing]]</string>
+      <string>bad link repair</string>
+      <string>Fixing [[Wikipedia:Disambiguation pages with links|links to disambiguation pages]]</string>
+      <string>Unicodifying</string>
+      <string>copy editing</string>
+      <string>copy editing, applying general fixes</string>
+      <string>copy editing, applying [[Wikipedia:AutoWikiBrowser/General_fixes]]</string>
+      <string>copy editing, applying [[General fixes|Wikipedia:AutoWikiBrowser/General_fixes]]</string>
+      <string>copy editing, applying [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>copy editing by applying [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>fixing substantives and applying [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>copy editing and applying [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>copy edit with [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>cleaning carnegie link; copy edit with [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>efficiency improvements</string>
+    </Summaries>
+    <PasteMore>
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+    </PasteMore>
+    <FindText>\$\d\$\d</FindText>
+    <FindRegex>true</FindRegex>
+    <FindCaseSensitive>false</FindCaseSensitive>
+    <WordWrap>true</WordWrap>
+    <ToolBarEnabled>true</ToolBarEnabled>
+    <BypassRedirect>true</BypassRedirect>
+    <AutoSaveSettings>true</AutoSaveSettings>
+    <noSectionEditSummary>false</noSectionEditSummary>
+    <restrictDefaultsortAddition>false</restrictDefaultsortAddition>
+    <restrictOrphanTagging>false</restrictOrphanTagging>
+    <noMOSComplianceFixes>false</noMOSComplianceFixes>
+    <syntaxHighlightEditBox>false</syntaxHighlightEditBox>
+    <highlightAllFind>false</highlightAllFind>
+    <PreParseMode>false</PreParseMode>
+    <NoAutoChanges>false</NoAutoChanges>
+    <OnLoadAction>0</OnLoadAction>
+    <DiffInBotMode>false</DiffInBotMode>
+    <Minor>false</Minor>
+    <AddToWatchlist>2</AddToWatchlist>
+    <TimerEnabled>true</TimerEnabled>
+    <SortListAlphabetically>true</SortListAlphabetically>
+    <AddIgnoredToLog>true</AddIgnoredToLog>
+    <EditToolbarEnabled>false</EditToolbarEnabled>
+    <filterNonMainSpace>false</filterNonMainSpace>
+    <AutoFilterDuplicates>true</AutoFilterDuplicates>
+    <FocusAtEndOfEditBox>false</FocusAtEndOfEditBox>
+    <scrollToUnbalancedBrackets>false</scrollToUnbalancedBrackets>
+    <TextBoxSize>10</TextBoxSize>
+    <TextBoxFont>Courier New</TextBoxFont>
+    <LowThreadPriority>false</LowThreadPriority>
+    <Beep>false</Beep>
+    <Flash>true</Flash>
+    <Minimize>false</Minimize>
+    <LockSummary>true</LockSummary>
+    <SaveArticleList>true</SaveArticleList>
+    <SuppressUsingAWB>false</SuppressUsingAWB>
+    <AddUsingAWBToActionSummaries>true</AddUsingAWBToActionSummaries>
+    <IgnoreNoBots>false</IgnoreNoBots>
+    <ClearPageListOnProjectChange>false</ClearPageListOnProjectChange>
+    <SortInterWikiOrder>true</SortInterWikiOrder>
+    <ReplaceReferenceTags>true</ReplaceReferenceTags>
+    <LoggingEnabled>false</LoggingEnabled>
+    <AlertPreferences>
+      <int>1</int>
+      <int>2</int>
+      <int>3</int>
+      <int>4</int>
+      <int>5</int>
+      <int>6</int>
+      <int>8</int>
+      <int>9</int>
+      <int>10</int>
+      <int>11</int>
+      <int>13</int>
+      <int>14</int>
+      <int>15</int>
+      <int>16</int>
+      <int>17</int>
+      <int>18</int>
+      <int>19</int>
+      <int>20</int>
+      <int>21</int>
+      <int>22</int>
+    </AlertPreferences>
+  </General>
+  <SkipOptions>
+    <SkipNonexistent>false</SkipNonexistent>
+    <Skipexistent>false</Skipexistent>
+    <SkipDontCare>true</SkipDontCare>
+    <SkipWhenNoChanges>false</SkipWhenNoChanges>
+    <SkipSpamFilterBlocked>false</SkipSpamFilterBlocked>
+    <SkipInuse>false</SkipInuse>
+    <SkipWhenOnlyWhitespaceChanged>false</SkipWhenOnlyWhitespaceChanged>
+    <SkipOnlyGeneralFixChanges>false</SkipOnlyGeneralFixChanges>
+    <SkipOnlyMinorGeneralFixChanges>true</SkipOnlyMinorGeneralFixChanges>
+    <SkipOnlyCosmetic>false</SkipOnlyCosmetic>
+    <SkipOnlyCasingChanged>false</SkipOnlyCasingChanged>
+    <SkipIfRedirect>false</SkipIfRedirect>
+    <SkipIfNoAlerts>false</SkipIfNoAlerts>
+    <SkipDoes>false</SkipDoes>
+    <SkipDoesText />
+    <SkipDoesRegex>false</SkipDoesRegex>
+    <SkipDoesCaseSensitive>false</SkipDoesCaseSensitive>
+    <SkipDoesAfterProcessing>false</SkipDoesAfterProcessing>
+    <SkipDoesNot>false</SkipDoesNot>
+    <SkipDoesNotText />
+    <SkipDoesNotRegex>false</SkipDoesNotRegex>
+    <SkipDoesNotCaseSensitive>false</SkipDoesNotCaseSensitive>
+    <SkipDoesNotAfterProcessing>false</SkipDoesNotAfterProcessing>
+    <SkipNoFindAndReplace>false</SkipNoFindAndReplace>
+    <SkipMinorFindAndReplace>false</SkipMinorFindAndReplace>
+    <SkipNoRegexTypoFix>false</SkipNoRegexTypoFix>
+    <SkipNoDisambiguation>false</SkipNoDisambiguation>
+    <SkipNoLinksOnPage>false</SkipNoLinksOnPage>
+    <GeneralSkipList />
+  </SkipOptions>
+  <Module>
+    <Enabled>false</Enabled>
+    <Language>C# 3.5</Language>
+    <Code>        public string ProcessArticle(string ArticleText, string ArticleTitle, int wikiNamespace, out string Summary, out bool Skip)
+        {
+            Skip = false;
+            Summary = "test";
+            ArticleText = "test \r\n\r\n" + ArticleText;
+            return ArticleText;
+        }</Code>
+  </Module>
+  <ExternalProgram>
+    <Enabled>false</Enabled>
+    <Skip>false</Skip>
+    <Program />
+    <Parameters />
+    <PassAsFile>true</PassAsFile>
+    <OutputFile />
+  </ExternalProgram>
+  <Disambiguation>
+    <Enabled>false</Enabled>
+    <Link />
+    <Variants />
+    <ContextChars>20</ContextChars>
+  </Disambiguation>
+  <Special>
+    <namespaceValues />
+    <remDupes>true</remDupes>
+    <sortAZ>true</sortAZ>
+    <filterTitlesThatContain>false</filterTitlesThatContain>
+    <filterTitlesThatContainText />
+    <filterTitlesThatDontContain>false</filterTitlesThatDontContain>
+    <filterTitlesThatDontContainText />
+    <areRegex>false</areRegex>
+    <opType>0</opType>
+    <remove />
+  </Special>
+  <Tool>
+    <ListComparerUseCurrentArticleList>0</ListComparerUseCurrentArticleList>
+    <ListSplitterUseCurrentArticleList>0</ListSplitterUseCurrentArticleList>
+    <DatabaseScannerUseCurrentArticleList>0</DatabaseScannerUseCurrentArticleList>
+  </Tool>
+  <Plugin />
+</AutoWikiBrowserPreferences>
