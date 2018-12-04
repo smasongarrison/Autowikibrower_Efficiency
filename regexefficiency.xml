@@ -371,6 +371,16 @@
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
+      <Replacement>
+        <Find>(\((?:\?:)?|\|)s\?he\|</Find>
+        <Replace>$1she|he|</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
     </Replacements>
     <AdvancedReps>
       <IRule xsi:type="Rule">
@@ -649,6 +659,7 @@
       </IRule>
       <IRule xsi:type="Rule">
         <enabled_>false</enabled_>
+        <Children />
         <Name>Rule</Name>
         <ruletype_>OnWholePage</ruletype_>
         <replace_>(?&lt;lead&gt;\((?:\?:)?)(?&lt;stem1&gt;\w{1,})\|(?&lt;stem2&gt;\w{1,})\)(?&lt;tail&gt;[\w\?]{2,})(?&lt;end&gt;\||\))</replace_>
@@ -732,8 +743,8 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>he|</FindText>
-    <FindRegex>false</FindRegex>
+    <FindText>\|\w\?\w\|</FindText>
+    <FindRegex>true</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
     <ToolBarEnabled>true</ToolBarEnabled>
