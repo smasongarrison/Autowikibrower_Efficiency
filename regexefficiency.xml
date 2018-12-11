@@ -8,12 +8,7 @@
   <List>
     <ListSource>Wikipedia:AutoWikiBrowser/Typos</ListSource>
     <SelectedProvider>LinksOnPageOnlyBlueListProvider</SelectedProvider>
-    <ArticleList>
-      <Article NameSpaceKey="4">
-        <PreProcessed>false</PreProcessed>
-        <Name>Wikipedia:AutoWikiBrowser/Typos</Name>
-      </Article>
-    </ArticleList>
+    <ArticleList />
   </List>
   <FindAndReplace>
     <Enabled>true</Enabled>
@@ -22,8 +17,208 @@
     <AppendSummary>true</AppendSummary>
     <Replacements>
       <Replacement>
-        <Find>(?&lt;lead&gt;\((?:\?:)?|\|)(?&lt;q&gt;[\w]|\[[\w]+\])\|(?&lt;r&gt;[\w\?\[\]\-]*)\)\?</Find>
+        <Find>\(ing\|ed\|ions\?\|ive\)</Find>
+        <Replace>(ed|i(?:ng|ons?|ve))</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(:</Find>
+        <Replace>(?:</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|ing\|ions\?\)</Find>
+        <Replace>|i(?:ng|ons?))</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)(?&lt;leaf&gt;\w)(?&lt;opt1&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt2&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt3&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt4&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt5&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt6&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?\|\k&lt;stem&gt;(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${stem}${leaf}?${opt1}${opt2}${opt3}${opt4}${opt5}${opt6}${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;opt1&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)(?&lt;opt2&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt3&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt4&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt5&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt6&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?\|(?&lt;q&gt;\w\?)(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${q}|${opt1}${opt2}${opt3}${opt4}${opt5}${opt6}${end}</Replace>
+        <Comment>(xxx|x? -&gt; (x?|xxx</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)(?&lt;opt1&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt2&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt3&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt4&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt5&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt6&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?\|\k&lt;stem&gt;(?&lt;a&gt;\w)(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${stem}${leaf}?${opt1}${opt2}${opt3}${opt4}${opt5}${opt6}${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)\(\?:(?&lt;stem&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)\)\?(?&lt;leaf&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${stem}${leaf}|${leaf}${end}</Replace>
+        <Comment>(?:stem)?leaf -&gt; stemleaf|leaf</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[[\w]+)\](?&lt;q&gt;\?)?\|(?&lt;leaf&gt;\w)(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${stem}${leaf}]${q}${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[?[\w][\w\]\?]{0,})\(\?:(?&lt;opt1&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)(?&lt;opt2&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt3&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt4&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt5&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt6&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?\)(?&lt;tail&gt;[\w]{0,})\|\k&lt;stem&gt;(?&lt;branch1&gt;[\w][\w\?\(:]{0,})\k&lt;tail&gt;(?=\)?\|)</Find>
+        <Replace>${lead}${stem}(?:${opt1}${opt2}${opt3}${opt4}${opt5}${opt6}|${branch1})${tail}</Replace>
+        <Comment>stem(branch1|branch2|branch3)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[?[\w][\w\]\?]{1,})(?&lt;branch1&gt;[\w][\w\?]{0,})(?&lt;opt1&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt2&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt3&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt4&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt5&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt6&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?\|\k&lt;stem&gt;(?&lt;branch2&gt;[\w][\w\?]{0,})(?=\||\))</Find>
+        <Replace>${lead}${stem}(?:${branch1}|${branch2})${opt1}${opt2}${opt3}${opt4}${opt5}${opt6}</Replace>
+        <Comment>stem(?:branch1|branch2)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\w\d\s])\?(?&lt;leaf&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${stem}${leaf}|${leaf}${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;(?:[tTwWsS]|\[(?:tT|wW|sS)\])h)\(\?:(?&lt;opt1&gt;[a-z][a-z\?\[\]]{0,})\|(?&lt;opt2&gt;[a-z][a-z\?\[\]]{0,})\)\|\k&lt;stem&gt;(?&lt;opt3&gt;[\w][a-z\?]{0,})(?=\||\))</Find>
+        <Replace>${lead}${stem}(?:${opt1}|${opt2}|${opt3})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)\?\|\k&lt;stem&gt;(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${stem}?${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;r&gt;[\w\?\[\]\-]*)\|(?&lt;q&gt;[\w]|\[[\w]+\])\)\?</Find>
         <Replace>${lead}${q}?|${r})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;(?:[tTwWsS]|\[(?:tT|wW|sS)\])\w)(?&lt;opt1&gt;[a-z][a-z\?]{0,})\|\k&lt;stem&gt;(?&lt;opt2&gt;[a-z][a-z\?]{0,})(?=\||\))</Find>
+        <Replace>${lead}${stem}(?:${opt1}|${opt2})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[A-Za-z]{1,})(?:\[(?&lt;opt1&gt;[A-Za-z]{2,})\]|(?&lt;opt2&gt;[\w]{1}))(?&lt;q&gt;\?)?\|\k&lt;stem&gt;(?&lt;opt3&gt;[\w])(?=\||\))</Find>
+        <Replace>${lead}${stem}[${opt1}${opt2}${opt3}]${q}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?)(?&lt;stem1&gt;[\w]+)\|(?&lt;stem2&gt;[\w]+)\)(?&lt;tail&gt;[\w\?]{2,})(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${stem1}${tail}|${stem2}${tail})${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;a&gt;.)\|(?&lt;b&gt;.)(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}[${a}${b}]${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)\[?(?&lt;stem&gt;\w)\]?(?&lt;q&gt;\?)?\|(?&lt;leaf&gt;\w)(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}[${stem}${leaf}]${q}${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;start&gt;\[[\w\d\.,]*)(?&lt;b&gt;\w)\k&lt;b&gt;(?&lt;end&gt;[\w\d\.,]*\])</Find>
+        <Replace>${start}${b}${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\w]|\[[\w]+\])(?&lt;opt1&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)(?&lt;opt2&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt3&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt4&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt5&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt6&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?\)\?</Find>
+        <Replace>${lead}${stem}?${opt1}${opt2}${opt3}${opt4}${opt5}${opt6})</Replace>
         <Comment>(x?|....)</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
@@ -32,68 +227,8 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;lead&gt;\((?:\?:)?|\|)(?&lt;r&gt;[\w\?\[\]\-]*)\|(?&lt;q&gt;[\w]|\[[\w]+\])\)\?</Find>
-        <Replace>${lead}${q}?|${r})</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;\[?[\w][\w\]\?]{2,})\(\?:(?&lt;b1&gt;[\w][\w\?\[\]\(:\)]{0,20})(?&lt;b2&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?(?&lt;b4&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?(?&lt;b5&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?\)(?&lt;tail&gt;[\w]{0,})\|\k&lt;stem&gt;(?&lt;b3&gt;[\w][\w\?\(:]{0,20})\k&lt;tail&gt;(?=\)?\|)</Find>
-        <Replace>${lead}${stem}(?:${b1}${b2}${b4}${b5}|${b3})${tail}</Replace>
-        <Comment>stem(branch1|branch2|branch3)</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;(?:[tTwWsS]|\[(?:tT|wW|sS)\])h)(?&lt;b1&gt;[a-z][a-z\?]{0,10})\|\k&lt;stem&gt;(?&lt;b2&gt;[a-z][a-z\?]{0,10})(?=\||\))</Find>
-        <Replace>${lead}${stem}(?:${b1}|${b2})</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;\[?[\w][\w\]\?]{1,15})(?&lt;b1&gt;[\w][\w\?]{0,10})\|\k&lt;stem&gt;(?&lt;b2&gt;[\w][\w\?]{0,10})(?=\||\))</Find>
-        <Replace>${lead}${stem}(?:${b1}|${b2})</Replace>
-        <Comment>stem(branch1|branch2)</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;(?:[tTwWsS]|\[(?:tT|wW|sS)\])h)\(\?:(?&lt;b1&gt;[a-z][a-z\?\[\]]{0,10})\|(?&lt;b2&gt;[a-z][a-z\?\[\]]{0,10})\)\|\k&lt;stem&gt;(?&lt;b3&gt;[a-z][a-z\?]{0,10})(?=\||\))</Find>
-        <Replace>${lead}${stem}(?:${b1}|${b2}|${b3})</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;[A-Za-z]{1,4})(?:\[(?&lt;b1&gt;[A-Za-z]{2,})\]|(?&lt;b2&gt;[A-Za-z]{1}))(?&lt;q&gt;\?)?\|\k&lt;stem&gt;(?&lt;b3&gt;[A-Za-z])(?=\||\))</Find>
-        <Replace>${lead}${stem}[${b1}${b2}${b3}]${q}</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\(\?:(\(\?:[A-Za-z]{1,}\))\)</Find>
-        <Replace>$1</Replace>
+        <Find>\(\?:([\w]{1,}\??)\)([^\?])</Find>
+        <Replace>$1$2</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
@@ -122,7 +257,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\((?&lt;q&gt;\?:)?\|(?&lt;a&gt;[A-Za-z]{1,})\)</Find>
+        <Find>\((?&lt;q&gt;\?:)?\|(?&lt;a&gt;[\w]{1,})\)</Find>
         <Replace>(${q}${a})?</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -142,14 +277,24 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(:</Find>
-        <Replace>(?:</Replace>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)\|\k&lt;stem&gt;\?(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${stem}?${end}</Replace>
         <Comment />
-        <IsRegex>false</IsRegex>
+        <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(\(\?:[.]+\))\)</Find>
+        <Replace>$1</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
         <Find>\(January\|February\|March\|April\|May\|June\|July\|August\|September\|October\|November\|December\)</Find>
@@ -172,9 +317,19 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;!\[)\[(?&lt;cap1&gt;[A-Z]{0,2})(?&lt;l1&gt;[a-z]{0,19})(?&lt;cap2&gt;[A-Z]{1,})(?&lt;l2&gt;[a-z]{1,19})(?&lt;o&gt;[^\]-]{0,19})\]</Find>
+        <Find>(?&lt;!\[)\[(?&lt;cap1&gt;[A-Z]{0,})(?&lt;l1&gt;[a-z]{0,})(?&lt;cap2&gt;[A-Z]{1,})(?&lt;l2&gt;[a-z]{1,})(?&lt;o&gt;[^\]-]{0,})\]</Find>
         <Replace>[${l1}${l2}${cap1}${cap2}${o}]</Replace>
         <Comment>order efficiency</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[(?&lt;lc1&gt;a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*)(?&lt;lc2&gt;a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*)(?&lt;uc1&gt;A*B*C*D*E*F*G*H*I*J*K*L*M*N*O*P*Q*R*S*T*U*V*W*X*Y*Z*)(?&lt;uc2&gt;A*B*C*D*E*F*G*H*I*J*K*L*M*N*O*P*Q*R*S*T*U*V*W*X*Y*Z*)(?&lt;noslc&gt;[a-z]*)(?&lt;nosuc&gt;[A-Z]*)\]</Find>
+        <Replace>[${lc2}${lc1}${noslc}${uc2}${uc1}${nosuc}]</Replace>
+        <Comment />
         <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
@@ -192,7 +347,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\[0-9]</Find>
+        <Find>0-9</Find>
         <Replace>\d</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
@@ -262,16 +417,6 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\|fo\(\?:ur\(\?:teen\)\?\|rty\)\|fi\(\?:ve\|ft\(\?:y\|teen\)\)\|</Find>
-        <Replace>|f(?:o(?:ur(?:teen)?|rty)|i(?:ve|ft(?:y|een)))|</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
         <Find>\|fo\(\?:ur\(\?:teen\)\?\|rty\)\|fi\(\?:ve\|ft\(\?:y\|een\)\)\|</Find>
         <Replace>|f(?:o(?:ur(?:teen)?|rty)|i(?:ve|ft(?:y|een)))|</Replace>
         <Comment />
@@ -282,8 +427,58 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
+        <Find>\|fo\(\?:ur\(\?:teen\)\?\|rty\)\|fi\(\?:ve\|ft\(\?:y\|teen\)\)\|</Find>
+        <Replace>|f(?:o(?:ur(?:teen)?|rty)|i(?:ve|ft(?:y|een)))|</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)ed\|(?&lt;a&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)\|ers\?(?&lt;end&gt;\||\))</Find>
+        <Replace>${lead}${a}|e(?:d|rs?)${end}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
         <Find>\|six\(\?:t\(\?:y\|een\)\)\?\|seven\(\?:t\(\?:y\|een\)\)\?\|</Find>
         <Replace>|s(?:ix|even)(?:teen|ty)?|</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|was\|were\|</Find>
+        <Replace>|w(?:as|ere)|</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>e\[rd]s\?</Find>
+        <Replace>e(?:d|rs?)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>e\[dr]s\?</Find>
+        <Replace>e(?:d|rs?)</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
         <Enabled>true</Enabled>
@@ -362,8 +557,8 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;lead&gt;\((?:\?:)?)(?&lt;stem1&gt;\w{1,})\|(?&lt;stem2&gt;\w{1,})\)(?&lt;tail&gt;[\w\?]{2,})(?&lt;end&gt;\||\))</Find>
-        <Replace>${lead}${stem1}${tail}|${stem2}${tail})${end}</Replace>
+        <Find>\(\?:\[([\w\d]+)\]\)(?!\?)</Find>
+        <Replace>[$1]</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
@@ -372,8 +567,8 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(\((?:\?:)?|\|)s\?he\|</Find>
-        <Replace>$1she|he|</Replace>
+        <Find>\[(.)\]</Find>
+        <Replace>$1</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
@@ -381,289 +576,45 @@
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
+      <Replacement>
+        <Find>\(\?:(\w)([\w]+)\|\1\)(?!\?)</Find>
+        <Replace>$1(?:$2)?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(\w)\|\1([\w]+)\)(?!\?)</Find>
+        <Replace>$1(?:$2)?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:ion\|ing\)</Find>
+        <Replace />
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
     </Replacements>
     <AdvancedReps>
-      <IRule xsi:type="Rule">
-        <enabled_>false</enabled_>
-        <Children>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>|) -&gt; )?</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>\((?&lt;q&gt;\?:)?\|(?&lt;a&gt;[A-Za-z]{1,})\)</replace_>
-            <with_>(${q}${a})?</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>(?:(?:</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>\(\?:(\(\?:[A-Za-z]{1,}\))\)</replace_>
-            <with_>$1</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>x|) -&gt; x)?</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;!\+)\|\)</replace_>
-            <with_>)?</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>(x?) -&gt; (x)?</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>\((.)\?\)</replace_>
-            <with_>($1)?</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-        </Children>
-        <Name>Shorter/Smaller Captures</Name>
-        <ruletype_>OnWholePage</ruletype_>
-        <replace_ />
-        <with_ />
-        <ifContains_ />
-        <ifNotContains_ />
-        <regex_>false</regex_>
-        <ifIsRegex_>false</ifIsRegex_>
-        <numoftimes_>1</numoftimes_>
-        <ifRegexOptions_>None</ifRegexOptions_>
-        <regexOptions_>None</regexOptions_>
-      </IRule>
-      <IRule xsi:type="Rule">
-        <enabled_>false</enabled_>
-        <Children>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>[xyzXYZ]</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;!\[)\[(?&lt;cap1&gt;[A-Z]{0,2})(?&lt;l1&gt;[a-z]{0,19})(?&lt;cap2&gt;[A-Z]{1,})(?&lt;l2&gt;[a-z]{1,19})(?&lt;o&gt;[^\]-]{0,19})\]</replace_>
-            <with_>[${l1}${l2}${cap1}${cap2}${o}]</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>2</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>Singleline</regexOptions_>
-          </IRule>
-        </Children>
-        <Name>Order Efficiency</Name>
-        <ruletype_>OnWholePage</ruletype_>
-        <replace_ />
-        <with_ />
-        <ifContains_ />
-        <ifNotContains_ />
-        <regex_>false</regex_>
-        <ifIsRegex_>false</ifIsRegex_>
-        <numoftimes_>1</numoftimes_>
-        <ifRegexOptions_>None</ifRegexOptions_>
-        <regexOptions_>None</regexOptions_>
-      </IRule>
-      <IRule xsi:type="Rule">
-        <enabled_>false</enabled_>
-        <Children>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>stem(branch1|branch2)</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;\[?[\w][\w\]\?]{1,15})(?&lt;b1&gt;[\w][\w\?]{0,10})\|\k&lt;stem&gt;(?&lt;b2&gt;[\w][\w\?]{0,10})(?=\||\))</replace_>
-            <with_>${lead}${stem}(?:${b1}|${b2})</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>stem(branch1|branch2|branch3)</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;\[?[\w][\w\]\?]{2,})\(\?:(?&lt;b1&gt;[\w][\w\?\[\]\(:\)]{0,20})(?&lt;b2&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?(?&lt;b4&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?(?&lt;b5&gt;\|[\w][\w\?\[\]\(:\)]{0,20})?\)(?&lt;tail&gt;[\w]{0,})\|\k&lt;stem&gt;(?&lt;b3&gt;[\w][\w\?\(:]{0,20})\k&lt;tail&gt;(?=\)?\|)</replace_>
-            <with_>${lead}${stem}(?:${b1}${b2}${b4}${b5}|${b3})${tail}</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>stem[xyz]?tail</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;lead&gt;\||:|\()(?&lt;stem&gt;[A-Za-z]{1,4})(?:\[(?&lt;b1&gt;[A-Za-z]{2,})\]|(?&lt;b2&gt;[A-Za-z]{1}))(?&lt;q&gt;\?)?(?&lt;tail&gt;[A-Za-z]{0,4})\|\k&lt;stem&gt;(?&lt;b3&gt;[A-Za-z])\k&lt;tail&gt;(?=\||\))</replace_>
-            <with_>${lead}${stem}[${b1}${b2}${b3}]${q}${tail}</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children>
-              <IRule xsi:type="Rule">
-                <enabled_>true</enabled_>
-                <Children />
-                <Name>x[yz]q? 2</Name>
-                <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;lead&gt;\||\()(?&lt;stem&gt;[A-Za-z])(?&lt;b1&gt;[a-z])\|\k&lt;stem&gt;(?&lt;b2&gt;[a-xz])(?&lt;tail&gt;[a-z])\?(?=\||\))</replace_>
-                <with_>${lead}${stem}[${b1}${b2}]${tail}?</with_>
-                <ifContains_ />
-                <ifNotContains_ />
-                <regex_>true</regex_>
-                <ifIsRegex_>false</ifIsRegex_>
-                <numoftimes_>1</numoftimes_>
-                <ifRegexOptions_>None</ifRegexOptions_>
-                <regexOptions_>None</regexOptions_>
-              </IRule>
-              <IRule xsi:type="Rule">
-                <enabled_>true</enabled_>
-                <Children />
-                <Name>x[yz]q? 1</Name>
-                <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;lead&gt;\||\()(?&lt;stem&gt;[A-Za-z])(?&lt;b1&gt;[a-z])(?&lt;o&gt;[a-z])\?\|\k&lt;stem&gt;(?&lt;b2&gt;[a-xz])(?=\||\))</replace_>
-                <with_>${lead}${stem}[${b1}${b2}]${o}?</with_>
-                <ifContains_ />
-                <ifNotContains_ />
-                <regex_>true</regex_>
-                <ifIsRegex_>false</ifIsRegex_>
-                <numoftimes_>1</numoftimes_>
-                <ifRegexOptions_>None</ifRegexOptions_>
-                <regexOptions_>None</regexOptions_>
-              </IRule>
-            </Children>
-            <Name>Fewer Steps, but ...</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_ />
-            <with_ />
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>false</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>(x?|....)</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;lead&gt;\((?:\?:)?|\|)(?&lt;q&gt;[\w]|\[[\w]+\])\|(?&lt;r&gt;[\w\?\[\]\-]*)\)\?</replace_>
-            <with_>${lead}${q}?|${r})</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>[$1$2]</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>\(\?:([\w\d])\|([\w\d])\)</replace_>
-            <with_>[$1$2]</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>(x?|....)2</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;lead&gt;\((?:\?:)?|\|)(?&lt;r&gt;[\w\?\[\]\-]*)\|(?&lt;q&gt;[\w]|\[[\w]+\])\)\?</replace_>
-            <with_>${lead}${q}?|${r})</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>false</enabled_>
-            <Children />
-            <Name>The Their</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>(:|\(|\|)((?:[tT]|\[tT\])he)(?:\|\2ir|ir\|\2)(\||\))</replace_>
-            <with_>$1$2he(?:ir)?$3</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-        </Children>
-        <Name>Few Steps</Name>
-        <ruletype_>OnWholePage</ruletype_>
-        <replace_ />
-        <with_ />
-        <ifContains_ />
-        <ifNotContains_ />
-        <regex_>false</regex_>
-        <ifIsRegex_>false</ifIsRegex_>
-        <numoftimes_>1</numoftimes_>
-        <ifRegexOptions_>None</ifRegexOptions_>
-        <regexOptions_>None</regexOptions_>
-      </IRule>
       <IRule xsi:type="Rule">
         <enabled_>false</enabled_>
         <Children />
         <Name>Rule</Name>
         <ruletype_>OnWholePage</ruletype_>
-        <replace_>(?&lt;lead&gt;\((?:\?:)?)(?&lt;stem1&gt;\w{1,})\|(?&lt;stem2&gt;\w{1,})\)(?&lt;tail&gt;[\w\?]{2,})(?&lt;end&gt;\||\))</replace_>
-        <with_>${lead}${stem1}${tail}|${stem2}${tail})${end}</with_>
+        <replace_>(?&lt;lead&gt;\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[?[\w][\w\]\?]{0,})\(\?:(?&lt;opt1&gt;[\w\d\?\[\]\+\.,\{\}\*\\]+)(?&lt;opt2&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt3&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt4&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt5&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?(?&lt;opt6&gt;\|[\w\d\?\[\]\+\.,\{\}\*\\]+)?\)(?&lt;tail&gt;[\w]{0,})\|\k&lt;stem&gt;(?&lt;branch1&gt;[\w][\w\?\(:]{0,})\k&lt;tail&gt;(?=\)?\|)</replace_>
+        <with_>${lead}${stem}(?:${opt1}${opt2}${opt3}${opt4}${opt5}${opt6}|${branch1})${tail}</with_>
         <ifContains_ />
         <ifNotContains_ />
         <regex_>true</regex_>
@@ -743,9 +694,9 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>\|\w\?\w\|</FindText>
+    <FindText>Self</FindText>
     <FindRegex>true</FindRegex>
-    <FindCaseSensitive>false</FindCaseSensitive>
+    <FindCaseSensitive>true</FindCaseSensitive>
     <WordWrap>true</WordWrap>
     <ToolBarEnabled>true</ToolBarEnabled>
     <BypassRedirect>true</BypassRedirect>
