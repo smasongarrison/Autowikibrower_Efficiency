@@ -8,7 +8,12 @@
   <List>
     <ListSource>Wikipedia:AutoWikiBrowser/Typos</ListSource>
     <SelectedProvider>LinksOnPageOnlyBlueListProvider</SelectedProvider>
-    <ArticleList />
+    <ArticleList>
+      <Article NameSpaceKey="4">
+        <PreProcessed>false</PreProcessed>
+        <Name>Wikipedia:AutoWikiBrowser/Typos</Name>
+      </Article>
+    </ArticleList>
   </List>
   <FindAndReplace>
     <Enabled>true</Enabled>
