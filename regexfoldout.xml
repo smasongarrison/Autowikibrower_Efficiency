@@ -1,0 +1,2098 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoWikiBrowserPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:space="preserve" Version="5.10.1.0">
+  <Project>wikipedia</Project>
+  <LanguageCode>en</LanguageCode>
+  <CustomProject />
+  <Protocol>https://</Protocol>
+  <LoginDomain />
+  <List>
+    <ListSource>User:Smasongarrison/sandbox/awb</ListSource>
+    <SelectedProvider>RedirectsListProvider</SelectedProvider>
+    <ArticleList>
+      <Article NameSpaceKey="2">
+        <PreProcessed>false</PreProcessed>
+        <Name>User:Smasongarrison/sandbox/awb</Name>
+      </Article>
+    </ArticleList>
+  </List>
+  <FindAndReplace>
+    <Enabled>true</Enabled>
+    <IgnoreSomeText>false</IgnoreSomeText>
+    <IgnoreMoreText>false</IgnoreMoreText>
+    <AppendSummary>true</AppendSummary>
+    <Replacements>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([e-zE-Z]\[?[\w\\]*\]?[\w\*\+\?]*)\|((?:[a-dA-D]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-dA-D\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-dA-D]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
+        <Replace>$2|$1</Replace>
+        <Comment>yz|abc -&gt; abc|yz</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!\[)\[(?&lt;cap1&gt;\p{Lu}{0,})(?&lt;l1&gt;\p{Ll}{0,})(?&lt;cap2&gt;\p{Lu}{1,})(?&lt;l2&gt;\p{Ll}{1,})(?&lt;o&gt;[^\]-]{0,})\]</Find>
+        <Replace>[${l1}${l2}${cap1}${cap2}${o}]</Replace>
+        <Comment>[Aa]-&gt; [aA]</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([n-zN-Z]\[?[\w\\]*\]?[\w\*\+\?]*)\|((?:[a-mA-M]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-mA-U\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-mA-M]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
+        <Replace>$2|$1</Replace>
+        <Comment>yz|abc -&gt; abc|yz</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?:(\\?[\p{L}\.,\*\?\s\$;"#%&amp;'])|\[(\\?[\p{L}\.,\*\?\s\$;"#%&amp;'])\])\{2\}</Find>
+        <Replace>$1$1$2$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([g-zG-Z]\[?[\w\\]*\]?[\w\*\+\?]*)\|((?:[a-fA-F]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-fA-F\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-fA-F]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
+        <Replace>$2|$1</Replace>
+        <Comment>yz|abc -&gt; abc|yz</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[(\\?.)\](?![\+\*\{])</Find>
+        <Replace>$1</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\w+)(\w)\|\1(\w)(?=[\)\|])</Find>
+        <Replace>$1[$2$3]</Replace>
+        <Comment>?:ale|ali) -&gt; ?:al[ei])</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\p{L})(\w+)\|\[(\p{L}*)\1(\p{L}*)\](\w+)(?=[\)\|])</Find>
+        <Replace>$1(?:$2|$5)|[$3$4]$5</Replace>
+        <Comment>(?:pale|[pP]ali) -&gt; p(?:ale|ali)|Pali)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([x-zX-Z]\[?[\w\\]*\]?[\w\*\+\?]*)\|((?:[a-wA-W]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-wA-W\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-wA-W]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
+        <Replace>$2|$1</Replace>
+        <Comment>yz|abc -&gt; abc|yz</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=[^\)]\((?:\?&lt;?[!:=])?|[^\)]\|)([\w]+|[\w]*\[\w+\](?:[\?\+\*]|\{[\p{N},]+\})?[\w]*)\(\?:([\p{L}\|\\\?\[\]\*\+\d]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\))*[\p{L}\|\\\?\[\]\*\+\d]*)\)\|\1(?:\(\?:([\p{L}\|\\\?\[\]\*\+\d]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\))*[\p{L}\|\\\?\[\]\*\+\d]*)\)(?![\*\+\?])|([\p{L}\\\?\[\]\*\+\d]+)(?=[\)\|]))</Find>
+        <Replace>$1(?:$2|$3$4)</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\^\\w]</Find>
+        <Replace>\W</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[?[\\\p{L}][\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']{1,})(?&lt;branch1&gt;\p{L}[\p{L}\?]{0,})(?&lt;opt1&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt2&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt3&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt4&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt5&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt6&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?\|\k&lt;stem&gt;(?&lt;branch2&gt;\p{L}[\p{L}\?]{0,})(?=[\|\)])</Find>
+        <Replace>${stem}(?:${branch1}|${branch2})${opt1}${opt2}${opt3}${opt4}${opt5}${opt6}</Replace>
+        <Comment>stem(?:branch1|branch2)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\\\p{L}]*\[?\p{L}\[?[\]\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']{0,})\(\?:(?&lt;opt&gt;(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']+)(?:\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)\)(?&lt;or&gt;(?:\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)+)\|\k&lt;stem&gt;(?&lt;branch&gt;\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*)(?=[\)\|])</Find>
+        <Replace>${stem}(?:${opt}|${branch})${or}</Replace>
+        <Comment>stem(branch1|branch2|branch3)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;(?:\p{L}[\p{L}\p{M}\p{N}\p{Po}\?\+\.,\{\}\*\\\s\$;"#%&amp;']+|\[\p{L}+\][\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*))(?&lt;opt1&gt;(?:\\?[\p{L}\[\]\+\.,\}\\\s\$;"#%&amp;']+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))\|\k&lt;stem&gt;(?&lt;opt2&gt;(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</Find>
+        <Replace>${stem}(?:${opt1}|${opt2})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;(?:\p{L}{2,}|\[\p{L}{2,}\]))\(\?:(?&lt;opt1&gt;(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))\|(?&lt;opt2&gt;(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))\)\|\k&lt;stem&gt;(?&lt;opt3&gt;(?:[\p{L}\p{M}\p{N}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</Find>
+        <Replace>${stem}(?:${opt1}|${opt2}|${opt3})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']+)\|\k&lt;stem&gt;\?(?=[\)\|])</Find>
+        <Replace>${stem}?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']+)\?\|\k&lt;stem&gt;(?=[\)\|])</Find>
+        <Replace>${stem}?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\p{L}|\[[\\\p{L}]+\])(?&lt;opt&gt;(?:\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']+)(?:\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)\)\?</Find>
+        <Replace>${stem}?${opt})</Replace>
+        <Comment>(x?|....)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\p{L}{1,})(?:\[(?&lt;opt1&gt;\p{L}{2,})\]|(?&lt;opt2&gt;\p{L}{1}))(?&lt;q&gt;\?)?\|\k&lt;stem&gt;(?&lt;opt3&gt;\p{L})(?=[\|\)])</Find>
+        <Replace>${stem}[${opt1}${opt2}${opt3}]${q}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\s])\*(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']+)(?=[\)\|])</Find>
+        <Replace>${stem}+${leaf}|${leaf}</Replace>
+        <Comment>${stem}*${leaf} -&gt; ${stem}+${leaf}|${leaf}</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\(\?:(?&lt;stem&gt;[\p{L}\?\[\]\+\|\.,\{\}\*\\\s\$;"#%&amp;']+)\)\?(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)(?=[\)\|])</Find>
+        <Replace>${stem}${leaf}|${leaf}</Replace>
+        <Comment>(?:stem)?leaf -&gt; stemleaf|leaf</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\^\\d]</Find>
+        <Replace>\D</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']{2,})(?&lt;a&gt;\[\\?\p{L}+\]|\\?\p{L}[\p{L}\p{M}\p{N}\p{Po}\?\+\.,\{\}\*\\\s\$;"#%&amp;']{1,})\|\k&lt;stem&gt;(?&lt;b&gt;\[\\?\p{L}+\]|[\\\p{L}][\p{L}\p{M}\p{N}\p{Po}\?\+\.,\{\}\*\\\s\$;"#%&amp;']{1,})(?=[\|\)])</Find>
+        <Replace>${stem}(?:${a}|${b})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(\((?:\?:)?[.]+\))\)</Find>
+        <Replace>$1</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(\\?\p{L}[\p{L}\?]?)\)(?![\?\*\+\{])</Find>
+        <Replace>$1</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[[\\\p{L}]+)\](?&lt;q&gt;\?)?\|(?&lt;leaf&gt;\p{L})(?=[\)\|])</Find>
+        <Replace>${stem}${leaf}]${q}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=[\p{L}\|\?:])([\p{L}\.,\\\s\$;"#%&amp;'])\*</Find>
+        <Replace>(?:$1?|$1+)</Replace>
+        <Comment>convert * into  ? and +</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?:(\\?[\p{L}\.,\*\?\s\$;"#%&amp;'])|\[(\\?[\p{L}\.,\*\?\s\$;"#%&amp;'])\])\{1,2\}</Find>
+        <Replace>$1$1$2$2?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(\p{L}{1,}(?:[\?\+\*]|\{[\p{N},]+\})?)\)([^\?])</Find>
+        <Replace>$1$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?[\w]+)([\w\\\?\+\[\]\*]*)\|\1\(\?:([\w\|\\\?\+\[\]\*]+)\)(?=[\)\|])</Find>
+        <Replace>$1(?:$3|$2)</Replace>
+        <Comment>(ly|l(?:ed|ing) -&gt; (l(?:ed|ing|y)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:([\p{L}\[\]\\]*)\|([\p{L}\[\]\\]*)\)\?(\p{L})\?</Find>
+        <Replace>(?:$3?|$1$3?|$2$3?)</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(\[\w+\]\w*)\)\?\(\?:\[(\p{Ll})(\p{Lu})\](\w*)\)</Find>
+        <Replace>(?:$1$2|[$2$3]$4)</Replace>
+        <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>e\[rd]s\?</Find>
+        <Replace>e(?:d|rs?)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?\w)\?([\w\+\*\?]+)(?=[\)\|])</Find>
+        <Replace>$1$2|$2</Replace>
+        <Comment>x?yy -&gt; xyy|yy</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?[\p{L}\?]+)\|\1(\\?[\p{L}\?]+)(?=[\)\|])</Find>
+        <Replace>$1(?:$2)?</Replace>
+        <Comment>stem|stemleaf -&gt; stem(?:leaf)?</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(\\?\p{L}[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*)\|\1((?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))\)(?!\?)</Find>
+        <Replace>$1(?:$2)?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(:</Find>
+        <Replace>(?:</Replace>
+        <Comment>(: -&gt; (?:</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[(.)\]([\?\+\*])?(?!\{)</Find>
+        <Replace>$1$2</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(.)\?\)\?</Find>
+        <Replace>$1?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;r&gt;[\p{L}\?\[\]\-]*)\|(?&lt;q&gt;\p{L}|\[[\\\p{L}]+\])\)\?</Find>
+        <Replace>${q}?|${r})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(\\?\p{L})\{0,1\}</Find>
+        <Replace>$1?</Replace>
+        <Comment>a{0,1} -&gt; a?</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:([\p{L}\[\]\\]*)\)\?(\p{L})\?</Find>
+        <Replace>(?:$2?|$1$2?)</Replace>
+        <Comment>(word)?s? -&gt; (s?|words?)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:\[(\w)-(\w)\](?:[\?\+\*]|\{[\p{N},]+\})?\)</Find>
+        <Replace>[$1-$2]$3</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[-\ ]</Find>
+        <Replace>[-\s]</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\*\?\)</Find>
+        <Replace>*)?</Replace>
+        <Comment>*?) -&gt; *)?</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\\?\p{L})\?(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{S}\?\\\s\+\$]+\))?(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)(?=[\)\|])</Find>
+        <Replace>${stem}${leaf}|${leaf}</Replace>
+        <Comment>x?yy -&gt; xyy|yy   BROKEN</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\((?&lt;q&gt;\?:)?\|(?&lt;a&gt;\\?\p{L}{1,})\)</Find>
+        <Replace>(${q}${a})?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\((\[\w+\]\w*)\)\?\(\[(\p{Ll})(\p{Lu})\](\w*)\)</Find>
+        <Replace>($1$2|[$2$3]$4)</Replace>
+        <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\((.|\[\\?[\p{L}\.,\*\\\s\$;"#%&amp;']+\])\?\)</Find>
+        <Replace>($1)?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!\+)\|\)</Find>
+        <Replace>)?</Replace>
+        <Comment>|) -&gt; )?</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:(\[?\p{L}+\]?)([\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']+)\|\1\)(?!\?)</Find>
+        <Replace>$1(?:$2)?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\ \\t\r\n\\f]</Find>
+        <Replace>\s</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;start&gt;\[[\p{L}\.,]*)(?&lt;b&gt;\\?\p{L})\k&lt;b&gt;(?=[\p{L}\.,]*\])</Find>
+        <Replace>${start}${b}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(first\|second\|t\(\?:enth\|we\(\?:lfth\|ntieth\)\|hir\(\?:d\|t\(\?:eenth\|ieth\)\)\)\|f\(\?:o\(\?:rtieth\|urt\(\?:eenth\|h\)\)\|ift\(\?:eenth\|h\|ieth\)\)\|s\(\?:even\|ix\)t\(\?:eenth\|h\|ieth\)\|eight\(\?:eenth\|h\|ieth\)\|nint\(\?:eenth\|h\|ieth\)\|\\d\+\(\?:nd\|rd\|st\|th\)\)</Find>
+        <Replace>(\d+(?:nd|rd|st|th)|e(?:ight(?:eenth|h|ieth)|leventh)|f(?:i(?:ft(?:eenth|h|ieth)|rst)|o(?:rtieth|urt(?:eenth|h)))|hundredth|nint(?:eenth|h|ieth)|s(?:e(?:cond|vent(?:eenth|h|ieth))|ixt(?:eenth|h|ieth))|t(?:enth|h(?:ir(?:d|teenth|tieth)|ousandth)|we(?:lfth|ntieth)))</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find> ([\+\*\{\?])</Find>
+        <Replace>\s$1</Replace>
+        <Comment> + -&gt; \s+</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\(\?:(?:\[cw\]\|sh|sh\|\[cw\])\)ould(?=[\)\|])</Find>
+        <Replace>could|should|would</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[([^\(\s\)\]´ˈ׳᾿‘’′Ꞌꞌ`;'´ˈ׳᾿‘’′Ꞌꞌ`\|])([;']{0,})[´ˈ׳᾿‘’′Ꞌꞌ`´ˈ׳᾿‘’′Ꞌꞌ`]{1,}([;']{0,})[´ˈ׳᾿‘’′Ꞌꞌ`´ˈ׳᾿‘’′Ꞌꞌ`]{0,}([;']{0,})([\\\p{L}]{0,})\]</Find>
+        <Replace>[$1$5´ˈ׳᾿‘’′Ꞌꞌ`$2$3$4]</Replace>
+        <Comment>apostrophe</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[(?&lt;lc1&gt;a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*\p{Ll}*)(?&lt;lc2&gt;a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*\p{Ll}*)?(?&lt;uc1&gt;A*B*C*D*E*F*G*H*I*J*K*L*M*N*O*P*Q*R*S*T*U*V*W*X*Y*Z*\p{Lu}*)(?&lt;uc2&gt;A*B*C*D*E*F*G*H*I*J*K*L*M*N*O*P*Q*R*S*T*U*V*W*X*Y*Z*\p{Lu}*)(?&lt;noslc&gt;\p{Ll}*)(?&lt;nosuc&gt;\p{Lu}*)\]</Find>
+        <Replace>[${lc2}${noslc}${lc1}${uc2}${nosuc}${uc1}]</Replace>
+        <Comment>alphabetize</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\|ty\?\|ted\|</Find>
+        <Replace>|t(?:ed|y?)|</Replace>
+        <Comment>|ty?|ted|-&gt;|t(?:ed|y?)|</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[a-z]\[a-z]\*</Find>
+        <Replace>[a-z]+</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>0-9</Find>
+        <Replace>\d</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[?[\w][\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']{0})(?&lt;branch1&gt;\p{L}[\p{L}\+\\\?]{0,})(?&lt;opt1&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt2&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt3&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt4&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt5&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt6&gt;\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?\|\k&lt;stem&gt;(?&lt;branch2&gt;\p{L}[\p{L}\+\\\?]{0,})(?=[\|\)])</Find>
+        <Replace>${stem}(?:${branch1}|${branch2})${opt1}${opt2}${opt3}${opt4}${opt5}${opt6}</Replace>
+        <Comment>reduce steps; stem 1</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\w{2,})\[(\p{L})(\p{L}+)\]([\w\\]+[\?\+\w\\\*\[\]]*)(?=[\)\|])</Find>
+        <Replace>$1$2$4|$1[$3]$4</Replace>
+        <Comment>wom[ae]n -&gt;woman|women</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\p{L})\(\?:(?&lt;a&gt;\\?\p{L}+[\p{L}\?]*)(?&lt;branch1&gt;\\?\p{L}[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*)\|\k&lt;a&gt;(?&lt;branch2&gt;\\?\p{L}[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*)\)(?![\?\+])</Find>
+        <Replace>${stem}${a}(?:${branch1}|${branch2})</Replace>
+        <Comment>stem(abranch|abranch) -&gt;stema (branch|branch)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?:)?)(?&lt;stem1&gt;[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']+)\|(?&lt;stem2&gt;[\p{L}\?\[\]\+\.,\{\}\\\*\s\$;"#%&amp;']+)(?&lt;stem3&gt;\|[\p{L}\?\[\]\+\.,\{\}\\\*\s\$;"#%&amp;']+)\)(?&lt;tail&gt;[\p{L}\[\]\+\.,\{\}\*\s\$;"#%&amp;']{1,})(?=[\)\|])</Find>
+        <Replace>${stem1}${tail}|${stem2}${tail}${stem3}${tail}</Replace>
+        <Comment>(${stem1}|${stem2}${stem3})${tail} -&gt; ${stem1}${tail}|${stem2}${tail})${stem3}${tail}</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\w*)\[(\p{Ll})(\p{Ll}\p{L}*)\](\w[\w\\\?\+\*\[\]]*)(?=[\)\|])</Find>
+        <Replace>$1$2$4|$1[$3]$4</Replace>
+        <Comment>wom[ae]n -&gt;woman|women</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\(\?:([\p{L}\|]+)\)(?=[\)\|])</Find>
+        <Replace>$1</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>';]</Find>
+        <Replace>;']</Replace>
+        <Comment>';] -&gt; ;']</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?:(\\?\p{L}[\p{L}\?]*)\|\1|\[(\\?\p{L})\](?![\?\*\+\{])|\(\?:([\p{L}\p{M}\p{N}\p{Po}\p{S}\\\?\|]+)\)(?![\?\*\+\{]))(?=[\)\|])</Find>
+        <Replace>$1$2$3</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\^\\s]</Find>
+        <Replace>\S</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[aA])(?&lt;a&gt;[\p{L}\[\]\+\.,\{\}\\\s]+)\|\k&lt;stem&gt;(?&lt;b&gt;\\?[\p{L}\[\]\+\.,\}\\\s\$;"#%&amp;']+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*)(?=[\)\|])</Find>
+        <Replace>${stem}(?:${a}|${b})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[?(?&lt;stem&gt;\\?\p{L})\]?(?&lt;q&gt;\?)?\|(?&lt;leaf&gt;\\?\p{L})(?=[\)\|])</Find>
+        <Replace>[${stem}${leaf}]${q}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}]{1,})(?:(?&lt;opt1&gt;\[[\p{L}\\]{1,})\]|(?&lt;opt2&gt;\\?\p{L}{1}))(?&lt;q&gt;[\?\+\*])?\|\k&lt;stem&gt;(?&lt;opt3&gt;\\?\p{L})\k&lt;q&gt;(?=[\|\)])</Find>
+        <Replace>${stem}${opt1}${opt2}${opt3}]${q}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?:)?)(?&lt;stem1&gt;[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']+)\|(?&lt;stem2&gt;[\p{L}\?\[\]\+\.,\{\}\\\*\s\$;"#%&amp;']+)\)(?&lt;tail&gt;[\p{L}\[\]\+\.,\{\}\*\s\$;"#%&amp;']{1,})(?=[\)\|])</Find>
+        <Replace>${stem1}${tail}|${stem2}${tail})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']+)(?&lt;leaf&gt;\p{L})(?&lt;opt&gt;(?:\|[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)\|\k&lt;stem&gt;(?=[\)\|])</Find>
+        <Replace>${stem}${leaf}?${opt}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:\[([\p{L}\.]+\](?:[\?\+\*]|\{[\p{N},]+\})?)\)(?!\?)</Find>
+        <Replace>[$1</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+    </Replacements>
+    <AdvancedReps>
+      <IRule xsi:type="Rule">
+        <enabled_>false</enabled_>
+        <Children>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Spread out - Upper Case</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[\p{Lu}])(?&lt;bb&gt;\p{Lu}[\p{Lu}\?\+\.,\*\\\s\$;"#%&amp;']*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?\p{L}[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?\p{L}[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Spread out - Lower Case</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[\p{Ll}])(?&lt;bb&gt;[\p{Ll}\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?\p{L}[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>false</enabled_>
+            <Children>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - A</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[aA])(?&lt;bb&gt;[b-zB-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - B</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[bB])(?&lt;bb&gt;[c-zC-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - C</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[cC])(?&lt;bb&gt;[d-zD-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - D</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[dD])(?&lt;bb&gt;[e-zE-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - E</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[eE])(?&lt;bb&gt;[f-zF-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - F</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[fF])(?&lt;bb&gt;[g-zG-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - G</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[gG])(?&lt;bb&gt;[h-zH-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - H</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[hH])(?&lt;bb&gt;[i-zI-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - I</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[iI])(?&lt;bb&gt;[j-zJ-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - J</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[jJ])(?&lt;bb&gt;[k-zK-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - K</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[kK])(?&lt;bb&gt;[l-zL-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - L</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[lL])(?&lt;bb&gt;[m-zM-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>false</enabled_>
+                <Children />
+                <Name>Spread out - M</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[mM])(?&lt;bb&gt;[n-zN-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>false</enabled_>
+                <Children />
+                <Name>Spread out - N</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[nN])(?&lt;bb&gt;[o-zO-Z\?\+\.,\*\\\s\$;"#%&amp;']+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\[\]\.,\}\\\s\$;"#%&amp;'-]+[\p{L}\?\[\]\+\.,\{\}\*\\\s\$;"#%&amp;'-]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+            </Children>
+            <Name>Spread Out Single Letter</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_ />
+            <with_ />
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>false</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+        </Children>
+        <Name>Spread Out</Name>
+        <ruletype_>OnWholePage</ruletype_>
+        <replace_ />
+        <with_ />
+        <ifContains_ />
+        <ifNotContains_ />
+        <regex_>false</regex_>
+        <ifIsRegex_>false</ifIsRegex_>
+        <numoftimes_>1</numoftimes_>
+        <ifRegexOptions_>None</ifRegexOptions_>
+        <regexOptions_>None</regexOptions_>
+      </IRule>
+      <IRule xsi:type="Rule">
+        <enabled_>false</enabled_>
+        <Children>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off A</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)a(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)A(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[aA]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off B</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)b(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)B(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[bB]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off C</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)c(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)C(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[cC]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off D</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)d(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)D(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[dD]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off E</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)e(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)E(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[eE]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off F</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)f(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)F(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[fF]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off G</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)g(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)G(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[gG]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off H</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)h(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)H(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[hH]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off I</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)i(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)I(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[iI]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off J</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)j(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)J(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[jJ]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off K</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)k(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)K(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[kK]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off L</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)l(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)L(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[lL]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off M</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)m(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)M(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[mM]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off N</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)n(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)N(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[nN]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off O</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)o(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)O(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[oO]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off P</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)p(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)P(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[pP]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off Q</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)q(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)Q(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[qQ]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off R</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)r(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)R(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[rR]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off S</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)s(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)S(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[sS]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off T</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)t(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)T(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[tT]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off U</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)u(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)U(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[uU]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off V</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\p{L}+[\p{L}\\]*)v(?&lt;a&gt;\\?\p{L}+[\p{L}\\]*)V(?&lt;b&gt;\\?\p{L}*[\p{L}\\]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+)*(?:[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\(\?:\\?\p{L}+[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;']*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?[\p{L}\?\[\]\.,\{\}\\\s\$;"#%&amp;'-]+))(?=[\|\)])</replace_>
+            <with_>[vV]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+        </Children>
+        <Name>Or Split</Name>
+        <ruletype_>OnWholePage</ruletype_>
+        <replace_ />
+        <with_ />
+        <ifContains_ />
+        <ifNotContains_ />
+        <regex_>true</regex_>
+        <ifIsRegex_>false</ifIsRegex_>
+        <numoftimes_>1</numoftimes_>
+        <ifRegexOptions_>None</ifRegexOptions_>
+        <regexOptions_>None</regexOptions_>
+      </IRule>
+      <IRule xsi:type="Rule">
+        <enabled_>true</enabled_>
+        <Children>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Merged ORs</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=[^\)]\((?:\?&lt;?[!:=])?|[^\)]\|)([\w]+|[\w]*\[\w+\](?:[\?\+\*]|\{[\p{N},]+\})?[\w]*)\(\?:([\p{L}\|\\\?\[\]\*\+\d]+)\)\|\1\(\?:([\p{L}\|\\\?\[\]\*\+\d]+)\)(?![\*\+\?])</replace_>
+            <with_>$1(?:$2|$3)</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>35</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>false</enabled_>
+            <Children>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Unfold</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=[^\)]\((?:\?&lt;?[!:=])?|[^\)]\|)([\w]+|[\w]*\[\w+\](?:[\?\+\*]|\{[\p{N},]+\})?[\w]*)\(\?:([\p{L}\\\?\[\]\*\+\d]+)\|</replace_>
+                <with_>$1$2|$1(?:</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>35</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>cleanup )</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([\w]+|[\w]*\[\w+\](?:[\?\+\*]|\{[\p{N},]+\})?[\w]*)\(\?:([\p{L}\\\?\[\]\*\+\d]+)\)(?![\?\+\*]|\{[\p{N},]+\})</replace_>
+                <with_>$1$2</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>15</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>cleanup ?</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([\w]+|[\w]*\[\w+\](?:[\?\+\*]|\{[\p{N},]+\})?[\w]*)\(\?:([\p{L}\\\?\[\]\*\+\d]+)\)\?(?![\+\*]|\{[\p{N},]+\})</replace_>
+                <with_>$1|$1$2</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>15</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+            </Children>
+            <Name>Unfold</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_ />
+            <with_ />
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>false</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-A2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[b-zB-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[b-zB-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[aA]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?))(?:\|[aA]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-B2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[c-zC-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[c-zC-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-bA-B]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-bA-B\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-bA-B]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-C2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[d-zD-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[d-zD-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-cA-C]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-dA-D\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-cA-C]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-D2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[e-zE-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[e-zE-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-dA-D]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-dA-D\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-dA-D]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-E2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[f-zF-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[f-zF-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-eA-E]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-eA-E\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-eA-E]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-F2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[g-zG-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[g-zG-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-fA-F]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-fA-F\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-fA-F]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-G2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[h-zH-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[h-zH-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-gA-G]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-gA-G\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-gA-G]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-H2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[i-zI-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[i-zI-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-hA-H]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-hA-H\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-hA-H]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-I2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[j-zJ-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[j-zJ-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-iA-I]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-iA-I\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-iA-I]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-J2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[k-zK-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[k-zK-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-jA-J]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-jA-J\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-jA-J]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-K2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[l-zL-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[l-zL-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-kA-K]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-kA-K\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-kA-K]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-L2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[m-zM-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[m-zM-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-lA-L]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-lA-L\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-lA-L]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-M2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[n-zN-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[n-zN-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-mA-M]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-mA-M\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-mA-M]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-N2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[o-zO-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[o-zO-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-nA-N]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-nA-N\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-nA-N]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-O2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[p-zP-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[p-zP-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-oA-O]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-oA-O\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-oA-O]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-P2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[q-zQ-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[q-zQ-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-pA-P]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-pA-P\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-pA-P]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-Q2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[r-zR-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[r-zR-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-qA-Q]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-qA-Q\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-qA-Q]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-R2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[s-zS-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[s-zS-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-rA-R]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-rA-R\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-rA-R]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-S2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[t-zT-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[t-zT-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-sA-S]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-sA-S\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-sA-S]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-T2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[u-zU-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[u-zU-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-tA-T]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-tA-T\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-tA-T]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-U2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[v-zV-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[v-zV-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))\|(?&lt;a&gt;(?:[a-uA-U]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-uA-U\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-uA-U]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-V2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[w-zW-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[w-zW-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-vA-V]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-vA-V\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-vA-V]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-W2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[x-zX-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[x-zX-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-wA-W]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-wA-W\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-wA-W]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-X2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[y-zY-Z]\[?[\p{L}]*\]?[\p{L}\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[y-zY-Z\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\]\[?[\p{L}]*\]?[\p{L}\*\+\?]*)(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-xA-X]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-xA-X\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-xA-X]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Alphabetize-Y2</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;[zZ]\[?[\p{L}]*\]?[\p{L}\*\+\?]*|(?:\[[zZ\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\])(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:[a-yA-Y]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-yA-Y\?\+\.,\*\\\s\$;"#%&amp;']+\p{L}*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\p{L}]*\]?[\p{L}\*\+\?]*))(?:\|[a-yA-Y]+\[?[\w]*\]?[\w\*\+\?]*(?:\(\?:\\?\p{L}+[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s\+\$]*(?:\((?:\?:)?[\\\p{L}]*(?:\((?:\?:)?[\\\p{L}]*[\p{L}\p{M}\p{N}\p{Po}\p{S}\[\]\|\?\\\s&amp;'-]*\))*[\p{L}\p{M}\p{N}\p{Po}\p{S}\?\\\s&amp;;'-]*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <with_>${a}|${na}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>2</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+            </Children>
+            <Name>Alphabetize_Basic</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_ />
+            <with_ />
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>false</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>2</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+        </Children>
+        <Name>Alphabetize</Name>
+        <ruletype_>OnWholePage</ruletype_>
+        <replace_ />
+        <with_ />
+        <ifContains_ />
+        <ifNotContains_ />
+        <regex_>false</regex_>
+        <ifIsRegex_>false</ifIsRegex_>
+        <numoftimes_>1</numoftimes_>
+        <ifRegexOptions_>None</ifRegexOptions_>
+        <regexOptions_>None</regexOptions_>
+      </IRule>
+    </AdvancedReps>
+    <SubstTemplates />
+    <IncludeComments>false</IncludeComments>
+    <ExpandRecursively>true</ExpandRecursively>
+    <IgnoreUnformatted>false</IgnoreUnformatted>
+  </FindAndReplace>
+  <Editprefs>
+    <GeneralFixes>false</GeneralFixes>
+    <Tagger>false</Tagger>
+    <Unicodify>false</Unicodify>
+    <Recategorisation>0</Recategorisation>
+    <NewCategory />
+    <NewCategory2 />
+    <ReImage>0</ReImage>
+    <ImageFind />
+    <Replace />
+    <SkipIfNoCatChange>false</SkipIfNoCatChange>
+    <RemoveSortKey>false</RemoveSortKey>
+    <SkipIfNoImgChange>false</SkipIfNoImgChange>
+    <AppendText>false</AppendText>
+    <AppendTextMetaDataSort>false</AppendTextMetaDataSort>
+    <Append>true</Append>
+    <Text />
+    <Newlines>0</Newlines>
+    <AutoDelay>10</AutoDelay>
+    <BotMaxEdits>0</BotMaxEdits>
+    <SupressTag>false</SupressTag>
+    <RegexTypoFix>false</RegexTypoFix>
+  </Editprefs>
+  <General>
+    <AutoSaveEdit>
+      <Enabled>false</Enabled>
+      <SavePeriod>30</SavePeriod>
+      <SaveFile />
+    </AutoSaveEdit>
+    <SelectedSummary>efficiency improvements; alphabetizing</SelectedSummary>
+    <Summaries>
+      <string>clean up</string>
+      <string>re-categorisation per [[WP:CFD|CFD]]</string>
+      <string>clean up and re-categorisation per [[WP:CFD|CFD]]</string>
+      <string>removing category per [[WP:CFD|CFD]]</string>
+      <string>[[Wikipedia:Template substitution|subst:'ing]]</string>
+      <string>[[Wikipedia:WikiProject Stub sorting|stub sorting]]</string>
+      <string>[[WP:AWB/T|Typo fixing]]</string>
+      <string>bad link repair</string>
+      <string>Fixing [[Wikipedia:Disambiguation pages with links|links to disambiguation pages]]</string>
+      <string>Unicodifying</string>
+      <string>copy editing</string>
+      <string>copy editing, applying general fixes</string>
+      <string>copy editing, applying [[Wikipedia:AutoWikiBrowser/General_fixes]]</string>
+      <string>copy editing, applying [[General fixes|Wikipedia:AutoWikiBrowser/General_fixes]]</string>
+      <string>copy editing, applying [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>copy editing by applying [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>fixing substantives and applying [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>copy editing and applying [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>copy edit with [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>cleaning carnegie link; copy edit with [[Wikipedia:AutoWikiBrowser/General_fixes|General fixes]]</string>
+      <string>efficiency improvements</string>
+      <string>efficiency improvements; alphabetizing</string>
+    </Summaries>
+    <PasteMore>
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+      <string />
+    </PasteMore>
+    <FindText>trg5Z</FindText>
+    <FindRegex>false</FindRegex>
+    <FindCaseSensitive>true</FindCaseSensitive>
+    <WordWrap>true</WordWrap>
+    <ToolBarEnabled>true</ToolBarEnabled>
+    <BypassRedirect>true</BypassRedirect>
+    <AutoSaveSettings>true</AutoSaveSettings>
+    <noSectionEditSummary>false</noSectionEditSummary>
+    <restrictDefaultsortAddition>false</restrictDefaultsortAddition>
+    <restrictOrphanTagging>false</restrictOrphanTagging>
+    <noMOSComplianceFixes>false</noMOSComplianceFixes>
+    <syntaxHighlightEditBox>false</syntaxHighlightEditBox>
+    <highlightAllFind>false</highlightAllFind>
+    <PreParseMode>false</PreParseMode>
+    <NoAutoChanges>false</NoAutoChanges>
+    <OnLoadAction>0</OnLoadAction>
+    <DiffInBotMode>false</DiffInBotMode>
+    <Minor>false</Minor>
+    <AddToWatchlist>2</AddToWatchlist>
+    <TimerEnabled>true</TimerEnabled>
+    <SortListAlphabetically>true</SortListAlphabetically>
+    <AddIgnoredToLog>true</AddIgnoredToLog>
+    <EditToolbarEnabled>false</EditToolbarEnabled>
+    <filterNonMainSpace>false</filterNonMainSpace>
+    <AutoFilterDuplicates>true</AutoFilterDuplicates>
+    <FocusAtEndOfEditBox>false</FocusAtEndOfEditBox>
+    <scrollToUnbalancedBrackets>false</scrollToUnbalancedBrackets>
+    <TextBoxSize>10</TextBoxSize>
+    <TextBoxFont>Courier New</TextBoxFont>
+    <LowThreadPriority>false</LowThreadPriority>
+    <Beep>false</Beep>
+    <Flash>true</Flash>
+    <Minimize>false</Minimize>
+    <LockSummary>true</LockSummary>
+    <SaveArticleList>true</SaveArticleList>
+    <SuppressUsingAWB>false</SuppressUsingAWB>
+    <AddUsingAWBToActionSummaries>true</AddUsingAWBToActionSummaries>
+    <IgnoreNoBots>false</IgnoreNoBots>
+    <ClearPageListOnProjectChange>false</ClearPageListOnProjectChange>
+    <SortInterWikiOrder>true</SortInterWikiOrder>
+    <ReplaceReferenceTags>true</ReplaceReferenceTags>
+    <LoggingEnabled>false</LoggingEnabled>
+    <AlertPreferences>
+      <int>1</int>
+      <int>2</int>
+      <int>3</int>
+      <int>4</int>
+      <int>5</int>
+      <int>6</int>
+      <int>8</int>
+      <int>9</int>
+      <int>10</int>
+      <int>11</int>
+      <int>13</int>
+      <int>14</int>
+      <int>15</int>
+      <int>16</int>
+      <int>17</int>
+      <int>18</int>
+      <int>19</int>
+      <int>20</int>
+      <int>21</int>
+      <int>22</int>
+    </AlertPreferences>
+  </General>
+  <SkipOptions>
+    <SkipNonexistent>false</SkipNonexistent>
+    <Skipexistent>false</Skipexistent>
+    <SkipDontCare>true</SkipDontCare>
+    <SkipWhenNoChanges>false</SkipWhenNoChanges>
+    <SkipSpamFilterBlocked>false</SkipSpamFilterBlocked>
+    <SkipInuse>false</SkipInuse>
+    <SkipWhenOnlyWhitespaceChanged>false</SkipWhenOnlyWhitespaceChanged>
+    <SkipOnlyGeneralFixChanges>false</SkipOnlyGeneralFixChanges>
+    <SkipOnlyMinorGeneralFixChanges>true</SkipOnlyMinorGeneralFixChanges>
+    <SkipOnlyCosmetic>false</SkipOnlyCosmetic>
+    <SkipOnlyCasingChanged>false</SkipOnlyCasingChanged>
+    <SkipIfRedirect>false</SkipIfRedirect>
+    <SkipIfNoAlerts>false</SkipIfNoAlerts>
+    <SkipDoes>false</SkipDoes>
+    <SkipDoesText />
+    <SkipDoesRegex>false</SkipDoesRegex>
+    <SkipDoesCaseSensitive>false</SkipDoesCaseSensitive>
+    <SkipDoesAfterProcessing>false</SkipDoesAfterProcessing>
+    <SkipDoesNot>false</SkipDoesNot>
+    <SkipDoesNotText />
+    <SkipDoesNotRegex>false</SkipDoesNotRegex>
+    <SkipDoesNotCaseSensitive>false</SkipDoesNotCaseSensitive>
+    <SkipDoesNotAfterProcessing>false</SkipDoesNotAfterProcessing>
+    <SkipNoFindAndReplace>false</SkipNoFindAndReplace>
+    <SkipMinorFindAndReplace>false</SkipMinorFindAndReplace>
+    <SkipNoRegexTypoFix>false</SkipNoRegexTypoFix>
+    <SkipNoDisambiguation>false</SkipNoDisambiguation>
+    <SkipNoLinksOnPage>false</SkipNoLinksOnPage>
+    <GeneralSkipList />
+  </SkipOptions>
+  <Module>
+    <Enabled>false</Enabled>
+    <Language>C# 3.5</Language>
+    <Code>        public string ProcessArticle(string ArticleText, string ArticleTitle, int wikiNamespace, out string Summary, out bool Skip)
+        {
+            Skip = false;
+            Summary = "test";
+            ArticleText = "test \r\n\r\n" + ArticleText;
+            return ArticleText;
+        }</Code>
+  </Module>
+  <ExternalProgram>
+    <Enabled>false</Enabled>
+    <Skip>false</Skip>
+    <Program />
+    <Parameters />
+    <PassAsFile>true</PassAsFile>
+    <OutputFile />
+  </ExternalProgram>
+  <Disambiguation>
+    <Enabled>false</Enabled>
+    <Link />
+    <Variants />
+    <ContextChars>20</ContextChars>
+  </Disambiguation>
+  <Special>
+    <namespaceValues />
+    <remDupes>true</remDupes>
+    <sortAZ>true</sortAZ>
+    <filterTitlesThatContain>false</filterTitlesThatContain>
+    <filterTitlesThatContainText />
+    <filterTitlesThatDontContain>false</filterTitlesThatDontContain>
+    <filterTitlesThatDontContainText />
+    <areRegex>false</areRegex>
+    <opType>0</opType>
+    <remove />
+  </Special>
+  <Tool>
+    <ListComparerUseCurrentArticleList>0</ListComparerUseCurrentArticleList>
+    <ListSplitterUseCurrentArticleList>0</ListSplitterUseCurrentArticleList>
+    <DatabaseScannerUseCurrentArticleList>0</DatabaseScannerUseCurrentArticleList>
+  </Tool>
+  <Plugin />
+</AutoWikiBrowserPreferences>
