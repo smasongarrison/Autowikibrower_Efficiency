@@ -102,7 +102,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:(\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\1((?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))\)(?!\?)</Find>
+        <Find>\(\?:(\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\1((?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))\)(?!\?)</Find>
         <Replace>$1(?:$2)?</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -112,7 +112,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:(\\?\w[\w\?]*)\)(?![\?\*\+\{])</Find>
+        <Find>\(\?:(\\?\w[\w\?]*)\)(?![\?\*\+\{\^])</Find>
         <Replace>$1</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -122,7 +122,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:(\[\w+\]\w*)\)\?\(\?:\[(\p{Ll})(\p{Lu})\]([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\)</Find>
+        <Find>\(\?:(\[\w+\]\w*)\)\?\(\?:\[(\p{Ll})(\p{Lu})\]([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\)</Find>
         <Replace>(?:$1$2|[$2$3]$4)</Replace>
         <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
         <IsRegex>true</IsRegex>
@@ -132,7 +132,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:(\[?\\?\w+\]?)([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\|\1\)(?!\?)</Find>
+        <Find>\(\?:(\[?\\?\w+\]?)([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\|\1\)(?!\?)</Find>
         <Replace>$1(?:$2)?</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -172,7 +172,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]*\)[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\)(?!\?)</Find>
+        <Find>\(\?:([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]*\)[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\)(?!\?)</Find>
         <Replace>$1</Replace>
         <Comment>(?:omed(?:ies|y)) -&gt; omed(?:ies|y)</Comment>
         <IsRegex>true</IsRegex>
@@ -182,7 +182,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\((\?:)?(\[\w+\]\w*)\)\?\(\1\[(\p{Ll})(\p{Lu})\](\w*)\)</Find>
+        <Find>\((\?:)?(\[\w+\]\w*)\)\?\(\1\[(\p{Ll})(\p{Lu})\]([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\)</Find>
         <Replace>($1$2$3|[$3$4]$5)</Replace>
         <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
         <IsRegex>true</IsRegex>
@@ -192,7 +192,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\((.|\[(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s])\?\)</Find>
+        <Find>\((.|\[(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s])\?\)</Find>
         <Replace>($1)?</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -302,7 +302,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\(?:|\|)(\w+)\+(\w+)?\|\1(\w+)(?=[\)\|])</Find>
+        <Find>(?&lt;=\(?:|\|)(\w+)\+([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)?\|\1([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?=[\)\|])</Find>
         <Replace>$1(?:$1*$2|$3)</Replace>
         <Comment>al+y|aly = al(l*y|y)</Comment>
         <IsRegex>true</IsRegex>
@@ -312,7 +312,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\(?:|\|)(\w+)(\w+)\|\1\+(\w+)?(?=[\)\|])</Find>
+        <Find>(?&lt;=\(?:|\|)(\w+)([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\|\1\+([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)?(?=[\)\|])</Find>
         <Replace>$1(?:$2|$1*$3)</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -362,7 +362,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\(\?:([\w\?\[\]\\]+)\|([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)([\w]+[\?\+\*]?|\[\w-?\w\][\?\+\*]?)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\(\?:([\w\?\[\]\\]+)\|([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)([\w]+[\?\+\*]?|\[\w-?\w\][\?\+\*]?)(?=[\)\|])</Find>
         <Replace>$1$3|(?:$2)$3</Replace>
         <Comment>(?:a|st)s? -&gt; as?|(?:st)s?</Comment>
         <IsRegex>true</IsRegex>
@@ -382,7 +382,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\(\?:(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)\?(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\(\?:(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)\?(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)(?=[\)\|])</Find>
         <Replace>${stem}${leaf}|${leaf}</Replace>
         <Comment>(?:stem)?leaf -&gt; stemleaf|leaf</Comment>
         <IsRegex>true</IsRegex>
@@ -422,7 +422,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\w*)\[(\w)(\w+)\](\w[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\w*)\[(\w)(\w+)\](\w[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
         <Replace>$1$2$4|$1[$3]$4</Replace>
         <Comment>wom[ae]n -&gt;woman|women</Comment>
         <IsRegex>true</IsRegex>
@@ -442,7 +442,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\w)([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\1\+([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\w)([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\1\+([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
         <Replace>$1(?:$2|$1+$3|$3)</Replace>
         <Comment>erd|e+dd -&gt;e(rd|e+dd|dd)</Comment>
         <IsRegex>true</IsRegex>
@@ -452,7 +452,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\w)((?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\|\[(\w*)\1(\w*)\]((?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\w)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\|\[(\w*)\1(\w*)\]((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
         <Replace>$1(?:$2|$5)|[$3$4]$5</Replace>
         <Comment>(?:pale|[pP]ali) -&gt; p(?:ale|ali)|Pali)</Comment>
         <IsRegex>true</IsRegex>
@@ -462,7 +462,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?\w)\?([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?\w)\?([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?=[\)\|])</Find>
         <Replace>$1$2|$2</Replace>
         <Comment>x?yy -&gt; xyy|yy</Comment>
         <IsRegex>true</IsRegex>
@@ -492,7 +492,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?\w)(\\?\w)?\|\1(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?\w+\[?\w*\]?\w*)(\\?\w)\|\1(?=[\)\|])</Find>
         <Replace>$1$2?</Replace>
         <Comment>ed?|e -&gt; ed?</Comment>
         <IsRegex>true</IsRegex>
@@ -502,7 +502,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)((?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\1((?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\1((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
         <Replace>$1(?:$2)?</Replace>
         <Comment>stem|stemleaf -&gt; stem(?:leaf)?</Comment>
         <IsRegex>true</IsRegex>
@@ -512,7 +512,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?[\w]+)((?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\1\(\?:((?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?[\w]+)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\1\(\?:((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\)(?=[\)\|])</Find>
         <Replace>$1(?:$3|$2)</Replace>
         <Comment>(ly|l(?:ed|ing) -&gt; (l(?:ed|ing|y)</Comment>
         <IsRegex>true</IsRegex>
@@ -522,7 +522,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?[\w]+)((?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\1(?![\?\+\*\{])([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(\\?[\w]+)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\1(?![\?\+\*\{])([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
         <Replace>$1(?:$2|$3)</Replace>
         <Comment>|ing|ive[a-z]* -&gt; i(ng|ve[a-z]*)</Comment>
         <IsRegex>true</IsRegex>
@@ -532,7 +532,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([x-zX-Z]\[?[\w\\]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|((?:[a-wA-W]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-wA-W\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-wA-W]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([x-zX-Z]\[?[\w\\]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|((?:[a-wA-W]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-wA-W\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-wA-W]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
         <Replace>$2|$1</Replace>
         <Comment>yz|abc -&gt; abc|yz</Comment>
         <IsRegex>true</IsRegex>
@@ -542,7 +542,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([n-zN-Z]\[?[\w\\]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|((?:[a-mA-M]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-mA-U\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-mA-M]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([n-zN-Z]\[?[\w\\]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|((?:[a-mA-M]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-mA-U\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-mA-M]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
         <Replace>$2|$1</Replace>
         <Comment>yz|abc -&gt; abc|yz</Comment>
         <IsRegex>true</IsRegex>
@@ -552,7 +552,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([g-zG-Z]\[?[\w\\]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|((?:[a-fA-F]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-fA-F\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-fA-F]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([g-zG-Z]\[?[\w\\]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|((?:[a-fA-F]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-fA-F\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-fA-F]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
         <Replace>$2|$1</Replace>
         <Comment>yz|abc -&gt; abc|yz</Comment>
         <IsRegex>true</IsRegex>
@@ -562,7 +562,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([e-zE-Z]\[?[\w\\]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|((?:[a-dA-D]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-dA-D\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-dA-D]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)([e-zE-Z]\[?[\w\\]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|((?:[a-dA-D]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-dA-D\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-dA-D]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</Find>
         <Replace>$2|$1</Replace>
         <Comment>yz|abc -&gt; abc|yz</Comment>
         <IsRegex>true</IsRegex>
@@ -572,7 +572,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\w|\[[\\\w]+\])(?&lt;opt&gt;(?:\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?:\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)\)\?</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\w|\[[\\\w]+\])(?&lt;opt&gt;(?:\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?:\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)\)\?</Find>
         <Replace>${stem}?${opt})</Replace>
         <Comment>(x?|....)</Comment>
         <IsRegex>true</IsRegex>
@@ -592,7 +592,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\w)\(\?:(?&lt;a&gt;\\?\w+[\w\?]*)(?&lt;branch1&gt;\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\k&lt;a&gt;(?&lt;branch2&gt;\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\)(?![\?\+])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\w)\(\?:(?&lt;a&gt;\\?\w+[\w\?]*)(?&lt;branch1&gt;\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|\k&lt;a&gt;(?&lt;branch2&gt;\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\)(?![\?\+])</Find>
         <Replace>${stem}${a}(?:${branch1}|${branch2})</Replace>
         <Comment>stem(abranch|abranch) -&gt;stema (branch|branch)</Comment>
         <IsRegex>true</IsRegex>
@@ -612,7 +612,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[?[\w][\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{0})(?&lt;branch1&gt;\w[\w\+\\\?]{0,})(?&lt;opt1&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt2&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt3&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt4&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt5&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt6&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?\|\k&lt;stem&gt;(?&lt;branch2&gt;\w[\w\+\\\?]{0,})(?=[\|\)])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[?[\w][\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{0})(?&lt;branch1&gt;\w[\w\+\\\?]{0,})(?&lt;opt1&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt2&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt3&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt4&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt5&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt6&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?\|\k&lt;stem&gt;(?&lt;branch2&gt;\w[\w\+\\\?]{0,})(?=[\|\)])</Find>
         <Replace>${stem}(?:${branch1}|${branch2})${opt1}${opt2}${opt3}${opt4}${opt5}${opt6}</Replace>
         <Comment>reduce steps; stem 1</Comment>
         <IsRegex>true</IsRegex>
@@ -622,7 +622,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[?[\\\w][\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{1,})(?&lt;branch1&gt;\w[\w\?]{0,})(?&lt;opt1&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt2&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt3&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt4&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt5&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt6&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?\|\k&lt;stem&gt;(?&lt;branch2&gt;\w[\w\?]{0,})(?=[\|\)])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;\[?[\\\w][\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{1,})(?&lt;branch1&gt;\w[\w\?]{0,})(?&lt;opt1&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt2&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt3&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt4&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt5&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?&lt;opt6&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)?\|\k&lt;stem&gt;(?&lt;branch2&gt;\w[\w\?]{0,})(?=[\|\)])</Find>
         <Replace>${stem}(?:${branch1}|${branch2})${opt1}${opt2}${opt3}${opt4}${opt5}${opt6}</Replace>
         <Comment>stem(?:branch1|branch2)</Comment>
         <IsRegex>true</IsRegex>
@@ -642,7 +642,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\w\s])\*(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\w\s])\*(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?=[\)\|])</Find>
         <Replace>${stem}+${leaf}|${leaf}</Replace>
         <Comment>${stem}*${leaf} -&gt; ${stem}+${leaf}|${leaf}</Comment>
         <IsRegex>true</IsRegex>
@@ -652,7 +652,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\|\k&lt;stem&gt;\?(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\|\k&lt;stem&gt;\?(?=[\)\|])</Find>
         <Replace>${stem}?</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -662,7 +662,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\?\|\k&lt;stem&gt;(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\?\|\k&lt;stem&gt;(?=[\)\|])</Find>
         <Replace>${stem}?</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -672,7 +672,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?&lt;leaf&gt;\w+)(?&lt;opt&gt;(?:\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)\|\k&lt;stem&gt;(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?&lt;leaf&gt;\w+)(?&lt;opt&gt;(?:\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)\|\k&lt;stem&gt;(?=[\)\|])</Find>
         <Replace>${stem}(?:${leaf})?${opt}</Replace>
         <Comment>uthr|ut → ut(?:hr)?</Comment>
         <IsRegex>true</IsRegex>
@@ -682,7 +682,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{1,})(?&lt;a&gt;\[\\?\w+\]|\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]{1,})\|\k&lt;stem&gt;(?&lt;b&gt;\[\\?\w+\]|[\\\w][\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]{1,})(?=[\|\)])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{1,})(?&lt;a&gt;\[\\?\w+\]|\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]{1,})\|\k&lt;stem&gt;(?&lt;b&gt;\[\\?\w+\]|[\\\w][\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]{1,})(?=[\|\)])</Find>
         <Replace>${stem}(?:${a}|${b})</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -692,7 +692,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\\\w]*\[?\w\[?[\]\w\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{0,})\(\?:(?&lt;opt&gt;(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?:\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)\)(?&lt;or&gt;(?:\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)+)\|\k&lt;stem&gt;(?&lt;branch&gt;\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;[\\\w]*\[?\w\[?[\]\w\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{0,})\(\?:(?&lt;opt&gt;(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?:\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)\)(?&lt;or&gt;(?:\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\w\p{M}\p{S}\p{Lm}\p{Lo}\p{Lm}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\+\*\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)?)?\)(?:[\?\+\*]|\{[\p{N},]+\})?)+)\|\k&lt;stem&gt;(?&lt;branch&gt;\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)(?=[\)\|])</Find>
         <Replace>${stem}(?:${opt}|${branch})${or}</Replace>
         <Comment>stem(branch1|branch2|branch3)</Comment>
         <IsRegex>true</IsRegex>
@@ -702,7 +702,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;(?:\w{1,}|\[\w{1,}\]))\(\?:(?&lt;opt1&gt;(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))\|(?&lt;opt2&gt;(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))\)\|\k&lt;stem&gt;(?&lt;opt3&gt;(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;(?:\w{1,}|\[\w{1,}\]))\(\?:(?&lt;opt1&gt;(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))\|(?&lt;opt2&gt;(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))\)\|\k&lt;stem&gt;(?&lt;opt3&gt;(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</Find>
         <Replace>${stem}(?:${opt1}|${opt2}|${opt3})</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -712,7 +712,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;(?:\w[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+|\[\w+\][\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?&lt;opt1&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))\|\k&lt;stem&gt;(?&lt;opt2&gt;(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;stem&gt;(?:\w[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+|\[\w+\][\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?&lt;opt1&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))\|\k&lt;stem&gt;(?&lt;opt2&gt;(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</Find>
         <Replace>${stem}(?:${opt1}|${opt2})</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -732,7 +732,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?:(\\?\w[\w\?]*)\|\1|\[(\\?\w)\](?![\?\*\+\{])|\(\?:([\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)(?![\?\*\+\{]))(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?:(\\?\w[\w\?]*)\|\1|\[(\\?\w)\](?![\?\*\+\{\^])|\(\?:([\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)(?![\?\*\+\{\^]))(?=[\)\|])</Find>
         <Replace>$1$2$3</Replace>
         <Comment>(?:e[ds]?|ing) → e[ds]?|ing</Comment>
         <IsRegex>true</IsRegex>
@@ -742,7 +742,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?:)?)(?&lt;stem1&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\|(?&lt;stem2&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\)(?&lt;tail&gt;(?![\?\*\+\{]|\\s)[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{1,35})(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?:)?)(?&lt;stem1&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\|(?&lt;stem2&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\)(?&lt;tail&gt;(?![\?\*\+\{]|\\s)[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{1,35})(?=[\)\|])</Find>
         <Replace>${stem1}${tail}|${stem2}${tail})</Replace>
         <Comment> ?:er|is)\s+\w+ → ?:er\s+\w+|is\s+\w+) </Comment>
         <IsRegex>true</IsRegex>
@@ -752,7 +752,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?:)?)(?&lt;stem1&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\|(?&lt;stem2&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?&lt;stem3&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\)(?&lt;tail&gt;(?![\+\*\?])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{1,})(?=[\)\|])</Find>
+        <Find>(?&lt;=\((?:\?:)?)(?&lt;stem1&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\|(?&lt;stem2&gt;[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?&lt;stem3&gt;\|[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\)(?&lt;tail&gt;(?![\+\*\?])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]{1,})(?=[\)\|])</Find>
         <Replace>${stem1}${tail}|${stem2}${tail}${stem3}${tail})</Replace>
         <Comment>(${stem1}|${stem2}${stem3})${tail} -&gt; ${stem1}${tail}|${stem2}${tail})${stem3}${tail}</Comment>
         <IsRegex>true</IsRegex>
@@ -762,7 +762,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=[^\)]\((?:\?&lt;?[!:=])?|[^\)]\|)([\w]+|[\w]*\[\w+\](?:[\?\+\*]|\{[\p{N},]+\})?[\w]*)\(\?:([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)\|\1(?:\(\?:([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)(?![\*\+\?])|([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?=[\)\|]))</Find>
+        <Find>(?&lt;=[^\)]\((?:\?&lt;?[!:=])?|[^\)]\|)([\w]+|[\w]*\[\w+\](?:[\?\+\*]|\{[\p{N},]+\})?[\w]*)\(\?:([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)\|\1(?:\(\?:([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)(?![\*\+\?])|([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)(?=[\)\|]))</Find>
         <Replace>$1(?:$2|$3$4)</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -772,7 +772,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=[\w\|\?:])([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s])\*</Find>
+        <Find>(?&lt;=[\w\|\?:])([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s])\*</Find>
         <Replace>(?:$1?|$1+)</Replace>
         <Comment>convert * into  ? and +</Comment>
         <IsRegex>true</IsRegex>
@@ -802,7 +802,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?:(\\?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s])|\[(\\?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s])\])\{2\}</Find>
+        <Find>(?:(\\?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s])|\[(\\?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s])\])\{2\}</Find>
         <Replace>$1$1$2$2</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -812,7 +812,7 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?:(\\?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s])|\[(\\?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s])\])\{1,2\}</Find>
+        <Find>(?:(\\?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s])|\[(\\?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s])\])\{1,2\}</Find>
         <Replace>$1$1$2$2?</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
@@ -846,7 +846,7 @@
         <Replace>[$1$2]$3</Replace>
         <Comment>(?:d|s?) -&gt; [ds]?</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -901,22 +901,7 @@
             <Children />
             <Name>Spread out - Upper Case</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[\p{Lu}])(?&lt;bb&gt;\p{Lu}[\p{Lu}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
-            <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
-            <ifContains_ />
-            <ifNotContains_ />
-            <regex_>true</regex_>
-            <ifIsRegex_>false</ifIsRegex_>
-            <numoftimes_>1</numoftimes_>
-            <ifRegexOptions_>None</ifRegexOptions_>
-            <regexOptions_>None</regexOptions_>
-          </IRule>
-          <IRule xsi:type="Rule">
-            <enabled_>true</enabled_>
-            <Children />
-            <Name>Spread out - Lower Case</Name>
-            <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[\p{Ll}])(?&lt;bb&gt;[\p{Ll}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[\p{Lu}])(?&lt;bb&gt;\p{Lu}[\p{Lu}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
             <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -928,13 +913,28 @@
           </IRule>
           <IRule xsi:type="Rule">
             <enabled_>false</enabled_>
+            <Children />
+            <Name>Spread out - Lower Case</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[\p{Ll}])(?&lt;bb&gt;[\p{Ll}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:\\?\w[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
             <Children>
               <IRule xsi:type="Rule">
                 <enabled_>true</enabled_>
                 <Children />
                 <Name>Spread out - A</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[aA])(?&lt;bb&gt;[b-zB-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[aA])(?&lt;bb&gt;[b-zB-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -949,7 +949,7 @@
                 <Children />
                 <Name>Spread out - B</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[bB])(?&lt;bb&gt;[c-zC-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[bB])(?&lt;bb&gt;[c-zC-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -964,7 +964,7 @@
                 <Children />
                 <Name>Spread out - C</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[cC])(?&lt;bb&gt;[d-zD-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[cC])(?&lt;bb&gt;[d-zD-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -979,7 +979,7 @@
                 <Children />
                 <Name>Spread out - D</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[dD])(?&lt;bb&gt;[e-zE-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[dD])(?&lt;bb&gt;[e-zE-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -994,7 +994,7 @@
                 <Children />
                 <Name>Spread out - E</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[eE])(?&lt;bb&gt;[f-zF-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[eE])(?&lt;bb&gt;[f-zF-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1009,7 +1009,7 @@
                 <Children />
                 <Name>Spread out - F</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[fF])(?&lt;bb&gt;[g-zG-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[fF])(?&lt;bb&gt;[g-zG-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1024,7 +1024,7 @@
                 <Children />
                 <Name>Spread out - G</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[gG])(?&lt;bb&gt;[h-zH-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[gG])(?&lt;bb&gt;[h-zH-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1039,7 +1039,7 @@
                 <Children />
                 <Name>Spread out - H</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[hH])(?&lt;bb&gt;[i-zI-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[hH])(?&lt;bb&gt;[i-zI-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1054,7 +1054,7 @@
                 <Children />
                 <Name>Spread out - I</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[iI])(?&lt;bb&gt;[j-zJ-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[iI])(?&lt;bb&gt;[j-zJ-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1069,7 +1069,7 @@
                 <Children />
                 <Name>Spread out - J</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[jJ])(?&lt;bb&gt;[k-zK-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[jJ])(?&lt;bb&gt;[k-zK-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1084,7 +1084,7 @@
                 <Children />
                 <Name>Spread out - K</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[kK])(?&lt;bb&gt;[l-zL-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[kK])(?&lt;bb&gt;[l-zL-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1099,7 +1099,7 @@
                 <Children />
                 <Name>Spread out - L</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[lL])(?&lt;bb&gt;[m-zM-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[lL])(?&lt;bb&gt;[m-zM-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1110,11 +1110,11 @@
                 <regexOptions_>None</regexOptions_>
               </IRule>
               <IRule xsi:type="Rule">
-                <enabled_>false</enabled_>
+                <enabled_>true</enabled_>
                 <Children />
                 <Name>Spread out - M</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[mM])(?&lt;bb&gt;[n-zN-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[mM])(?&lt;bb&gt;[n-zN-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1125,11 +1125,26 @@
                 <regexOptions_>None</regexOptions_>
               </IRule>
               <IRule xsi:type="Rule">
-                <enabled_>false</enabled_>
+                <enabled_>true</enabled_>
                 <Children />
                 <Name>Spread out - N</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[nN])(?&lt;bb&gt;[o-zO-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[nN])(?&lt;bb&gt;[o-zO-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
+                <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
+                <ifContains_ />
+                <ifNotContains_ />
+                <regex_>true</regex_>
+                <ifIsRegex_>false</ifIsRegex_>
+                <numoftimes_>1</numoftimes_>
+                <ifRegexOptions_>None</ifRegexOptions_>
+                <regexOptions_>None</regexOptions_>
+              </IRule>
+              <IRule xsi:type="Rule">
+                <enabled_>true</enabled_>
+                <Children />
+                <Name>Spread out - O</Name>
+                <ruletype_>OnWholePage</ruletype_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;aa&gt;[nN])(?&lt;bb&gt;[p-zP-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:\\?\w+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?=[\|\)])</replace_>
                 <with_>${aa}${q}${body}|[${bb}]${q}${body}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1173,7 +1188,7 @@
             <Children />
             <Name>Split Off A</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)a(?&lt;a&gt;\\?\w+[\w\\]*)A(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)a(?&lt;a&gt;\\?\w+[\w\\]*)A(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[aA]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1188,7 +1203,7 @@
             <Children />
             <Name>Split Off B</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)b(?&lt;a&gt;\\?\w+[\w\\]*)B(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)b(?&lt;a&gt;\\?\w+[\w\\]*)B(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[bB]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1203,7 +1218,7 @@
             <Children />
             <Name>Split Off C</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)c(?&lt;a&gt;\\?\w+[\w\\]*)C(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)c(?&lt;a&gt;\\?\w+[\w\\]*)C(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[cC]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1218,7 +1233,7 @@
             <Children />
             <Name>Split Off D</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)d(?&lt;a&gt;\\?\w+[\w\\]*)D(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)d(?&lt;a&gt;\\?\w+[\w\\]*)D(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[dD]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1233,7 +1248,7 @@
             <Children />
             <Name>Split Off E</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)e(?&lt;a&gt;\\?\w+[\w\\]*)E(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)e(?&lt;a&gt;\\?\w+[\w\\]*)E(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[eE]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1248,7 +1263,7 @@
             <Children />
             <Name>Split Off F</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)f(?&lt;a&gt;\\?\w+[\w\\]*)F(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)f(?&lt;a&gt;\\?\w+[\w\\]*)F(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[fF]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1263,7 +1278,7 @@
             <Children />
             <Name>Split Off G</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)g(?&lt;a&gt;\\?\w+[\w\\]*)G(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)g(?&lt;a&gt;\\?\w+[\w\\]*)G(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[gG]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1278,7 +1293,7 @@
             <Children />
             <Name>Split Off H</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)h(?&lt;a&gt;\\?\w+[\w\\]*)H(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)h(?&lt;a&gt;\\?\w+[\w\\]*)H(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[hH]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1293,7 +1308,7 @@
             <Children />
             <Name>Split Off I</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)i(?&lt;a&gt;\\?\w+[\w\\]*)I(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)i(?&lt;a&gt;\\?\w+[\w\\]*)I(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[iI]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1308,7 +1323,7 @@
             <Children />
             <Name>Split Off J</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)j(?&lt;a&gt;\\?\w+[\w\\]*)J(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)j(?&lt;a&gt;\\?\w+[\w\\]*)J(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[jJ]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1323,7 +1338,7 @@
             <Children />
             <Name>Split Off K</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)k(?&lt;a&gt;\\?\w+[\w\\]*)K(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)k(?&lt;a&gt;\\?\w+[\w\\]*)K(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[kK]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1338,7 +1353,7 @@
             <Children />
             <Name>Split Off L</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)l(?&lt;a&gt;\\?\w+[\w\\]*)L(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)l(?&lt;a&gt;\\?\w+[\w\\]*)L(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[lL]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1353,7 +1368,7 @@
             <Children />
             <Name>Split Off M</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)m(?&lt;a&gt;\\?\w+[\w\\]*)M(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)m(?&lt;a&gt;\\?\w+[\w\\]*)M(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[mM]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1368,7 +1383,7 @@
             <Children />
             <Name>Split Off N</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)n(?&lt;a&gt;\\?\w+[\w\\]*)N(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)n(?&lt;a&gt;\\?\w+[\w\\]*)N(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[nN]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1383,7 +1398,7 @@
             <Children />
             <Name>Split Off O</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)o(?&lt;a&gt;\\?\w+[\w\\]*)O(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)o(?&lt;a&gt;\\?\w+[\w\\]*)O(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[oO]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1398,7 +1413,7 @@
             <Children />
             <Name>Split Off P</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)p(?&lt;a&gt;\\?\w+[\w\\]*)P(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)p(?&lt;a&gt;\\?\w+[\w\\]*)P(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[pP]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1413,7 +1428,7 @@
             <Children />
             <Name>Split Off Q</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)q(?&lt;a&gt;\\?\w+[\w\\]*)Q(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)q(?&lt;a&gt;\\?\w+[\w\\]*)Q(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[qQ]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1428,7 +1443,7 @@
             <Children />
             <Name>Split Off R</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)r(?&lt;a&gt;\\?\w+[\w\\]*)R(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)r(?&lt;a&gt;\\?\w+[\w\\]*)R(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[rR]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1443,7 +1458,7 @@
             <Children />
             <Name>Split Off S</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)s(?&lt;a&gt;\\?\w+[\w\\]*)S(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)s(?&lt;a&gt;\\?\w+[\w\\]*)S(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[sS]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1458,7 +1473,7 @@
             <Children />
             <Name>Split Off T</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)t(?&lt;a&gt;\\?\w+[\w\\]*)T(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)t(?&lt;a&gt;\\?\w+[\w\\]*)T(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[tT]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1473,7 +1488,7 @@
             <Children />
             <Name>Split Off U</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)u(?&lt;a&gt;\\?\w+[\w\\]*)U(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)u(?&lt;a&gt;\\?\w+[\w\\]*)U(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[uU]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1488,8 +1503,38 @@
             <Children />
             <Name>Split Off V</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)v(?&lt;a&gt;\\?\w+[\w\\]*)V(?&lt;b&gt;(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]+))(?=[\|\)])</replace_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)v(?&lt;a&gt;\\?\w+[\w\\]*)V(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
+            <with_>[wW]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off W</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)w(?&lt;a&gt;\\?\w+[\w\\]*)W(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
             <with_>[vV]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>Split Off X</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\[(?&lt;c&gt;\\?\w+[\w\\]*)x(?&lt;a&gt;\\?\w+[\w\\]*)X(?&lt;b&gt;(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*)\](?&lt;q&gt;\?)?(?&lt;body&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+)*(?:[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+))?(?=[\|\)])</replace_>
+            <with_>[xX]${q}${body}|[${c}${a}${b}]${q}${body}</with_>
             <ifContains_ />
             <ifNotContains_ />
             <regex_>true</regex_>
@@ -1519,7 +1564,7 @@
             <Children />
             <Name>Merged ORs</Name>
             <ruletype_>OnWholePage</ruletype_>
-            <replace_>(?&lt;=[^\)]\((?:\?&lt;?[!:=])?|[^\)]\|)([\w]+|[\w]*\[\w+\](?:[\?\+\*]|\{[\p{N},]+\})?[\w]*)\(\?:([\w\|\\\?\[\]\*\+\d]+)\)\|\1\(\?:([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)(?![\*\+\?])</replace_>
+            <replace_>(?&lt;=[^\)]\((?:\?&lt;?[!:=])?|[^\)]\|)([\w]+|[\w]*\[\w+\](?:[\?\+\*]|\{[\p{N},]+\})?[\w]*)\(\?:([\w\|\\\?\[\]\*\+\d]+)\)\|\1\(\?:([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)(?![\*\+\?])</replace_>
             <with_>$1(?:$2|$3)</with_>
             <ifContains_ />
             <ifNotContains_ />
@@ -1598,7 +1643,7 @@
                 <Children />
                 <Name>Alphabetize-A2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[b-zB-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[b-zB-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:[aA]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?))(?:\|[aA]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[b-zB-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[b-zB-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:[aA]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?))(?:\|[aA]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1613,7 +1658,7 @@
                 <Children />
                 <Name>Alphabetize-B2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[c-zC-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[c-zC-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-bA-B]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-bA-B\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-bA-B]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[c-zC-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[c-zC-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-bA-B]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-bA-B\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-bA-B]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1628,7 +1673,7 @@
                 <Children />
                 <Name>Alphabetize-C2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[d-zD-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[d-zD-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-cA-C]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-dA-D\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-cA-C]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[d-zD-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[d-zD-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-cA-C]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-dA-D\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-cA-C]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1643,7 +1688,7 @@
                 <Children />
                 <Name>Alphabetize-D2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[e-zE-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[e-zE-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-dA-D]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-dA-D\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-dA-D]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[e-zE-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[e-zE-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-dA-D]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-dA-D\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-dA-D]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1658,7 +1703,7 @@
                 <Children />
                 <Name>Alphabetize-E2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[f-zF-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[f-zF-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-eA-E]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-eA-E\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-eA-E]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[f-zF-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[f-zF-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-eA-E]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-eA-E\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-eA-E]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1673,7 +1718,7 @@
                 <Children />
                 <Name>Alphabetize-F2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[g-zG-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[g-zG-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-fA-F]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-fA-F\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-fA-F]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[g-zG-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[g-zG-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-fA-F]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-fA-F\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-fA-F]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1688,7 +1733,7 @@
                 <Children />
                 <Name>Alphabetize-G2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[h-zH-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[h-zH-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-gA-G]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-gA-G\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-gA-G]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[h-zH-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[h-zH-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-gA-G]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-gA-G\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-gA-G]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1703,7 +1748,7 @@
                 <Children />
                 <Name>Alphabetize-H2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[i-zI-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[i-zI-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-hA-H]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-hA-H\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-hA-H]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[i-zI-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[i-zI-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-hA-H]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-hA-H\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-hA-H]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1718,7 +1763,7 @@
                 <Children />
                 <Name>Alphabetize-I2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[j-zJ-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[j-zJ-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-iA-I]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-iA-I\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-iA-I]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[j-zJ-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[j-zJ-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-iA-I]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-iA-I\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-iA-I]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1733,7 +1778,7 @@
                 <Children />
                 <Name>Alphabetize-J2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[k-zK-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[k-zK-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-jA-J]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-jA-J\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-jA-J]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[k-zK-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[k-zK-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-jA-J]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-jA-J\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-jA-J]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1748,7 +1793,7 @@
                 <Children />
                 <Name>Alphabetize-K2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[l-zL-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[l-zL-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-kA-K]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-kA-K\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-kA-K]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[l-zL-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[l-zL-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-kA-K]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-kA-K\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-kA-K]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1763,7 +1808,7 @@
                 <Children />
                 <Name>Alphabetize-L2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[m-zM-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[m-zM-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-lA-L]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-lA-L\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-lA-L]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[m-zM-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[m-zM-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-lA-L]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-lA-L\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-lA-L]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1778,7 +1823,7 @@
                 <Children />
                 <Name>Alphabetize-M2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[n-zN-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[n-zN-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-mA-M]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-mA-M\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-mA-M]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[n-zN-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[n-zN-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-mA-M]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-mA-M\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-mA-M]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1793,7 +1838,7 @@
                 <Children />
                 <Name>Alphabetize-N2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[o-zO-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[o-zO-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-nA-N]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-nA-N\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-nA-N]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[o-zO-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[o-zO-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-nA-N]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-nA-N\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-nA-N]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1808,7 +1853,7 @@
                 <Children />
                 <Name>Alphabetize-O2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[p-zP-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[p-zP-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-oA-O]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-oA-O\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-oA-O]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[p-zP-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[p-zP-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-oA-O]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-oA-O\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-oA-O]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1823,7 +1868,7 @@
                 <Children />
                 <Name>Alphabetize-P2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[q-zQ-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[q-zQ-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-pA-P]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-pA-P\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-pA-P]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[q-zQ-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[q-zQ-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-pA-P]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-pA-P\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-pA-P]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1838,7 +1883,7 @@
                 <Children />
                 <Name>Alphabetize-Q2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[r-zR-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[r-zR-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-qA-Q]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-qA-Q\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-qA-Q]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[r-zR-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[r-zR-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-qA-Q]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-qA-Q\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-qA-Q]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1853,7 +1898,7 @@
                 <Children />
                 <Name>Alphabetize-R2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[s-zS-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[s-zS-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-rA-R]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-rA-R\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-rA-R]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[s-zS-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[s-zS-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-rA-R]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-rA-R\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-rA-R]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1868,7 +1913,7 @@
                 <Children />
                 <Name>Alphabetize-S2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[t-zT-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[t-zT-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-sA-S]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-sA-S\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-sA-S]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[t-zT-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[t-zT-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-sA-S]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-sA-S\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-sA-S]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1883,7 +1928,7 @@
                 <Children />
                 <Name>Alphabetize-T2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[u-zU-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[u-zU-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-tA-T]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-tA-T\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-tA-T]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[u-zU-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[u-zU-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-tA-T]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-tA-T\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-tA-T]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1898,7 +1943,7 @@
                 <Children />
                 <Name>Alphabetize-U2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[v-zV-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[v-zV-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))\|(?&lt;a&gt;(?:\[?[a-uA-U]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-uA-U\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-uA-U]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[v-zV-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[v-zV-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))\|(?&lt;a&gt;(?:\[?[a-uA-U]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-uA-U\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-uA-U]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1913,7 +1958,7 @@
                 <Children />
                 <Name>Alphabetize-V2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[w-zW-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[w-zW-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-vA-V]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-vA-V\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-vA-V]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[w-zW-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[w-zW-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-vA-V]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-vA-V\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-vA-V]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1928,7 +1973,7 @@
                 <Children />
                 <Name>Alphabetize-W2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[x-zX-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[x-zX-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-wA-W]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-wA-W\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-wA-W]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[x-zX-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[x-zX-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-wA-W]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-wA-W\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-wA-W]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1943,7 +1988,7 @@
                 <Children />
                 <Name>Alphabetize-X2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[y-zY-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[y-zY-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-xA-X]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-xA-X\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-xA-X]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[y-zY-Z]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[y-zY-Z\p{Lo}\p{Lm}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]+\w*\]\[?[\w]*\]?)(?:[\?\+\*]|\{[\p{N},]+\})?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*)\|(?&lt;a&gt;(?:\[?[a-xA-X]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-xA-X\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-xA-X]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1958,7 +2003,7 @@
                 <Children />
                 <Name>Alphabetize-Y2</Name>
                 <ruletype_>OnWholePage</ruletype_>
-                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[zZ]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*|(?:\[[zZ\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\])(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:\[?[a-yA-Y]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-yA-Y\p{M}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-yA-Y]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
+                <replace_>(?&lt;!\{\{Redirect\|)(?&lt;=\((?:\?&lt;?[!:=])?|\|)(?&lt;na&gt;\[?[zZ]\]?\[?[p{L}]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*|(?:\[[zZ\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\])(?:[\?\+\*]|\{[\p{N},]+\})?)\|(?&lt;a&gt;(?:\[?[a-yA-Y]+\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*|(?:\[[a-yA-Y\p{M}\p{So}\p{Sc}\p{Po}\p{Pd}%\+\s]+[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\+\s]*\](?:[\?\+\*]|\{[\p{N},]+\})?\[?[\w]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*))(?:\|\[?[a-yA-Y]+\]?\[?[\w\\-]*\]?[\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s]*(?:\(\?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*(?:\((?:\?:)?[\\\w]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s\|]*\))*[\p{L}\p{M}\p{N}\p{S}\p{Po}\p{Pd}%\[\]\+\s]*\))*\))*\)(?:[\?\+\*]|\{[\p{N},]+\})?)*)*)(?=[\)\|])</replace_>
                 <with_>${a}|${na}</with_>
                 <ifContains_ />
                 <ifNotContains_ />
@@ -1999,7 +2044,7 @@
         <Children />
         <Name>Fold Out</Name>
         <ruletype_>OnWholePage</ruletype_>
-        <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\(\?:([\w\?\[\]\\-]+)\|([\p{L}\p{M}\p{N}\p{So}\p{Sk}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)([\w]+[\?\+\*]?|\[\w-?\w\][\?\+\*]?)(?=[\)\|])</replace_>
+        <replace_>(?&lt;=\((?:\?&lt;?[!:=])?|\|)\(\?:([\w\?\[\]\\-]+)\|([\p{L}\p{M}\p{N}\p{So}\p{Sc}\p{Po}\p{Pd}%\[\]\+\s\|]+)\)([\w]+[\?\+\*]?|\[\w-?\w\][\?\+\*]?)(?=[\)\|])</replace_>
         <with_>$1$3|(?:$2)$3</with_>
         <ifContains_ />
         <ifNotContains_ />
@@ -2081,9 +2126,9 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>\[\^.{1,2}\]</FindText>
-    <FindRegex>true</FindRegex>
-    <FindCaseSensitive>false</FindCaseSensitive>
+    <FindText>)?(?:</FindText>
+    <FindRegex>false</FindRegex>
+    <FindCaseSensitive>true</FindCaseSensitive>
     <WordWrap>true</WordWrap>
     <ToolBarEnabled>true</ToolBarEnabled>
     <BypassRedirect>true</BypassRedirect>
