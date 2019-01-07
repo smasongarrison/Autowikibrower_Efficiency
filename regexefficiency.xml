@@ -2126,8 +2126,8 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>)?(?:</FindText>
-    <FindRegex>false</FindRegex>
+    <FindText>\[\w+\]\w*\[\w*\p{Lu}+\w*\]</FindText>
+    <FindRegex>true</FindRegex>
     <FindCaseSensitive>true</FindCaseSensitive>
     <WordWrap>true</WordWrap>
     <ToolBarEnabled>true</ToolBarEnabled>
