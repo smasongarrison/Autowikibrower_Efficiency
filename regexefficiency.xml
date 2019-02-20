@@ -2424,7 +2424,7 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>paypal</FindText>
+    <FindText>(?&lt;!</FindText>
     <FindRegex>false</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
