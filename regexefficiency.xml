@@ -1201,6 +1201,16 @@
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
+      <Replacement>
+        <Find>\[\^\\\(\\\|:]\\\[\\w\+\\]\[\^\\\)]</Find>
+        <Replace />
+        <Comment>search for [nN]</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
     </Replacements>
     <AdvancedReps>
       <IRule xsi:type="Rule">
@@ -2383,7 +2393,7 @@
       <SavePeriod>30</SavePeriod>
       <SaveFile>E:\Dropbox\Workflow\Settings\wikibot\editbox.txt</SaveFile>
     </AutoSaveEdit>
-    <SelectedSummary>efficiency improvements</SelectedSummary>
+    <SelectedSummary>reorder list</SelectedSummary>
     <Summaries>
       <string>clean up</string>
       <string>re-categorisation per [[WP:CFD|CFD]]</string>
@@ -2411,6 +2421,7 @@
       <string>efficiency improvements; moving typos from new</string>
       <string>numbering dups</string>
       <string>merging dups</string>
+      <string>reorder list</string>
     </Summaries>
     <PasteMore>
       <string />
@@ -2424,8 +2435,8 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>albino</FindText>
-    <FindRegex>false</FindRegex>
+    <FindText>[^\(\|:]\[\w+\][^\)]</FindText>
+    <FindRegex>true</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
     <ToolBarEnabled>true</ToolBarEnabled>
