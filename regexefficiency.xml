@@ -8,12 +8,7 @@
   <List>
     <ListSource>Wikipedia:AutoWikiBrowser/Typos</ListSource>
     <SelectedProvider>RedirectsListProvider</SelectedProvider>
-    <ArticleList>
-      <Article NameSpaceKey="4">
-        <PreProcessed>false</PreProcessed>
-        <Name>Wikipedia:AutoWikiBrowser/Typos</Name>
-      </Article>
-    </ArticleList>
+    <ArticleList />
   </List>
   <FindAndReplace>
     <Enabled>true</Enabled>
@@ -822,8 +817,8 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\((\\?[\p{L}\p{M}\p{N}])\)\|\((\\?[\p{L}\p{M}\p{N}])\)(?=[\)\|])</Find>
-        <Replace>($1|$2)</Replace>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\((\?:)?(\\?[\p{L}\p{M}\p{N}])\)\|\((\1\\?[\p{L}\p{M}\p{N}])\)(?=[\)\|])</Find>
+        <Replace>($1$2|$3)</Replace>
         <Comment>(\s)|(\b)-&gt; (\s|\b)</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
