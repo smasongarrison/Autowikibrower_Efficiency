@@ -11,7 +11,7 @@
     <ArticleList>
       <Article NameSpaceKey="2">
         <PreProcessed>false</PreProcessed>
-        <Name>User:Smasongarrison/sandbox</Name>
+        <Name>User:Smasongarrison/benchmark a</Name>
       </Article>
       <Article NameSpaceKey="4">
         <PreProcessed>false</PreProcessed>
@@ -2361,6 +2361,94 @@
         <numoftimes_>1</numoftimes_>
         <ifRegexOptions_>None</ifRegexOptions_>
         <regexOptions_>None</regexOptions_>
+      </IRule>
+      <IRule xsi:type="Rule">
+        <enabled_>false</enabled_>
+        <Children>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>whitespace</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(?: \||\| )</replace_>
+            <with_>|</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>IgnoreCase</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Children />
+            <Name>tablfy</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>(\w+)\:\:(\w+)</replace_>
+            <with_>|$1||$2\r|-</with_>
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>true</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>IgnoreCase</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Name>nowiki</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>&lt;nowiki&gt;</replace_>
+            <with_ />
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>false</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Name>endnowiki</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>&lt;/nowiki&gt;</replace_>
+            <with_ />
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>false</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>None</regexOptions_>
+          </IRule>
+          <IRule xsi:type="Rule">
+            <enabled_>true</enabled_>
+            <Name>colon</Name>
+            <ruletype_>OnWholePage</ruletype_>
+            <replace_>::</replace_>
+            <with_ />
+            <ifContains_ />
+            <ifNotContains_ />
+            <regex_>false</regex_>
+            <ifIsRegex_>false</ifIsRegex_>
+            <numoftimes_>1</numoftimes_>
+            <ifRegexOptions_>None</ifRegexOptions_>
+            <regexOptions_>IgnoreCase</regexOptions_>
+          </IRule>
+        </Children>
+        <Name>ahk cleanup</Name>
+        <ruletype_>OnWholePage</ruletype_>
+        <replace_ />
+        <with_ />
+        <ifContains_ />
+        <ifNotContains_ />
+        <regex_>false</regex_>
+        <ifIsRegex_>false</ifIsRegex_>
+        <numoftimes_>1</numoftimes_>
+        <ifRegexOptions_>None</ifRegexOptions_>
+        <regexOptions_>IgnoreCase</regexOptions_>
       </IRule>
     </AdvancedReps>
     <SubstTemplates />
