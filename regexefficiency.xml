@@ -9,18 +9,18 @@
     <ListSource>Wikipedia:AutoWikiBrowser/Typos</ListSource>
     <SelectedProvider>RedirectsListProvider</SelectedProvider>
     <ArticleList>
-      <Article NameSpaceKey="2">
-        <PreProcessed>false</PreProcessed>
-        <Name>User:Smasongarrison/benchmark a</Name>
-      </Article>
       <Article NameSpaceKey="4">
         <PreProcessed>false</PreProcessed>
         <Name>Wikipedia:AutoWikiBrowser/Typos</Name>
       </Article>
+      <Article NameSpaceKey="2">
+        <PreProcessed>false</PreProcessed>
+        <Name>User:Smasongarrison/benchmark a</Name>
+      </Article>
     </ArticleList>
   </List>
   <FindAndReplace>
-    <Enabled>false</Enabled>
+    <Enabled>true</Enabled>
     <IgnoreSomeText>false</IgnoreSomeText>
     <IgnoreMoreText>false</IgnoreMoreText>
     <AppendSummary>true</AppendSummary>
@@ -31,7 +31,7 @@
         <Comment>search:  [nN]</Comment>
         <IsRegex>false</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
@@ -51,7 +51,7 @@
         <Comment>search: find nearby letters</Comment>
         <IsRegex>false</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
@@ -71,7 +71,7 @@
         <Comment>search</Comment>
         <IsRegex>false</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
@@ -391,7 +391,7 @@
         <Comment>wom[ae]n -&gt;woman|women</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
@@ -671,7 +671,7 @@
         <Comment>{0,99+} -&gt; *</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
@@ -721,7 +721,7 @@
         <Comment>{1,99+} -&gt; +</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
@@ -861,7 +861,7 @@
         <Comment>convert * into  ? and +</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
@@ -891,7 +891,7 @@
         <Comment>test</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
@@ -1111,7 +1111,7 @@
         <Comment>[-\s] → [-–−—―\s]</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
@@ -1181,7 +1181,7 @@
         <Comment> + -&gt; \s+</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
@@ -2397,6 +2397,7 @@
           </IRule>
           <IRule xsi:type="Rule">
             <enabled_>true</enabled_>
+            <Children />
             <Name>nowiki</Name>
             <ruletype_>OnWholePage</ruletype_>
             <replace_>&lt;nowiki&gt;</replace_>
@@ -2479,7 +2480,7 @@
     <AutoDelay>10</AutoDelay>
     <BotMaxEdits>0</BotMaxEdits>
     <SupressTag>false</SupressTag>
-    <RegexTypoFix>true</RegexTypoFix>
+    <RegexTypoFix>false</RegexTypoFix>
   </Editprefs>
   <General>
     <AutoSaveEdit>
