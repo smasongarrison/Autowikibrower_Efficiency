@@ -2411,6 +2411,7 @@
           </IRule>
           <IRule xsi:type="Rule">
             <enabled_>true</enabled_>
+            <Children />
             <Name>endnowiki</Name>
             <ruletype_>OnWholePage</ruletype_>
             <replace_>&lt;/nowiki&gt;</replace_>
@@ -2425,6 +2426,7 @@
           </IRule>
           <IRule xsi:type="Rule">
             <enabled_>true</enabled_>
+            <Children />
             <Name>colon</Name>
             <ruletype_>OnWholePage</ruletype_>
             <replace_>::</replace_>
