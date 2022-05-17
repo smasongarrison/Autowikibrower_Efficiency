@@ -312,13 +312,13 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;!\?=)\(\?:(\[[^\]\)\(]{1,10}\])\)</Find>
+        <Find>(?&lt;!\?=)\(\?:(\[[^\]\)\(]{1,10}\])\)(?![\{\*\+])</Find>
         <Replace>$1</Replace>
         <Comment>(?:[asdasa]) -&gt; [asdasdf]</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
+        <BeforeOrAfter>true</BeforeOrAfter>
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
       <Replacement>
