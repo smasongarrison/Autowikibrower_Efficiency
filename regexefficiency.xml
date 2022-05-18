@@ -22,14 +22,14 @@
     <AppendSummary>true</AppendSummary>
     <Replacements>
       <Replacement>
-        <Find>\(\?:\)\?</Find>
-        <Replace />
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\w)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*)\|\[([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\s]*)(?!\\)\1([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\s]*)(?!\\)\]((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*)(?=[\)\|])</Find>
+        <Replace>$1(?:$2|$5)|[$3$4]$5</Replace>
+        <Comment>(?:pale|[pP]ali) -&gt; p(?:ale|ali)|Pali)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
-        <BeforeOrAfter>true</BeforeOrAfter>
-        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
         <Find>\(\?:\[\\\|:\\\(]\)\(\?!\.\{0,25}find="\)\\\[\(\[\\\\]\?\\w\[\\p\{L}\\d]\*\\]\?\)\[\^\\\)]\{0,25}\\\|\\1</Find>
@@ -52,13 +52,13 @@
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\(\?!\?&lt;\?\[!=]\)\(\(\?!\?&lt;\?\[!=]\)\(\?:\?:\)\?\?:\)\?\?\)\?</Find>
-        <Replace />
+        <Find>\|nieces\?\|nephews\?</Find>
+        <Replace>|n(?:ieces?|ephews?)</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>true</BeforeOrAfter>
+        <Enabled>false</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
@@ -72,10 +72,10 @@
         <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\[[\.,\p{L}\p{M}\p{N}]*)(?&lt;dup&gt;\\?[\p{L}\p{M}\p{N}])\k&lt;dup&gt;(?=[\.,\p{L}\p{M}\p{N}]*\])</Find>
-        <Replace>${dup}</Replace>
-        <Comment>[aa] -&gt; [a]</Comment>
-        <IsRegex>true</IsRegex>
+        <Find>\{1,}</Find>
+        <Replace>+</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
@@ -92,151 +92,151 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;\w)\(\?:(?&lt;a&gt;\\?[\p{L}\p{M}\p{N}]+[\?\p{L}\p{M}\p{N}]*)(?&lt;leaf1&gt;\\?[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|\k&lt;a&gt;(?&lt;leaf2&gt;\\?[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\)(?![\+\?\*\{])</Find>
-        <Replace>${stem}${a}(?:${leaf1}|${leaf2})</Replace>
-        <Comment>stem(aleaf|aleaf) -&gt;stema (leaf|leaf)</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Find>\[\^\\w]</Find>
+        <Replace>\W</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;\[[\\\w]+)\](?&lt;q&gt;\?)?\|(?&lt;leaf&gt;\w)(?=[\)\|])</Find>
-        <Replace>${stem}${leaf}]${q}</Replace>
+        <Find> ([\+\*\{\?])</Find>
+        <Replace>\s$1</Replace>
+        <Comment> + -&gt; \s+</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\ \\t\r\n\\f]</Find>
+        <Replace>\s</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\^\\s]</Find>
+        <Replace>\S</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>0-9</Find>
+        <Replace>\d</Replace>
+        <Comment>0-9 -&gt; \d</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[\^\\d]</Find>
+        <Replace>\D</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[´ˈ׳᾿‘’′Ꞌꞌ`(')?\]\?(\w)(?![\?\*\+\{])</Find>
+        <Replace>[´ˈ׳᾿‘’′Ꞌꞌ`;$1]?$2</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\(\?:(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\|]+)\)\?(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)(?=[\)\|])</Find>
-        <Replace>${stem}${leaf}|${leaf}</Replace>
-        <Comment>(?:stem)?leaf -&gt; stemleaf|leaf</Comment>
+        <Find>\[Tt]he\|same\|new\|\[Tt]his\|</Find>
+        <Replace>[Tt]h(?:e|is)|same|new|</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[-\ ]</Find>
+        <Replace>[-\s]</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;!\()\[(?:\\?\-\\s|\\s\\?\-)\]</Find>
+        <Replace>[-–−—―\s]</Replace>
+        <Comment>[-\s] → [-–−—―\s]</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[([^\(\s\)\]´ˈ׳᾿‘’′Ꞌꞌ`;'´ˈ׳᾿‘’′Ꞌꞌ`\|])([;']*)[´ˈ׳᾿‘’′Ꞌꞌ`´ˈ׳᾿‘’′Ꞌꞌ`]+([;']*)[´ˈ׳᾿‘’′Ꞌꞌ`´ˈ׳᾿‘’′Ꞌꞌ`]*([;']*)([\\\w\p{P}]*)\]</Find>
+        <Replace>[$1$5´ˈ׳᾿‘’′Ꞌꞌ`$2$3$4]</Replace>
+        <Comment>apostrophe</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}]+)(?:(?&lt;opt1&gt;\[[\\\p{L}\p{M}\p{N}]+)\]|(?&lt;opt2&gt;\\?[\p{L}\p{M}\p{N}]))(?&lt;q&gt;[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\|\k&lt;stem&gt;(?&lt;opt3&gt;\\?[\p{L}\p{M}\p{N}])\k&lt;q&gt;(?=[\|\)])</Find>
-        <Replace>${stem}${opt1}${opt2}${opt3}]${q}</Replace>
+        <Find>\[A-Za-z(?:0-9|\d)_\]</Find>
+        <Replace>[\p{L}\p{M}\p{N}]</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?&lt;a&gt;\[\\?[\p{L}\p{M}\p{N}]+\]|\\?[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\+\s]+)\|\k&lt;stem&gt;(?&lt;b&gt;\[\\?[\p{L}\p{M}\p{N}]+\]|[\\\w][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\+\s]+)(?=[\|\)])</Find>
-        <Replace>${stem}(?:${a}|${b})</Replace>
-        <Comment />
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\[([\w-]+)\](?![\+\?\*])([\p{L}\p{M}\p{N}]+(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?|\[[\p{L}\p{M}\p{N}-]{2,}\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)\|(\\?\w)\2(?=[\)\|])</Find>
+        <Replace>[$1$3]$2</Replace>
+        <Comment>[ab]s|is=[abi]s</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?&lt;leaf&gt;[\p{L}\p{M}\p{N}]+)(?&lt;opt1&gt;(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)\|\k&lt;stem&gt;(?=[\)\|])</Find>
-        <Replace>${stem}(?:${leaf})?${opt1}</Replace>
-        <Comment>uthr|ut → ut(?:hr)?</Comment>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?\w)(?![\+\*])([\p{L}\p{M}\p{N}]+(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?|\[[\p{L}\p{M}\p{N}-]{2,}\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?|[\w\*\+\?\[\]\\]*)\|(\\?\w)\2(?=[\)\|])</Find>
+        <Replace>[$1$3]$2</Replace>
+        <Comment>as|is=[ai]s</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;\[?[\\\w][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?&lt;leaf1&gt;\w[\?\p{L}\p{M}\p{N}]*)(?&lt;opt1&gt;(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)\|\k&lt;stem&gt;(?&lt;leaf2&gt;\w[\?\p{L}\p{M}\p{N}]*)(?=[\|\)])</Find>
-        <Replace>${stem}(?:${leaf1}|${leaf2})${opt1}</Replace>
-        <Comment>stem(?:leaf1|leaf2)</Comment>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\[([\w-]+)\](?![\+\?\*])([\p{L}\p{M}\p{N}]+(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?|\[[\p{L}\p{M}\p{N}-]{2,}\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)\|\[(\w+)\]\2(?=[\)\|])</Find>
+        <Replace>[$1$3]$2</Replace>
+        <Comment>[ab]s|is=[abi]s</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+(?&lt;![\[\\]|\{\,?))(?&lt;leaf1&gt;(?![\]\?\+\*]|\,?\})[\[\]\*\\\?\+\p{L}\p{M}\p{N}]+(?&lt;![\[\\\{]))(?&lt;opt1&gt;(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)\|\k&lt;stem&gt;(?&lt;leaf2&gt;(?![\]\+\*\?]|\,?\})[\[\]\*\\\?\+\p{L}\p{M}\p{N}]+(?&lt;![\[\\\{]))(?=[\|\)])</Find>
-        <Replace>${stem}(?:${leaf1}|${leaf2})${opt1}</Replace>
-        <Comment>reduce steps; stem 1</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;(?:[\p{L}\p{M}\p{N}]+|(?:[\p{L}\p{M}\p{N}]*\[[\p{L}\p{M}\p{N}]+\][\\\?[\p{L}\p{M}\p{N}]]*)+))\(\?:(?&lt;opt1&gt;(?:(?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)\|)+)(?&lt;opt2&gt;(?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))\)\|\k&lt;stem&gt;(?&lt;opt3&gt;(?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))(?=[\|\)])</Find>
-        <Replace>${stem}(?:${opt1}${opt2}|${opt3})</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\\\w]*\[?\w\[?[\]\w\p{Lm}\p{Lo}\p{Sc}\p{So}\p{Pd}\p{Po}%\[\]\+\s]*)\(\?:(?&lt;opt1&gt;(?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)\)(?&lt;or&gt;(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)+)\|\k&lt;stem&gt;(?&lt;leaf&gt;\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)(?=[\)\|])</Find>
-        <Replace>${stem}(?:${opt1}|${leaf})${or}</Replace>
-        <Comment>stem(leaf1|leaf2|leaf3)</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;(?:\w[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\+\s]+|\[[\p{L}\p{M}\p{N}]+\][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*))(?&lt;opt1&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:\|(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))\|\k&lt;stem&gt;(?&lt;opt2&gt;(?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))(?=[\|\)])</Find>
-        <Replace>${stem}(?:${opt1}|${opt2})</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?:\?\|\k&lt;stem&gt;|\|\k&lt;stem&gt;\?)(?=[\)\|])</Find>
-        <Replace>${stem}?</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;\w|\[[\\\w]+\])(?&lt;opt1&gt;(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)\)\?</Find>
-        <Replace>${stem}?${opt1})</Replace>
-        <Comment>(x?|....)</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}]+)(?:\[(?&lt;opt1&gt;[\p{L}\p{M}\p{N}]+)\]|(?&lt;opt2&gt;\w))(?&lt;q&gt;\?)?\|\k&lt;stem&gt;(?&lt;opt3&gt;\w)(?=[\|\)])</Find>
-        <Replace>${stem}[${opt1}${opt2}${opt3}]${q}</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;\\?[\s\p{L}\p{M}\p{N}]|\[[\\\s\p{L}\p{M}\p{N}-]+\])\*(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?=[\)\|])</Find>
-        <Replace>${stem}+${leaf}|${leaf}</Replace>
-        <Comment>${stem}*${leaf} -&gt; ${stem}+${leaf}|${leaf}</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -276,17 +276,17 @@
         <Replace>$1</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\|]*\)[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\)(?!\?)</Find>
-        <Replace>$1</Replace>
-        <Comment>(?:omed(?:ies|y)) -&gt; omed(?:ies|y) (wonky...)</Comment>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?\w)(?![\+\?\*])([\p{L}\p{M}\p{N}]+(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?|\[[\p{L}\p{M}\p{N}-]{2,}\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)\|\[([\w-]+)\]\2(?=[\)\|])</Find>
+        <Replace>[$1$3]$2</Replace>
+        <Comment>[ab]s|is=[abi]s</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -296,7 +296,7 @@
         <Replace>$1</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -312,14 +312,14 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;!\?=)\(\?:(\[[^\]\)\(]{1,10}\])\)(?![\{\*\+])</Find>
-        <Replace>$1</Replace>
-        <Comment>(?:[asdasa]) -&gt; [asdasdf]</Comment>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\|(\\?[\p{L}\p{M}\p{N}]+|[\[\]\p{L}\p{M}\p{N}]*)\)</Find>
+        <Replace>$1)?</Replace>
+        <Comment>(|s) -&gt; (s)? </Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>true</BeforeOrAfter>
-        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
         <Find>(\\?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\s])\{2\}</Find>
@@ -336,7 +336,7 @@
         <Replace>$1$1?</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -402,41 +402,41 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(\((?:\?:)?)(\\?[\p{L}\p{N}\?\*\[\]\+\s]{2,})\)\?\1(\\?[\p{L}\p{N}\?\*\+\[\]\s\|]+)\)(\?)?</Find>
-        <Replace>$1$2(?:$3)$4|(?:$3)$4)</Replace>
-        <Comment>(ean?)?(s)?-&gt; ean?s?|s?</Comment>
+        <Find>(\[\w[\w-]+\]|\w)\{0,9\d+\}</Find>
+        <Replace>$1*</Replace>
+        <Comment>{0,99+} -&gt; *</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(\[[\p{L}\p{M}\p{N}-]+\]|\w)(?:\1(?:\*|\{0,\d+\})|\+\1(?:[\*\?]|\{0,\d+\}))</Find>
+        <Replace>$1+</Replace>
+        <Comment>[a-z][a-z]* /[a-z]+[a-z]* -&gt;[a-z]+</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?[\p{L}\p{M}\p{N}]+\[?[\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}]*)(\\?[\p{L}\p{M}\p{N}])\|\1(?=[\)\|])</Find>
-        <Replace>$1$2?</Replace>
-        <Comment>ed?|e -&gt; ed?</Comment>
+        <Find>(?&lt;=[^\)]\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|[^\)]\|)([\w]*)(\w)(\(\?:[\w\?\[\]\|]+\)[\?]?|[\w\?\[\]]+)\|\1(\w)\3(?=[\)\|])</Find>
+        <Replace>$1[$2$4]$3</Replace>
+        <Comment>s(?:ation|e[ds]?)|z(?:ation|e[ds]?) → [sz](?:ation|e[ds]?)</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\w)\|\1(\w)?(?=[\)\|])</Find>
-        <Replace>$1$2?</Replace>
-        <Comment>e|ed? -&gt; ed?</Comment>
+        <Find>\(\?:\[(\w)-(\w)\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\)</Find>
+        <Replace>[$1-$2]$3</Replace>
+        <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([\p{L}\p{M}\p{N}]+)\|\1(\w)?\?(?=[\)\|])</Find>
-        <Replace>$1$2?</Replace>
-        <Comment>i|i? -&gt; i?</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -452,29 +452,29 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([\p{L}\p{M}\p{N}]+)(\w)?\?\|\1(?=[\)\|])</Find>
-        <Replace>$1$2?</Replace>
-        <Comment>i?|i -&gt; i?</Comment>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?\w)\|(\\?\w)(\?)?(?=[\)\|])</Find>
+        <Replace>[$1$2]$3</Replace>
+        <Comment>(?:d|s?) -&gt; [ds]?</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?[\p{L}\p{M}\p{N}])\?([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+(?:\(\?:\\?[\p{L}\p{M}\p{N}\|\[\]\?]+\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?[\p{L}\p{M}\p{N}\?]*)(?=[\)\|])</Find>
-        <Replace>$1$2|$2</Replace>
-        <Comment>x?yy -&gt; xyy|yy</Comment>
+        <Find>(\[\w[\w-]+\]|\w)\{1,9\d+\}</Find>
+        <Replace>$1+</Replace>
+        <Comment>{1,99+} -&gt; +</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
+        <Enabled>false</Enabled>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(\(\?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\|]+)\)\|\1([\w\?\*\+\\\[\]\s]*\(\?:[\w\?\*\+\\\[\]\s\|]+\))</Find>
-        <Replace>$1$2|$3)</Replace>
-        <Comment>i(?:ng|ons?)|ive(?:ly|s?) -&gt;i(?:ng|ons?|ve(?:ly|s?))</Comment>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\[?(?&lt;stem&gt;\\?[\p{L}\p{M}\p{N}])\]?(?&lt;q&gt;\?)?\|(?&lt;leaf&gt;\\?[\p{L}\p{M}\p{N}])(?=[\)\|])</Find>
+        <Replace>[${stem}${leaf}]${q}</Replace>
+        <Comment>a|b -&gt; [ab]</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
         <Minor>false</Minor>
@@ -532,11 +532,11 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|\1((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)(?=[\)\|])</Find>
-        <Replace>$1(?:$2)?</Replace>
-        <Comment>stem|stemleaf -&gt; stem(?:leaf)?</Comment>
+        <Find>\(\?:\[([\.\p{L}\p{M}\p{N}]+\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)\)(?!\?)</Find>
+        <Replace>[$1</Replace>
+        <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -552,21 +552,21 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([\p{L}\p{M}\p{N}])([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?]+(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\?\+\s\|]+\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\?\s]*|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?\|]+\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\?\+\s]+)\|(\[[\p{L}\p{M}\p{N}]*)\1([\p{L}\p{M}\p{N}]+\]\??)(?=[\)\|])</Find>
-        <Replace>$1(?:$2)?|$3$4</Replace>
-        <Comment>eness|[ey] -&gt; y|e(?:ness)?</Comment>
+        <Find>(?&lt;!\[)\[(?&lt;cap1&gt;\p{Lu}*)(?&lt;l1&gt;\p{Ll}*)(?&lt;cap2&gt;\p{Lu}+)(?&lt;l2&gt;\p{Ll}+)(?&lt;o&gt;[^\]-]*)\]</Find>
+        <Replace>[${l1}${l2}${cap1}${cap2}${o}]</Replace>
+        <Comment>[Aa]-&gt; [aA]</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\(?:|\|)([\p{L}\p{M}\p{N}]+)([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)\|\1\+([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)?(?=[\)\|])</Find>
-        <Replace>$1(?:$2|$1*$3)</Replace>
-        <Comment />
+        <Find>(?&lt;!\[)\[(?&lt;lc1&gt;a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*\p{Ll}*)(?&lt;lc2&gt;a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*\p{Ll}*)?(?&lt;uc1&gt;A*B*C*D*E*F*G*H*I*J*K*L*M*N*O*P*Q*R*S*T*U*V*W*X*Y*Z*\p{Lu}*)(?&lt;uc2&gt;A*B*C*D*E*F*G*H*I*J*K*L*M*N*O*P*Q*R*S*T*U*V*W*X*Y*Z*\p{Lu}*)(?&lt;noslc&gt;\p{Ll}*)(?&lt;nosuc&gt;\p{Lu}*)(?&lt;nosnos&gt;[\p{L}\p{M}\p{N}\p{Po}\p{S}]*)\]</Find>
+        <Replace>[${lc2}${noslc}${lc1}${uc2}${nosuc}${uc1}${nosnos}]</Replace>
+        <Comment>alphabetize</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -602,19 +602,19 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?[\p{L}\p{M}\p{N}]+)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\?\s]*)\|\1(?![\+\?\*\{])([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\?\[\]\+\s]*)(?=[\)\|])</Find>
-        <Replace>$1(?:$2|$3)</Replace>
-        <Comment>|ing|ive[a-z]* -&gt; i(ng|ve[a-z]*)</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <Find>\*\?\)</Find>
+        <Replace>*)?</Replace>
+        <Comment>*?) -&gt; *)?</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\w)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*)\|\[([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\s]*)(?!\\)\1([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\s]*)(?!\\)\]((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*)(?=[\)\|])</Find>
-        <Replace>$1(?:$2|$5)|[$3$4]$5</Replace>
-        <Comment>(?:pale|[pP]ali) -&gt; p(?:ale|ali)|Pali)</Comment>
+        <Find>\((\?:)?(\[[\p{L}\p{M}\p{N}]+\][\p{L}\p{M}\p{N}]*)\)\?\(\1\[(\p{Ll})(\p{Lu})\]([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\)</Find>
+        <Replace>($1$2$3|[$3$4]$5)</Replace>
+        <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
         <Minor>false</Minor>
@@ -622,43 +622,43 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?[\p{L}\p{M}\p{N}]+)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|\1\(\?:((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\|]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\|]*\))*(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\)(?=[\)\|])</Find>
-        <Replace>$1(?:$3|$2)</Replace>
-        <Comment>(ly|l(?:ed|ing) -&gt; (l(?:ed|ing|y)</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(\((?:\?(?:&lt;|&amp;lt;)?[!=:])?)\[([\p{Lu}-]{2,})([\p{Ll}-]{2,})\]\+(?!\?)</Find>
-        <Replace>$1(?:[$2][$3]*|[$3]+)</Replace>
+        <Find>\(\?:s\+e\(\?:tt\)\?\|ss\+et\*\)</Find>
+        <Replace>(?:s(?:e(?:tt)?|s+et*))</Replace>
         <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(\((?:\?(?:&lt;|&amp;lt;)?[!=:])?)\[([\p{Ll}-]{2,})([\p{Lu}-]{2,})\]\+(?!\?)</Find>
-        <Replace>$1(?:[$3][$2]*|[$2]+)</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\|(\\?[\p{L}\p{M}\p{N}]+|[\[\]\p{L}\p{M}\p{N}]*)\)</Find>
-        <Replace>$1)?</Replace>
-        <Comment>(|s) -&gt; (s)? </Comment>
-        <IsRegex>true</IsRegex>
+        <Find>';]</Find>
+        <Replace>;']</Replace>
+        <Comment>';] -&gt; ;']</Comment>
+        <IsRegex>false</IsRegex>
         <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\((\?:)?([\p{L}\p{M}\p{N}\[\]\?\+\*\|]+\))\?\(\1([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?]+(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\?\+\s\|]+\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\?\s]*|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?\|]+\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\?\+\s]+)\)</Find>
+        <Replace>(?:($1$2$3|$3)</Replace>
+        <Comment>test</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>true</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:\[1-9]\|\[12]\\d\|3\[01]\)</Find>
+        <Replace>(?:[4-9]|[12]\d?|3[01]?)</Replace>
+        <Comment />
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
@@ -672,12 +672,12 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(\[\w[\w-]+\]|\w)\{0,9\d+\}</Find>
-        <Replace>$1*</Replace>
-        <Comment>{0,99+} -&gt; *</Comment>
+        <Find>\(\?:(\[[\p{L}\p{M}\p{N}]+\][\p{L}\p{M}\p{N}]*)\)\?\(\?:\[(\p{Ll})(\p{Lu})\]([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\?\[\]\+\s]*)\)</Find>
+        <Replace>(?:$1$2|[$2$3]$4)</Replace>
+        <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>true</Minor>
+        <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
@@ -702,9 +702,9 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=[^\)]\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|[^\)]\|)([\w]*)(\w)(\(\?:[\w\?\[\]\|]+\)[\?]?|[\w\?\[\]]+)\|\1(\w)\3(?=[\)\|])</Find>
-        <Replace>$1[$2$4]$3</Replace>
-        <Comment>s(?:ation|e[ds]?)|z(?:ation|e[ds]?) → [sz](?:ation|e[ds]?)</Comment>
+        <Find>\(\?:([\[\]\\\p{L}\p{M}\p{N}]*)\|([\[\]\\\p{L}\p{M}\p{N}]*)\)\?([\p{L}\p{M}\p{N}])\?</Find>
+        <Replace>(?:$3?|$1$3?|$2$3?)</Replace>
+        <Comment />
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
         <Minor>false</Minor>
@@ -712,9 +712,19 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(\[[\p{L}\p{M}\p{N}-]+\]|\w)(?:\1(?:\*|\{0,\d+\})|\+\1(?:[\*\?]|\{0,\d+\}))</Find>
-        <Replace>$1+</Replace>
-        <Comment>[a-z][a-z]* /[a-z]+[a-z]* -&gt;[a-z]+</Comment>
+        <Find>(?&lt;!\\)\|\)</Find>
+        <Replace>)?</Replace>
+        <Comment>|) -&gt; )? </Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\((.|\[(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s])\?\)</Find>
+        <Replace>($1)?</Replace>
+        <Comment>(s?) -&gt; (s)?</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
         <Minor>false</Minor>
@@ -722,9 +732,29 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(\[\w[\w-]+\]|\w)\{1,9\d+\}</Find>
-        <Replace>$1+</Replace>
-        <Comment>{1,99+} -&gt; +</Comment>
+        <Find>\(:</Find>
+        <Replace>(?:</Replace>
+        <Comment>(: -&gt; (?:</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\((\[[\p{L}\p{M}\p{N}]+\][\p{L}\p{M}\p{N}]*)\)\?\(\[(\p{Ll})(\p{Lu})\]([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\)</Find>
+        <Replace>($1$2|[$2$3]$4)</Replace>
+        <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=[\p{L}\p{M}\p{N}\|\?:\(])([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\s]|\[[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\s]+\])(?:\*|\{0,(?:999?)?\})</Find>
+        <Replace>(?:$1?|$1+)</Replace>
+        <Comment>convert * into  ? and +</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
         <Minor>true</Minor>
@@ -732,49 +762,9 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([x-zX-Z]\[?[\\\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|((?:[a-wA-W]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*|(?:\[[a-wA-W\p{M}\p{Sc}\p{So}\p{Pd}\p{Po}%\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\+\s]*\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\[?[\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*))(?:\|\[?[a-wA-W]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)*)(?=[\)\|])</Find>
-        <Replace>$2|$1</Replace>
-        <Comment>yz|abc -&gt; abc|yz</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([e-zE-Z]\[?[\\\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|((?:[a-dA-D]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*|(?:\[[a-dA-D\p{M}\p{Sc}\p{So}\p{Pd}\p{Po}%\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\+\s]*\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\[?[\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*))(?:\|\[?[a-dA-D]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)*)(?=[\)\|])</Find>
-        <Replace>$2|$1</Replace>
-        <Comment>yz|abc -&gt; abc|yz</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([n-zN-Z]\[?[\\\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|((?:[a-mA-M]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*|(?:\[[a-mA-U\p{M}\p{Sc}\p{So}\p{Pd}\p{Po}%\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\+\s]*\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\[?[\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*))(?:\|\[?[a-mA-M]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)*)(?=[\)\|])</Find>
-        <Replace>$2|$1</Replace>
-        <Comment>yz|abc -&gt; abc|yz</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([g-zG-Z]\[?[\\\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|((?:[a-fA-F]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*|(?:\[[a-fA-F\p{M}\p{Sc}\p{So}\p{Pd}\p{Po}%\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\+\s]*\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\[?[\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*))(?:\|\[?[a-fA-F]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)*)(?=[\)\|])</Find>
-        <Replace>$2|$1</Replace>
-        <Comment>yz|abc -&gt; abc|yz</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>true</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\((\?:)?(\[[\p{L}\p{M}\p{N}]+\][\p{L}\p{M}\p{N}]*)\)\?\(\1\[(\p{Ll})(\p{Lu})\]([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\)</Find>
-        <Replace>($1$2$3|[$3$4]$5)</Replace>
-        <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
+        <Find>\((\\?[\p{L}\p{N}\?\*\[\]\+\s]+)\|(\\?[\p{L}\p{N}\?\*\[\]\+\s]+)\)\((\\?[\p{L}\p{N}\?\*\[\]\+\s\|]+)\)(\?)?</Find>
+        <Replace>($1(?:$3)$4|$2(?:$3)$4)</Replace>
+        <Comment />
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
         <Minor>false</Minor>
@@ -802,62 +792,72 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\((\[[\p{L}\p{M}\p{N}]+\][\p{L}\p{M}\p{N}]*)\)\?\(\[(\p{Ll})(\p{Lu})\]([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\)</Find>
-        <Replace>($1$2|[$2$3]$4)</Replace>
-        <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
+        <Find>(\((?:\?:)?)(\\?[\p{L}\p{N}\?\*\[\]\+\s]{2,})\)\?\1(\\?[\p{L}\p{N}\?\*\+\[\]\s\|]+)\)(\?)?</Find>
+        <Replace>$1$2(?:$3)$4|(?:$3)$4)</Replace>
+        <Comment>(ean?)?(s)?-&gt; ean?s?|s?</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\((\\?[\p{L}\p{N}\?\*\[\]\+\s]+)\|(\\?[\p{L}\p{N}\?\*\[\]\+\s]+)\)\((\\?[\p{L}\p{N}\?\*\[\]\+\s\|]+)\)(\?)?</Find>
-        <Replace>($1(?:$3)$4|$2(?:$3)$4)</Replace>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(\(\?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\|]+)\)\|\1([\w\?\*\+\\\[\]\s]*\(\?:[\w\?\*\+\\\[\]\s\|]+\))</Find>
+        <Replace>$1$2|$3)</Replace>
+        <Comment>i(?:ng|ons?)|ive(?:ly|s?) -&gt;i(?:ng|ons?|ve(?:ly|s?))</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|\1((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)(?=[\)\|])</Find>
+        <Replace>$1(?:$2)?</Replace>
+        <Comment>stem|stemleaf -&gt; stem(?:leaf)?</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\w)\|\1(\w)?(?=[\)\|])</Find>
+        <Replace>$1$2?</Replace>
+        <Comment>e|ed? -&gt; ed?</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([\p{L}\p{M}\p{N}]+)(\w)?\?\|\1(?=[\)\|])</Find>
+        <Replace>$1$2?</Replace>
+        <Comment>i?|i -&gt; i?</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\(\?!\?&lt;\?\[!=]\)\(\(\?!\?&lt;\?\[!=]\)\(\?:\?:\)\?\?:\)\?\?\)\?</Find>
+        <Replace />
         <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\((.|\[(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s])\?\)</Find>
-        <Replace>($1)?</Replace>
-        <Comment>(s?) -&gt; (s)?</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\(:</Find>
-        <Replace>(?:</Replace>
-        <Comment>(: -&gt; (?:</Comment>
         <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>true</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:(\[[\p{L}\p{M}\p{N}]+\][\p{L}\p{M}\p{N}]*)\)\?\(\?:\[(\p{Ll})(\p{Lu})\]([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\?\[\]\+\s]*)\)</Find>
-        <Replace>(?:$1$2|[$2$3]$4)</Replace>
-        <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
+        <Find>(\((?:\?(?:&lt;|&amp;lt;)?[!=:])?)\[([\p{Ll}-]{2,})([\p{Lu}-]{2,})\]\+(?!\?)</Find>
+        <Replace>$1(?:[$3][$2]*|[$2]+)</Replace>
+        <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=[\p{L}\p{M}\p{N}\|\?:\(])([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\s]|\[[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\s]+\])(?:\*|\{0,(?:999?)?\})</Find>
-        <Replace>(?:$1?|$1+)</Replace>
-        <Comment>convert * into  ? and +</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
@@ -872,53 +872,53 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:([\[\]\\\p{L}\p{M}\p{N}]*)\|([\[\]\\\p{L}\p{M}\p{N}]*)\)\?([\p{L}\p{M}\p{N}])\?</Find>
-        <Replace>(?:$3?|$1$3?|$2$3?)</Replace>
-        <Comment />
+        <Find>(?&lt;!\?=)\(\?:(\[[^\]\)\(]{1,10}\])\)(?![\{\*\+])</Find>
+        <Replace>$1</Replace>
+        <Comment>(?:[asdasa]) -&gt; [asdasdf]</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\((\?:)?([\p{L}\p{M}\p{N}\[\]\?\+\*\|]+\))\?\(\1([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?]+(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\?\+\s\|]+\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\?\s]*|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?\|]+\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\?\+\s]+)\)</Find>
-        <Replace>(?:($1$2$3|$3)</Replace>
-        <Comment>test</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>true</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\(\?:\[1-9]\|\[12]\\d\|3\[01]\)</Find>
-        <Replace>(?:[4-9]|[12]\d?|3[01]?)</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\(\?:s\+e\(\?:tt\)\?\|ss\+et\*\)</Find>
-        <Replace>(?:s(?:e(?:tt)?|s+et*))</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;!\\)\|\)</Find>
-        <Replace>)?</Replace>
-        <Comment>|) -&gt; )? </Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;\\?[\s\p{L}\p{M}\p{N}]|\[[\\\s\p{L}\p{M}\p{N}-]+\])\*(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?=[\)\|])</Find>
+        <Replace>${stem}+${leaf}|${leaf}</Replace>
+        <Comment>${stem}*${leaf} -&gt; ${stem}+${leaf}|${leaf}</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\|]*\)[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\)(?!\?)</Find>
+        <Replace>$1</Replace>
+        <Comment>(?:omed(?:ies|y)) -&gt; omed(?:ies|y) (wonky...)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([\p{L}\p{M}\p{N}])([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?]+(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\?\+\s\|]+\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\?\s]*|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?]*(?:\((?:\?:)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\?\|]+\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\?\+\s]+)\|(\[[\p{L}\p{M}\p{N}]*)\1([\p{L}\p{M}\p{N}]+\]\??)(?=[\)\|])</Find>
+        <Replace>$1(?:$2)?|$3$4</Replace>
+        <Comment>eness|[ey] -&gt; y|e(?:ness)?</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\[[\.,\p{L}\p{M}\p{N}]*)(?&lt;dup&gt;\\?[\p{L}\p{M}\p{N}])\k&lt;dup&gt;(?=[\.,\p{L}\p{M}\p{N}]*\])</Find>
+        <Replace>${dup}</Replace>
+        <Comment>[aa] -&gt; [a]</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
@@ -932,23 +932,23 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\*\?\)</Find>
-        <Replace>*)?</Replace>
-        <Comment>*?) -&gt; *)?</Comment>
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([e-zE-Z]\[?[\\\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|((?:[a-dA-D]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*|(?:\[[a-dA-D\p{M}\p{Sc}\p{So}\p{Pd}\p{Po}%\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\+\s]*\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\[?[\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*))(?:\|\[?[a-dA-D]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)*)(?=[\)\|])</Find>
+        <Replace>$2|$1</Replace>
+        <Comment>yz|abc -&gt; abc|yz</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>';]</Find>
-        <Replace>;']</Replace>
-        <Comment>';] -&gt; ;']</Comment>
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Find>(?&lt;=\(?:|\|)([\p{L}\p{M}\p{N}]+)([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)\|\1\+([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)?(?=[\)\|])</Find>
+        <Replace>$1(?:$2|$1*$3)</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
-        <BeforeOrAfter>true</BeforeOrAfter>
+        <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
@@ -962,244 +962,244 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;!\[)\[(?&lt;cap1&gt;\p{Lu}*)(?&lt;l1&gt;\p{Ll}*)(?&lt;cap2&gt;\p{Lu}+)(?&lt;l2&gt;\p{Ll}+)(?&lt;o&gt;[^\]-]*)\]</Find>
-        <Replace>[${l1}${l2}${cap1}${cap2}${o}]</Replace>
-        <Comment>[Aa]-&gt; [aA]</Comment>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([n-zN-Z]\[?[\\\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|((?:[a-mA-M]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*|(?:\[[a-mA-U\p{M}\p{Sc}\p{So}\p{Pd}\p{Po}%\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\+\s]*\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\[?[\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*))(?:\|\[?[a-mA-M]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)*)(?=[\)\|])</Find>
+        <Replace>$2|$1</Replace>
+        <Comment>yz|abc -&gt; abc|yz</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;!\[)\[(?&lt;lc1&gt;a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*\p{Ll}*)(?&lt;lc2&gt;a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*\p{Ll}*)?(?&lt;uc1&gt;A*B*C*D*E*F*G*H*I*J*K*L*M*N*O*P*Q*R*S*T*U*V*W*X*Y*Z*\p{Lu}*)(?&lt;uc2&gt;A*B*C*D*E*F*G*H*I*J*K*L*M*N*O*P*Q*R*S*T*U*V*W*X*Y*Z*\p{Lu}*)(?&lt;noslc&gt;\p{Ll}*)(?&lt;nosuc&gt;\p{Lu}*)(?&lt;nosnos&gt;[\p{L}\p{M}\p{N}\p{Po}\p{S}]*)\]</Find>
-        <Replace>[${lc2}${noslc}${lc1}${uc2}${nosuc}${uc1}${nosnos}]</Replace>
-        <Comment>alphabetize</Comment>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([g-zG-Z]\[?[\\\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|((?:[a-fA-F]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*|(?:\[[a-fA-F\p{M}\p{Sc}\p{So}\p{Pd}\p{Po}%\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\+\s]*\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\[?[\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*))(?:\|\[?[a-fA-F]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)*)(?=[\)\|])</Find>
+        <Replace>$2|$1</Replace>
+        <Comment>yz|abc -&gt; abc|yz</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\[?(?&lt;stem&gt;\\?[\p{L}\p{M}\p{N}])\]?(?&lt;q&gt;\?)?\|(?&lt;leaf&gt;\\?[\p{L}\p{M}\p{N}])(?=[\)\|])</Find>
-        <Replace>[${stem}${leaf}]${q}</Replace>
-        <Comment>a|b -&gt; [ab]</Comment>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?[\p{L}\p{M}\p{N}])\?([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+(?:\(\?:\\?[\p{L}\p{M}\p{N}\|\[\]\?]+\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?[\p{L}\p{M}\p{N}\?]*)(?=[\)\|])</Find>
+        <Replace>$1$2|$2</Replace>
+        <Comment>x?yy -&gt; xyy|yy</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:\[([\.\p{L}\p{M}\p{N}]+\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)\)(?!\?)</Find>
-        <Replace>[$1</Replace>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([x-zX-Z]\[?[\\\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|((?:[a-wA-W]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*|(?:\[[a-wA-W\p{M}\p{Sc}\p{So}\p{Pd}\p{Po}%\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\+\s]*\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\[?[\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*))(?:\|\[?[a-wA-W]+\[?[\\\p{L}\p{M}\p{N}-]*\]?[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)*)(?=[\)\|])</Find>
+        <Replace>$2|$1</Replace>
+        <Comment>yz|abc -&gt; abc|yz</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)([\p{L}\p{M}\p{N}]+)\|\1(\w)?\?(?=[\)\|])</Find>
+        <Replace>$1$2?</Replace>
+        <Comment>i|i? -&gt; i?</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?[\p{L}\p{M}\p{N}]+\[?[\p{L}\p{M}\p{N}]*\]?[\p{L}\p{M}\p{N}]*)(\\?[\p{L}\p{M}\p{N}])\|\1(?=[\)\|])</Find>
+        <Replace>$1$2?</Replace>
+        <Comment>ed?|e -&gt; ed?</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;\w|\[[\\\w]+\])(?&lt;opt1&gt;(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)\)\?</Find>
+        <Replace>${stem}?${opt1})</Replace>
+        <Comment>(x?|....)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}]+)(?:\[(?&lt;opt1&gt;[\p{L}\p{M}\p{N}]+)\]|(?&lt;opt2&gt;\w))(?&lt;q&gt;\?)?\|\k&lt;stem&gt;(?&lt;opt3&gt;\w)(?=[\|\)])</Find>
+        <Replace>${stem}[${opt1}${opt2}${opt3}]${q}</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?\w)\|(\\?\w)(\?)?(?=[\)\|])</Find>
-        <Replace>[$1$2]$3</Replace>
-        <Comment>(?:d|s?) -&gt; [ds]?</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\(\?:\[(\w)-(\w)\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\)</Find>
-        <Replace>[$1-$2]$3</Replace>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;(?:\w[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\+\s]+|\[[\p{L}\p{M}\p{N}]+\][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*))(?&lt;opt1&gt;(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:\|(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))\|\k&lt;stem&gt;(?&lt;opt2&gt;(?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))(?=[\|\)])</Find>
+        <Replace>${stem}(?:${opt1}|${opt2})</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\[([\w-]+)\](?![\+\?\*])([\p{L}\p{M}\p{N}]+(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?|\[[\p{L}\p{M}\p{N}-]{2,}\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)\|\[(\w+)\]\2(?=[\)\|])</Find>
-        <Replace>[$1$3]$2</Replace>
-        <Comment>[ab]s|is=[abi]s</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?\w)(?![\+\?\*])([\p{L}\p{M}\p{N}]+(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?|\[[\p{L}\p{M}\p{N}-]{2,}\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)\|\[([\w-]+)\]\2(?=[\)\|])</Find>
-        <Replace>[$1$3]$2</Replace>
-        <Comment>[ab]s|is=[abi]s</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\[([\w-]+)\](?![\+\?\*])([\p{L}\p{M}\p{N}]+(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?|\[[\p{L}\p{M}\p{N}-]{2,}\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)\|(\\?\w)\2(?=[\)\|])</Find>
-        <Replace>[$1$3]$2</Replace>
-        <Comment>[ab]s|is=[abi]s</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?\w)(?![\+\*])([\p{L}\p{M}\p{N}]+(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?|\[[\p{L}\p{M}\p{N}-]{2,}\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?|[\w\*\+\?\[\]\\]*)\|(\\?\w)\2(?=[\)\|])</Find>
-        <Replace>[$1$3]$2</Replace>
-        <Comment>as|is=[ai]s</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\[([^\(\s\)\]´ˈ׳᾿‘’′Ꞌꞌ`;'´ˈ׳᾿‘’′Ꞌꞌ`\|])([;']*)[´ˈ׳᾿‘’′Ꞌꞌ`´ˈ׳᾿‘’′Ꞌꞌ`]+([;']*)[´ˈ׳᾿‘’′Ꞌꞌ`´ˈ׳᾿‘’′Ꞌꞌ`]*([;']*)([\\\w\p{P}]*)\]</Find>
-        <Replace>[$1$5´ˈ׳᾿‘’′Ꞌꞌ`$2$3$4]</Replace>
-        <Comment>apostrophe</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\[A-Za-z(?:0-9|\d)_\]</Find>
-        <Replace>[\p{L}\p{M}\p{N}]</Replace>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?:\?\|\k&lt;stem&gt;|\|\k&lt;stem&gt;\?)(?=[\)\|])</Find>
+        <Replace>${stem}?</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\[-\ ]</Find>
-        <Replace>[-\s]</Replace>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;(?:[\p{L}\p{M}\p{N}]+|(?:[\p{L}\p{M}\p{N}]*\[[\p{L}\p{M}\p{N}]+\][\\\?[\p{L}\p{M}\p{N}]]*)+))\(\?:(?&lt;opt1&gt;(?:(?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)\|)+)(?&lt;opt2&gt;(?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))\)\|\k&lt;stem&gt;(?&lt;opt3&gt;(?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))(?=[\|\)])</Find>
+        <Replace>${stem}(?:${opt1}${opt2}|${opt3})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\\\w]*\[?\w\[?[\]\w\p{Lm}\p{Lo}\p{Sc}\p{So}\p{Pd}\p{Po}%\[\]\+\s]*)\(\?:(?&lt;opt1&gt;(?:[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)\)(?&lt;or&gt;(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)+)\|\k&lt;stem&gt;(?&lt;leaf&gt;\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)(?=[\)\|])</Find>
+        <Replace>${stem}(?:${opt1}|${leaf})${or}</Replace>
+        <Comment>stem(leaf1|leaf2|leaf3)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;\[?[\\\w][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?&lt;leaf1&gt;\w[\?\p{L}\p{M}\p{N}]*)(?&lt;opt1&gt;(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)\|\k&lt;stem&gt;(?&lt;leaf2&gt;\w[\?\p{L}\p{M}\p{N}]*)(?=[\|\)])</Find>
+        <Replace>${stem}(?:${leaf1}|${leaf2})${opt1}</Replace>
+        <Comment>stem(?:leaf1|leaf2)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+(?&lt;![\[\\]|\{\,?))(?&lt;leaf1&gt;(?![\]\?\+\*]|\,?\})[\[\]\*\\\?\+\p{L}\p{M}\p{N}]+(?&lt;![\[\\\{]))(?&lt;opt1&gt;(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)?(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)\|\k&lt;stem&gt;(?&lt;leaf2&gt;(?![\]\+\*\?]|\,?\})[\[\]\*\\\?\+\p{L}\p{M}\p{N}]+(?&lt;![\[\\\{]))(?=[\|\)])</Find>
+        <Replace>${stem}(?:${leaf1}|${leaf2})${opt1}</Replace>
+        <Comment>reduce steps; stem 1</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?&lt;a&gt;\[\\?[\p{L}\p{M}\p{N}]+\]|\\?[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\+\s]+)\|\k&lt;stem&gt;(?&lt;b&gt;\[\\?[\p{L}\p{M}\p{N}]+\]|[\\\w][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\+\s]+)(?=[\|\)])</Find>
+        <Replace>${stem}(?:${a}|${b})</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)(?&lt;leaf&gt;[\p{L}\p{M}\p{N}]+)(?&lt;opt1&gt;(?:\|[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))?\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)*)\|\k&lt;stem&gt;(?=[\)\|])</Find>
+        <Replace>${stem}(?:${leaf})?${opt1}</Replace>
+        <Comment>uthr|ut → ut(?:hr)?</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)\(\?:(?&lt;stem&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\|]+)\)\?(?&lt;leaf&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?\\?[\p{L}\p{M}\p{N}]+[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\+\?\*\{])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{S}%\[\]\+\s]*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?(?:(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+))*\)(?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?)(?=[\)\|])</Find>
+        <Replace>${stem}${leaf}|${leaf}</Replace>
+        <Comment>(?:stem)?leaf -&gt; stemleaf|leaf</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;[\p{L}\p{M}\p{N}]+)(?:(?&lt;opt1&gt;\[[\\\p{L}\p{M}\p{N}]+)\]|(?&lt;opt2&gt;\\?[\p{L}\p{M}\p{N}]))(?&lt;q&gt;[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\|\k&lt;stem&gt;(?&lt;opt3&gt;\\?[\p{L}\p{M}\p{N}])\k&lt;q&gt;(?=[\|\)])</Find>
+        <Replace>${stem}${opt1}${opt2}${opt3}]${q}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;\w)\(\?:(?&lt;a&gt;\\?[\p{L}\p{M}\p{N}]+[\?\p{L}\p{M}\p{N}]*)(?&lt;leaf1&gt;\\?[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|\k&lt;a&gt;(?&lt;leaf2&gt;\\?[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\)(?![\+\?\*\{])</Find>
+        <Replace>${stem}${a}(?:${leaf1}|${leaf2})</Replace>
+        <Comment>stem(aleaf|aleaf) -&gt;stema (leaf|leaf)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(\((?:\?(?:&lt;|&amp;lt;)?[!=:])?)\[([\p{Lu}-]{2,})([\p{Ll}-]{2,})\]\+(?!\?)</Find>
+        <Replace>$1(?:[$2][$3]*|[$3]+)</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(?&lt;stem&gt;\[[\\\w]+)\](?&lt;q&gt;\?)?\|(?&lt;leaf&gt;\w)(?=[\)\|])</Find>
+        <Replace>${stem}${leaf}]${q}</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?[\p{L}\p{M}\p{N}]+)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\|\1\(\?:((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\|]*(?:\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s\|]*\))*(?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]*)\)(?=[\)\|])</Find>
+        <Replace>$1(?:$3|$2)</Replace>
+        <Comment>(ly|l(?:ed|ing) -&gt; (l(?:ed|ing|y)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?&lt;=\((?:\?(?:&lt;|&amp;lt;)?[!=:])?|\|)(\\?[\p{L}\p{M}\p{N}]+)((?![\?\*\+\{\^])[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\?\s]*)\|\1(?![\+\?\*\{])([\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\?\[\]\+\s]*)(?=[\)\|])</Find>
+        <Replace>$1(?:$2|$3)</Replace>
+        <Comment>|ing|ive[a-z]* -&gt; i(ng|ve[a-z]*)</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\(\?:\)\?</Find>
+        <Replace />
         <Comment />
         <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>(?&lt;!\()\[(?:\\?\-\\s|\\s\\?\-)\]</Find>
-        <Replace>[-–−—―\s]</Replace>
-        <Comment>[-\s] → [-–−—―\s]</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>true</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\[´ˈ׳᾿‘’′Ꞌꞌ`(')?\]\?(\w)(?![\?\*\+\{])</Find>
-        <Replace>[´ˈ׳᾿‘’′Ꞌꞌ`;$1]?$2</Replace>
-        <Comment />
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\[Tt]he\|same\|new\|\[Tt]his\|</Find>
-        <Replace>[Tt]h(?:e|is)|same|new|</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>true</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>0-9</Find>
-        <Replace>\d</Replace>
-        <Comment>0-9 -&gt; \d</Comment>
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\[\^\\d]</Find>
-        <Replace>\D</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>true</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\[\ \\t\r\n\\f]</Find>
-        <Replace>\s</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\[\^\\s]</Find>
-        <Replace>\S</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>true</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find> ([\+\*\{\?])</Find>
-        <Replace>\s$1</Replace>
-        <Comment> + -&gt; \s+</Comment>
-        <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>true</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\[\^\\w]</Find>
-        <Replace>\W</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\|nieces\?\|nephews\?</Find>
-        <Replace>|n(?:ieces?|ephews?)</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>true</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\{1,}</Find>
-        <Replace>+</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>false</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>None</RegularExpressionOptions>
+        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
     </Replacements>
     <AdvancedReps>
@@ -2517,7 +2517,7 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>acad</FindText>
+    <FindText>)|[pP](?:ar[at]|as(?:ado|sou?)|</FindText>
     <FindRegex>false</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
