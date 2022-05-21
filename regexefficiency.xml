@@ -56,7 +56,7 @@
         <Replace>|n(?:ieces?|ephews?)</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -2517,7 +2517,7 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>)|[pP](?:ar[at]|as(?:ado|sou?)|</FindText>
+    <FindText>profe</FindText>
     <FindRegex>false</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
