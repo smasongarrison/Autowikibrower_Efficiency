@@ -96,7 +96,7 @@
         <Replace>\W</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -104,7 +104,7 @@
       <Replacement>
         <Find> ([\+\*\{\?])</Find>
         <Replace>\s$1</Replace>
-        <Comment> + -&gt; \s+</Comment>
+        <Comment> + -&gt; \s+ (generalize white space)</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
         <Minor>true</Minor>
@@ -116,7 +116,7 @@
         <Replace>\s</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -126,7 +126,7 @@
         <Replace>\S</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>true</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -136,7 +136,7 @@
         <Replace>\d</Replace>
         <Comment>0-9 -&gt; \d</Comment>
         <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -146,7 +146,7 @@
         <Replace>\D</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>true</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -156,20 +156,10 @@
         <Replace>[´ˈ׳᾿‘’′Ꞌꞌ`;$1]?$2</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
-      </Replacement>
-      <Replacement>
-        <Find>\[Tt]he\|same\|new\|\[Tt]his\|</Find>
-        <Replace>[Tt]h(?:e|is)|same|new|</Replace>
-        <Comment />
-        <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
-        <Minor>true</Minor>
-        <BeforeOrAfter>false</BeforeOrAfter>
-        <RegularExpressionOptions>IgnoreCase</RegularExpressionOptions>
       </Replacement>
       <Replacement>
         <Find>\[-\ ]</Find>
@@ -456,7 +446,7 @@
         <Replace>[$1$2]$3</Replace>
         <Comment>(?:d|s?) -&gt; [ds]?</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -556,7 +546,7 @@
         <Replace>[${l1}${l2}${cap1}${cap2}${o}]</Replace>
         <Comment>[Aa]-&gt; [aA]</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -566,7 +556,7 @@
         <Replace>[${lc2}${noslc}${lc1}${uc2}${nosuc}${uc1}${nosnos}]</Replace>
         <Comment>alphabetize</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -576,7 +566,7 @@
         <Replace>$1(?:$2|$1+$3|$3)</Replace>
         <Comment>erd|e+dd -&gt;e(rd|e+dd|dd)</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -696,7 +686,7 @@
         <Replace>$1[$2$3$5]$4</Replace>
         <Comment>?:ale|ali) -&gt; ?:al[ei])</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -746,7 +736,7 @@
         <Replace>($1$2|[$2$3]$4)</Replace>
         <Comment>([uU]n)?([nN]) -&gt; ([uU]nn|[nN])</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -2517,7 +2507,7 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>profe</FindText>
+    <FindText>during</FindText>
     <FindRegex>false</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
