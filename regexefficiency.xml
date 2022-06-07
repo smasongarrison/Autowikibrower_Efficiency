@@ -9,10 +9,6 @@
     <ListSource>Wikipedia:AutoWikiBrowser/Typos</ListSource>
     <SelectedProvider>RedirectsListProvider</SelectedProvider>
     <ArticleList>
-      <Article NameSpaceKey="2">
-        <PreProcessed>false</PreProcessed>
-        <Name>User:Smasongarrison/awb</Name>
-      </Article>
       <Article NameSpaceKey="4">
         <PreProcessed>false</PreProcessed>
         <Name>Wikipedia:AutoWikiBrowser/Typos</Name>
@@ -450,7 +446,7 @@
         <Replace>[$1$3]$2</Replace>
         <Comment>[ab]s|is=[abi]s</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -740,7 +736,7 @@
         <Replace>${stem1}${tail}|${stem2}${tail}${stem3}${tail})</Replace>
         <Comment>(${stem1}|${stem2}${stem3})${tail} -&gt; ${stem1}${tail}|${stem2}${tail})${stem3}${tail}</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -768,10 +764,10 @@
       <Replacement>
         <Find>(?&lt;=\((?!\?(?:&lt;|&amp;lt;)?[!=])(?:\?:)?)(?&lt;stem1&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)\|(?&lt;stem2&gt;[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]+)\)(?&lt;tail&gt;(?![\?\*\+\{]|\\s)[\p{L}\p{M}\p{N}\p{Pd}\p{Po}\p{Sc}\p{So}%\[\]\+\s]{1,35})(?=[\)\|])</Find>
         <Replace>${stem1}${tail}|${stem2}${tail})</Replace>
-        <Comment> ?:er|is)\s+[\p{L}\p{M}\p{N}]+ → ?:er\s+[\p{L}\p{M}\p{N}]+|is\s+[\p{L}\p{M}\p{N}]+) </Comment>
+        <Comment>grabs braces incorrectly</Comment>
         <IsRegex>true</IsRegex>
         <Enabled>false</Enabled>
-        <Minor>false</Minor>
+        <Minor>true</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
@@ -780,7 +776,7 @@
         <Replace>(?:$3?|$1$3?|$2$3?)</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -790,7 +786,7 @@
         <Replace>($1$2(?:$3)?)?</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -810,7 +806,7 @@
         <Replace>(?:[4-9]|[12]\d?|3[01]?)</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -876,11 +872,11 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\(\?:\[(\w)-(\w)\](?:[\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\)</Find>
+        <Find>\(\?:\[(\w)-(\w)\]([\+\?\*]|\{\p{N}[\p{N},]{0,4}\})?\)</Find>
         <Replace>[$1-$2]$3</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -1000,7 +996,7 @@
         <Replace>[\p{L}\p{M}\p{N}]</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -2491,9 +2487,9 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>college</FindText>
-    <FindRegex>false</FindRegex>
-    <FindCaseSensitive>true</FindCaseSensitive>
+    <FindText>"[\w]+ [\w]+</FindText>
+    <FindRegex>true</FindRegex>
+    <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
     <ToolBarEnabled>true</ToolBarEnabled>
     <BypassRedirect>true</BypassRedirect>
