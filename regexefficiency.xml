@@ -196,7 +196,7 @@
         <Replace>$1[$2$4]$3</Replace>
         <Comment>s(?:ation|e[ds]?)|z(?:ation|e[ds]?) → [sz](?:ation|e[ds]?)</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -316,7 +316,7 @@
         <Replace>[$1$5´ˈ׳᾿‘’′Ꞌꞌ`$2$3$4]</Replace>
         <Comment>apostrophe</Comment>
         <IsRegex>true</IsRegex>
-        <Enabled>false</Enabled>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -1032,8 +1032,8 @@
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
       <Replacement>
-        <Find>\[´ˈ׳᾿‘’′Ꞌꞌ`(')?\]\?(\w)(?![\?\*\+\{])</Find>
-        <Replace>[´ˈ׳᾿‘’′Ꞌꞌ`;$1]?$2</Replace>
+        <Find>\[(')?[´ˈ׳᾿‘’′Ꞌꞌ`;]{2,}(')?\]([\?\*\+\(]|\{[d,]+\})(\w)(?![\?\*\{])</Find>
+        <Replace>[$1$2’;´ˈ׳᾿‘′Ꞌꞌ`]$3$4</Replace>
         <Comment />
         <IsRegex>true</IsRegex>
         <Enabled>true</Enabled>
@@ -1167,6 +1167,36 @@
         <Comment />
         <IsRegex>false</IsRegex>
         <Enabled>false</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[(?:(-)|( ))?[–‑−—―]{2,}(\\s| )?\]</Find>
+        <Replace>[$1–‑−—―$2$3]</Replace>
+        <Comment>hyphens</Comment>
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[(?: |\\s)-\]</Find>
+        <Replace>[-–‑−—―\s]</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>(?:\\)?-\?</Find>
+        <Replace>[-–‑−—―]?</Replace>
+        <Comment />
+        <IsRegex>true</IsRegex>
+        <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -2444,7 +2474,7 @@
       <SavePeriod>30</SavePeriod>
       <SaveFile>E:\Dropbox\Lab\zSoftware\AutoWikiBrowser6210\editbox.txt</SaveFile>
     </AutoSaveEdit>
-    <SelectedSummary>efficiency improvements</SelectedSummary>
+    <SelectedSummary>fixing commonly misused characters</SelectedSummary>
     <Summaries>
       <string>clean up</string>
       <string>re-categorisation per [[WP:CFD|CFD]]</string>
@@ -2487,8 +2517,8 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>"[\w]+ [\w]+</FindText>
-    <FindRegex>true</FindRegex>
+    <FindText>[-</FindText>
+    <FindRegex>false</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
     <ToolBarEnabled>true</ToolBarEnabled>
