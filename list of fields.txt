@@ -341,33 +341,7 @@ Surgery
 Surveying
 Syntax
 Systematics
-Taphonomy
-Technology
-Tectonics
-Teleology
-Television
-Tenrikyo
-Teratology
-Teuthology
-Textile
-Theatre
-Theft
-Theism
-Theology
-Therapy
-Thermochemistry
-Thermodynamics
-Topology
-Topos
-Toxicology
-Toy
-Transdisciplinarity
-Transgender
-Translation
-Transport
-Traumatology
-Travel
-Trigonometry
+
 Urology
 
 
