@@ -2517,12 +2517,12 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>profess</FindText>
+    <FindText>killed</FindText>
     <FindRegex>false</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
     <ToolBarEnabled>true</ToolBarEnabled>
-    <BypassRedirect>true</BypassRedirect>
+    <BypassRedirect>false</BypassRedirect>
     <AutoSaveSettings>true</AutoSaveSettings>
     <noSectionEditSummary>false</noSectionEditSummary>
     <restrictDefaultsortAddition>false</restrictDefaultsortAddition>
