@@ -2517,7 +2517,7 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>killed</FindText>
+    <FindText>j-relate</FindText>
     <FindRegex>false</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
