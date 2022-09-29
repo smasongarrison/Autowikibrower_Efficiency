@@ -86,7 +86,7 @@
         <Replace>+</Replace>
         <Comment />
         <IsRegex>false</IsRegex>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
@@ -1199,6 +1199,26 @@
         <Enabled>true</Enabled>
         <Minor>false</Minor>
         <BeforeOrAfter>false</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\[,\\\.]\\s\+\\w\+</Find>
+        <Replace>[,\.]\s{1,99}\w{1,99}</Replace>
+        <Comment>js optimize</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
+        <RegularExpressionOptions>None</RegularExpressionOptions>
+      </Replacement>
+      <Replacement>
+        <Find>\\s\[a-z]\+\\s\+\\w\+</Find>
+        <Replace>\s[a-z]{1,99}\s{1,99}\w{1,99}</Replace>
+        <Comment>js optimize</Comment>
+        <IsRegex>false</IsRegex>
+        <Enabled>true</Enabled>
+        <Minor>false</Minor>
+        <BeforeOrAfter>true</BeforeOrAfter>
         <RegularExpressionOptions>None</RegularExpressionOptions>
       </Replacement>
     </Replacements>
@@ -2517,7 +2537,7 @@
       <string />
       <string />
     </PasteMore>
-    <FindText>j-relate</FindText>
+    <FindText>?&lt;</FindText>
     <FindRegex>false</FindRegex>
     <FindCaseSensitive>false</FindCaseSensitive>
     <WordWrap>true</WordWrap>
