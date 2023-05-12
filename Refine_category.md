@@ -4,7 +4,7 @@
 ### Text Contains
 
 ```
-Category:(20\d\d deaths|Living people|British (?:psychiatrists|consciousness researchers and theorists))
+Category:(?:20(?:[1-9]\d|0[2-9]) deaths|Living people|British (?:psychiatrists|consciousness researchers and theorists))
 ```
 ### Doesn't Contain
 
