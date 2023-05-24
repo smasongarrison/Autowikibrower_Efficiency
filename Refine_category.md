@@ -29,3 +29,12 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[aA](?:gronomists|natomists|stronomers)|[bB](?
 ```
 Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:hysicians|sychiatrists)|[mM]edical doctors|[sS]urgeons)
 ```
+
+## Lawyers
+### Text Contains
+
+### Doesn't Contain
+
+```
+Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Ll]awyers|[jJ](?:udges|urists|ustices))
+```
