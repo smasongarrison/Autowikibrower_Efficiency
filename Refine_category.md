@@ -38,3 +38,12 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:hysicians|sychiatrists)|[mM]edical doct
 ```
 Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Ll]awyers|[jJ](?:udges|urists|ustices)|[Ss]olicitors|[bB]arristers)
 ```
+
+## Politicians
+### Text Contains
+
+### Doesn't Contain
+
+```
+Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp]oliticians)
+```
