@@ -15,6 +15,10 @@ Category:(19\d\d|18[89]\d) births
 ## Scientists
 ### Text Contains
 
+```
+...
+```
+
 ### Doesn't Contain
 
 ```
@@ -23,6 +27,10 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[aA](?:gronomists|natomists|stronomers)|[bB](?
 
 ## Physicians
 ### Text Contains
+
+```
+...
+```
 
 ### Doesn't Contain
 
@@ -33,6 +41,10 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:hysicians|sychiatrists)|[mM]edical doct
 ## Lawyers
 ### Text Contains
 
+```
+...
+```
+
 ### Doesn't Contain
 
 ```
@@ -42,8 +54,24 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Ll]awyers|[jJ](?:udges|urists|ustices)|[Ss]ol
 ## Politicians
 ### Text Contains
 
+```
+...
+```
+
 ### Doesn't Contain
 
 ```
 Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:oliticians|arty members)|[sS]enators|[mM](?:inisters|ayors)|[cC]ity councill?ors)
+```
+
+## People from a specific nationality
+### Text Contains
+
+```
+Category:(?:[A-Z\da-z\s\-]*\s)?(?:Afghan) 
+```
+### Doesn't Contain
+
+```
+...
 ```
