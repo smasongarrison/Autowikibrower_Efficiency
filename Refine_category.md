@@ -68,10 +68,10 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:oliticians|arty members)|[sS]enators|[m
 ### Text Contains
 
 ```
-Category:(?:[A-Z\da-z\s\-]*\s)?(?:Afghan) 
+...
 ```
 ### Doesn't Contain
 
 ```
-...
+Category:(?:[A-Z\da-z\s\-]*\s)?(?:Afghan) 
 ```
