@@ -64,7 +64,7 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Ll]awyers|[jJ](?:udges|urists|ustices)|[Ss]ol
 Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:oliticians|arty members)|[sS]enators|[mM](?:inisters|ayors)|[cC]ity councill?ors)
 ```
 
-## People from a specific nationality
+## People from a specific nationality who aren't already in a disability subcategory
 ### Text Contains
 
 ```
@@ -73,5 +73,5 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:oliticians|arty members)|[sS]enators|[m
 ### Doesn't Contain
 
 ```
-Category:(?:[A-Z\da-z\s\-]*\s)?(?:Afghan) 
+Category:(?:[A-Z\da-z\s\-]*\s)?(?:Afghan)(?! (?:blind|deaf|politicians with disabilities|amputees|disabled sportspeople))
 ```
