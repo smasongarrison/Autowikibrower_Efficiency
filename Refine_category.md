@@ -73,5 +73,5 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:oliticians|arty members)|[sS]enators|[m
 ### Doesn't Contain
 
 ```
-Category:(?:[A-Z\da-z\s\-]*\s)?(?:English)(?! (?:Revolution|Games|University|blind|deaf|politicians with disabilities|amputees|disabled sportspeople|-language))
+Category:(?:[A-Z\da-z\s\-]*\s)?(?:English)(?! (?:Revolution|Games|University|blind|deaf|politicians with disabilities|amputees|disabled sportspeople)|-language)
 ```
