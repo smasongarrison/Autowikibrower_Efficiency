@@ -75,3 +75,13 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:oliticians|arty members)|[sS]enators|[m
 ```
 Category:(?:[A-Z\da-z\s\-]*\s)?(?:English)(?! (?:Revolution|Games|University|blind|deaf|politicians with disabilities|amputees|disabled sportspeople)|-language)
 ```
+## Case Laws without a year
+### Text Contains
+```
+in (?:(?:A(?:merican|ustralian?)|British|Canad(?:ian|a)|European Union|Indian?|New Zealand|South African?|United (?:States|Kingdom)) )?case law\]\]
+```
+### Doesn't Contain
+
+```
+...
+```
