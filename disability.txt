@@ -1388,7 +1388,6 @@
 # [[:Colin Low, Baron Low of Dalston]]
 # [[:Colin Pillinger]]
 # [[:Collette Divitto]]
-# [[:Colonel Blink]]
 # [[:Colonel Chaffin]]
 # [[:Colt Wynn]]
 # [[:Commodore Nutt]]
