@@ -68,7 +68,7 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:oliticians|arty members)|[sS]enators|[m
 ### Text Contains
 
 ```
-Category:(?:(?:English|Welsh|Scot+ish) (?:people with disabilities|deaf people|amputees|blind people)|Paralympic [\d\w\s]+ for Great Britain\]\]|British blind people)|(?:from|in) British Columbia\]\]
+Category:(?:English|Welsh|Scot+ish|British) (?:people with disabilities|deaf people|amputees|blind people|politicians with disabilities)|(?:(?:from|in) British Columbia|Paralympic [\d\w\s]+ for Great Britain)\]\]
 ```
 ### Doesn't Contain
 
