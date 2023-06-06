@@ -73,7 +73,7 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:oliticians|arty members)|[sS]enators|[m
 ### Doesn't Contain
 
 ```
-Category:(?:[A-Z\da-z\s\-]*\s)?(?:English)(?! (?:Revolution|Games|University|blind|deaf|politicians with disabilities|amputees|disabled sportspeople)|-language)
+Category:(?:[A-Z\da-z\s\-]*\s)?(?:British)(?! (?:Games|University|Revolution|amputees|blind|d(?:isabled sportspeople|e(?:af|scent))|politicians with disabilities)|-language)
 ```
 ## Case Laws without a year
 ### Text Contains
