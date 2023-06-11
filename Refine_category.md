@@ -64,6 +64,31 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Ll]awyers|[jJ](?:udges|urists|ustices)|[Ss]ol
 Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:oliticians|arty members)|[sS]enators|[mM](?:inisters|ayors)|[cC]ity councill?ors)
 ```
 
+
+## activists who aren't already in a disability subcategory
+### Text Contains
+
+```
+\[\[Category:(Blind|Deaf) (activists)\]\]
+```
+### Doesn't Contain
+
+```
+(?:activists)\]\]
+```
+
+## educators who aren't already in a disability subcategory
+### Text Contains
+
+```
+\[\[Category:(Blind|Deaf) (educators|scholars and academics)\]\]
+```
+### Doesn't Contain
+
+```
+(?:schoolteachers|educators(?: of the (?:deaf|blind))?)\]\]
+```
+
 ## People from a specific nationality who aren't already in a disability subcategory
 ### Text Contains
 
