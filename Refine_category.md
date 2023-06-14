@@ -42,7 +42,7 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:hysicians|sychiatrists)|[mM]edical doct
 ### Text Contains
 
 ```
-...
+\[\[Category:(Blind|Deaf) (?:[Ll]awyers)\]\]
 ```
 
 ### Doesn't Contain
