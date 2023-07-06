@@ -1,3 +1,17 @@
+# Useful Skips for adding folks to a specific country
+
+## American
+### Text Contains
+
+```
+\[\[Category:(?:(?:\d\d[thrds]{2})-century )?American
+```
+### Doesn't Contain
+
+```
+Category:(19\d\d|18[89]\d) births
+```
+
 # Useful Skips for adding folks to a specific century
 
 ## 20th century
@@ -64,7 +78,7 @@ Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Ll]awyers|[jJ](?:udges|urists|ustices)|[Ss]ol
 Category:(?:[A-Z\da-z\s\-]*\s)?(?:[Pp](?:oliticians|arty members)|[sS]enators|[mM](?:inisters|ayors)|[cC]ity councill?ors)
 ```
 
-
+# Useful Skips for adding folks to a disability subcategory
 ## activists who aren't already in a disability subcategory
 ### Text Contains
 
@@ -100,6 +114,8 @@ Category:(?:English|Welsh|Scot+ish|British) (?:people with disabilities|deaf peo
 ```
 Category:(?:[A-Z\da-z\s\-]*\s)?(?:British)(?! (?:Games|University|Revolution|amputees|blind|d(?:isabled sportspeople|e(?:af|scent))|politicians with disabilities)|-language)
 ```
+
+# Useful Skips for addingLaws without a year
 ## Case Laws without a year
 ### Text Contains
 ```
