@@ -9,7 +9,6 @@
 ### Doesn't Contain
 
 ```
-Category:(19\d\d|18[89]\d) births
 ```
 
 # Useful Skips for adding folks to a specific century
