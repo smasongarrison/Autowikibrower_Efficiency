@@ -17,7 +17,7 @@
 ### Text Contains
 
 ```
-Category:(?:1(?:9[2-9]\d|8\d\d) deaths|Living people)
+Category:(?:1(?:9[1-9]\d|7\d\d) deaths|Living people)
 ```
 ### Doesn't Contain
 
