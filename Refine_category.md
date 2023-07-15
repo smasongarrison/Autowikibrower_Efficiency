@@ -13,11 +13,23 @@
 
 # Useful Skips for adding folks to a specific century
 
+## 19th century
+### Text Contains
+
+```
+Category:(?:1(?:9[2-9]\d|8\d\d) deaths|Living people)
+```
+### Doesn't Contain
+
+```
+Category:(?:(?:18\d\d|17[89]\d) births)
+```
+
 ## 20th century
 ### Text Contains
 
 ```
-Category:(?:20(?:[1-9]\d|0[2-9]) deaths|Living people|British (?:psychiatrists|consciousness researchers and theorists))
+Category:(?:20(?:[1-9]\d|0[2-9]) deaths|Living people)
 ```
 ### Doesn't Contain
 
