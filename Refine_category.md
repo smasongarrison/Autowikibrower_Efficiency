@@ -125,8 +125,20 @@ Category:(?:English|Welsh|Scot+ish|British) (?:people with disabilities|deaf peo
 ```
 Category:(?:[A-Z\da-z\s\-]*\s)?(?:British)(?! (?:Games|University|Revolution|amputees|blind|d(?:isabled sportspeople|e(?:af|scent))|politicians with disabilities)|-language)
 ```
+# Useful Skips for out of place century
 
-# Useful Skips for addingLaws without a year
+### Text Contains
+
+```
+...
+```
+### Doesn't Contain
+
+```
+Category:1[23456789]th-century
+```
+
+# Useful Skips for adding Laws without a year
 ## Case Laws without a year
 ### Text Contains
 ```
