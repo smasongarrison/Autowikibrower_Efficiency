@@ -41,12 +41,12 @@ Category:(19\d\d|18[89]\d) births
 ### Text Contains
 
 ```
-Category:(?:20(?:[1-9]\d|0[2-9]) deaths|Living people)
+Category:(?:20(?:[1-9]\d|0[2-9]) deaths)
 ```
 ### Doesn't Contain
 
 ```
-Category:(20\d\d|19[89]\d) births
+Category:(?:(?:20\d\d|19[89]\d) births|Living people)
 ```
 ## Scientists
 ### Text Contains
