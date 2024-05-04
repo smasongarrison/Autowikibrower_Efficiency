@@ -37,6 +37,17 @@ Category:(?:20(?:[1-9]\d|0[2-9]) deaths|Living people)
 Category:(19\d\d|18[89]\d) births
 ```
 
+## 21st century
+### Text Contains
+
+```
+Category:(?:20(?:[1-9]\d|0[2-9]) deaths|Living people)
+```
+### Doesn't Contain
+
+```
+Category:(20\d\d|19[89]\d) births
+```
 ## Scientists
 ### Text Contains
 
